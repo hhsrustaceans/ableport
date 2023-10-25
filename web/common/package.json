@@ -1,0 +1,9 @@
+{
+  "name": "@ableport/web-common",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "tailwindcss": "^3.3.4"
+  }
+}
