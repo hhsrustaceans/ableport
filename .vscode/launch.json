@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Frontend",
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/web",
             "skipFiles": [
                 "<node_internals>/**"
             ],

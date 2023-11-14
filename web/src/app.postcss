@@ -1,3 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-xl md:text-2xl;
+  }
+}
+
 @layer components {
   .btn {
     @apply bg-blue-500 outline-blue-300 outline-4 text-white rounded-md px-5 py-2 text-sm font-semibold inline-block focus:outline;

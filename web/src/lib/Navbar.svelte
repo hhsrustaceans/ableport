@@ -1,5 +1,5 @@
 <script lang="ts">
-  import logo from "@ableport/web-common/assets/logo.png";
+  import logo from "$lib/assets/logo.png";
 </script>
 
 <nav class="p-5">

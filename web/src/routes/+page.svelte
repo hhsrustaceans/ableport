@@ -1,7 +1,7 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
-  import Navbar from "./lib/Navbar.svelte";
-  import ConfirmButton from "@ableport/web-common/lib/ConfirmButton.svelte";
+  import Navbar from "$lib/Navbar.svelte";
+  import ConfirmButton from "$lib/controls/ConfirmButton.svelte";
 </script>
 
 <Navbar />
