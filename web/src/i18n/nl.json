@@ -2,5 +2,15 @@
   "welcome": {
     "message": "Hallo! Welkom op het testportaal voor ervaringsdeskundigen. Hier vindt u alle informatie die u nodig hebt.",
     "button": "Beginnen"
+  },
+  "a11y": {
+    "skip_link": "Navigeer naar hoofdinhoud"
+  },
+  "nav": {
+    "home": "Homepagina",
+    "controls": {
+      "a11y": "Toegankelijkheid",
+      "adjust_font_size": "Tekstgrootte aanpassen"
+    }
   }
 }

@@ -5,6 +5,8 @@
 </script>
 
 <button class="btn">
-  <span>{caption}</span>
-  <span><Icon icon="lucide:arrow-right-to-line" /></span>
+  <div class="flex items-center gap-1">
+    <span>{caption}</span>
+    <span><Icon icon="lucide:arrow-right-to-line" width="24" /></span>
+  </div>
 </button>
