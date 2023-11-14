@@ -4,7 +4,8 @@
     "button": "Beginnen"
   },
   "a11y": {
-    "skip_link": "Navigeer naar hoofdinhoud"
+    "skip_link": "Navigeer naar hoofdinhoud",
+    "help": "Hulp"
   },
   "nav": {
     "logo": "Logo van {product}",

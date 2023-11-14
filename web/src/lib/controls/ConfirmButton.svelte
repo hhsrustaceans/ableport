@@ -4,7 +4,7 @@
   export let caption: string;
 </script>
 
-<button class="btn">
+<button class="action action-primary">
   <div class="flex items-center gap-1">
     <span>{caption}</span>
     <span aria-hidden="true"

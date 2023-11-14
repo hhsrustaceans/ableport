@@ -6,10 +6,18 @@
   html {
     @apply text-xl md:text-2xl dark:bg-black dark:text-white;
   }
+
+  button {
+    @apply rounded-md outline-4 focus:outline-gray-300 dark:focus:outline-gray-400 focus:outline;
+  }
 }
 
 @layer components {
-  .btn {
-    @apply bg-blue-500 outline-blue-300 outline-4 text-white rounded-md px-5 py-2 text-sm font-semibold inline-block focus:outline;
+  .action {
+    @apply bg-gray-300 text-black focus:outline-gray-400 px-5 py-2 text-sm font-semibold inline-block;
+  }
+
+  .action-primary {
+    @apply bg-blue-500 text-white focus:outline-blue-300;
   }
 }
