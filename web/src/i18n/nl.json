@@ -11,7 +11,7 @@
     "logo": "Logo van {product}",
     "home": "Homepagina",
     "controls": {
-      "a11y": "Toegankelijkheid",
+      "settings_a11y": "Instellingen voor toegankelijkheid",
       "adjust_font_size": "Tekstgrootte aanpassen"
     }
   },

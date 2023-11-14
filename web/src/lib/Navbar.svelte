@@ -19,7 +19,7 @@
   </ul>
   <ul class="flex items-center gap-2">
     <li>
-      <button class="p-2" aria-label={$_("nav.controls.a11y")}>
+      <button class="p-2" aria-label={$_("nav.controls.settings_a11y")}>
         <Icon icon="radix-icons:accessibility" width="32" />
       </button>
     </li>
