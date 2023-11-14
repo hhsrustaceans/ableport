@@ -1,8 +1,12 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
   import Navbar from "$lib/Navbar.svelte";
-  import ConfirmButton from "$lib/controls/ConfirmButton.svelte";
+  import { productName } from "$lib/modules/config";
 </script>
+
+<svelte:head>
+  <title>{$_("portal.panel", { values: { product: productName } })}</title>
+</svelte:head>
 
 <main class="m-2">
   <header class="mb-12">
@@ -12,9 +16,6 @@
     <Navbar />
   </header>
   <div class="text-center m-12" id="main">
-    <p class="mb-4">
-      {$_("welcome.message")}
-    </p>
-    <ConfirmButton caption={$_("welcome.button")} />
+    <slot />
   </div>
 </main>

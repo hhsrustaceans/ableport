@@ -7,10 +7,17 @@
     "skip_link": "Navigeer naar hoofdinhoud"
   },
   "nav": {
+    "logo": "Logo van {product}",
     "home": "Homepagina",
     "controls": {
       "a11y": "Toegankelijkheid",
       "adjust_font_size": "Tekstgrootte aanpassen"
     }
+  },
+  "portal": {
+    "panel": "{product} voor ervaringsdeskundigen",
+    "admin": "{product} voor beheerders",
+    "recruit": "{product} voor bedrijven",
+    "research": "{product} voor onderzoekers"
   }
 }
