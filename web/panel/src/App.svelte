@@ -1,6 +1,7 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
   import Navbar from "./lib/Navbar.svelte";
+  import ConfirmButton from "@ableport/web-common/lib/ConfirmButton.svelte";
 </script>
 
 <Navbar />
@@ -8,5 +9,5 @@
   <p class="mb-4">
     {$_("welcome.message")}
   </p>
-  <button class="btn">{$_("welcome.button")}</button>
+  <ConfirmButton caption={$_("welcome.button")} />
 </main>

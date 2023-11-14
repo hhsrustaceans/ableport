@@ -2,9 +2,13 @@ const { AbleportTheme } = require("@ableport/web-common");
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["index.html", "src/**/*.{{svelte,ts},ts}"],
+  content: ["lib/**/*.{svelte,ts}"],
   theme: {
     extend: AbleportTheme,
   },
   plugins: [],
+  prefix: "ableport-",
+  corePlugins: {
+    preflight: false,
+  },
 };

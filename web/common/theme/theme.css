@@ -1,11 +1,5 @@
-@layer base {
-  html {
-    @apply text-xl;
-  }
-}
-
 @layer components {
   .btn {
-    @apply bg-blue-500 text-white rounded-md px-4 py-2 text-sm font-semibold;
+    @apply bg-blue-500 outline-blue-300 outline-4 text-white rounded-md px-5 py-2 text-sm font-semibold inline-block focus:outline;
   }
 }
