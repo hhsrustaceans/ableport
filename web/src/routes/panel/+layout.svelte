@@ -10,8 +10,10 @@
 
 <main class="m-2">
   <header class="mb-12">
-    <a class="absolute -top-10 focus:top-0" tabindex={0} href="#main"
-      >{$_("a11y.skip_link")}</a
+    <a
+      class="absolute -top-10 focus:top-0 text-sm py-1 px-2"
+      tabindex={0}
+      href="#main">{$_("a11y.skip_link")}</a
     >
     <Navbar />
   </header>

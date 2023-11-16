@@ -1,8 +1,4 @@
 {
-  "welcome": {
-    "message": "Hallo! Welkom op het testportaal voor ervaringsdeskundigen. Klik op {action} om een onderzoek te starten.",
-    "button": "Beginnen"
-  },
   "a11y": {
     "skip_link": "Navigeer naar hoofdinhoud",
     "help": "Hulp"
@@ -19,5 +15,12 @@
     "admin": "{product} voor beheerders",
     "recruit": "{product} voor bedrijven",
     "research": "{product} voor onderzoekers"
+  },
+  "panel": {
+    "welcome": {
+      "message": "Hallo! Welkom op het testportaal voor ervaringsdeskundigen. Klik op {action} om een onderzoek te starten.",
+      "button": "Beginnen"
+    },
+    "studies_avail": "Kies hieronder uit een van de beschikbare onderzoeken."
   }
 }

@@ -6,14 +6,26 @@
   html {
     @apply text-xl md:text-2xl dark:bg-black dark:text-white;
   }
+
+  a {
+    @apply focus:outline-2 focus:outline focus:outline-blue-400 focus:rounded-sm;
+  }
 }
 
 @layer components {
   .action {
-    @apply bg-gray-300 text-black focus:outline-gray-400 px-5 py-2 text-sm font-semibold inline-block rounded-md outline-4 focus:outline;
+    @apply bg-gray-200 dark:bg-gray-700 focus:outline focus:outline-gray-400 focus:outline-4 px-5 py-2 text-sm font-semibold inline-block rounded-md;
   }
 
   .action-primary {
     @apply bg-blue-500 text-white focus:outline-blue-300;
+  }
+
+  .cta {
+    @apply mb-4;
+  }
+
+  .detail {
+    @apply text-gray-600 dark:text-gray-400;
   }
 }

@@ -5,7 +5,7 @@
 </script>
 
 <button
-  class="p-2 focus:outline-gray-300 dark:focus:outline-gray-400 rounded-md focus:outline"
+  class="p-2 focus:outline-gray-300 dark:focus:outline-gray-400 focus:outline rounded-md"
   aria-label={$_("nav.controls.settings_a11y")}
 >
   <Icon icon="radix-icons:accessibility" width="32" />

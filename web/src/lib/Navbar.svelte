@@ -8,7 +8,7 @@
 <nav class="p-5 flex items-center justify-between">
   <ul class="flex items-center">
     <li>
-      <a href="/" aria-label={$_("nav.home")}
+      <a href="/" aria-label={$_("nav.home")} class="p-1 block"
         ><img
           src={logo}
           alt={$_("nav.logo", { values: { product: productName } })}
