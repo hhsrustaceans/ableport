@@ -18,7 +18,7 @@
 <ul class="max-w-md m-auto space-y-2">
   {#each studies as study}
     <li>
-      <a href="/panel/study/{study.id}" class="block focus:rounded-md">
+      <a href="/panel/study/{study.id}" class="block action action-li">
         <StudyPreview {study} />
       </a>
     </li>

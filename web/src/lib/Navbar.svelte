@@ -1,6 +1,7 @@
 <script lang="ts">
   import logo from "$lib/assets/logo.png";
   import A11yButton from "$lib/controls/A11yButton.svelte";
+  import LanguageButton from "$lib/controls/LanguageButton.svelte";
   import { _ } from "svelte-i18n";
   import { productName } from "./modules/config";
 </script>
@@ -19,5 +20,6 @@
   </ul>
   <ul class="flex items-center gap-2">
     <li><A11yButton /></li>
+    <li><LanguageButton /></li>
   </ul>
 </nav>

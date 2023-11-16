@@ -7,8 +7,12 @@
     "logo": "Logo van {product}",
     "home": "Homepagina",
     "controls": {
-      "settings_a11y": "Instellingen voor toegankelijkheid"
+      "settings_a11y": "Instellingen voor toegankelijkheid",
+      "settings_lang": "Taalinstelling"
     }
+  },
+  "dialog": {
+    "close": "Sluiten"
   },
   "portal": {
     "panel": "{product} voor ervaringsdeskundigen",
