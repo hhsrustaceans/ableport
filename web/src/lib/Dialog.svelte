@@ -9,7 +9,10 @@
 </script>
 
 <DialogOverlay {isOpen} {onDismiss}>
-  <DialogContent aria-label={title} class="rounded-md text-sm">
+  <DialogContent
+    aria-label={title}
+    class="rounded-md text-sm w-72 md:w-96 mx-auto my-24 bg-white dark:bg-gray-500 drop-shadow-2xl p-6"
+  >
     <button
       on:click={onDismiss}
       aria-label={$_("dialog.close")}
