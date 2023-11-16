@@ -15,6 +15,7 @@ __metadata:
     autoprefixer: ^10.4.16
     postcss: ^8.4.31
     svelte: ^4.0.5
+    svelte-accessible-dialog: ^2.1.3
     svelte-check: ^3.6.0
     svelte-i18n: ^4.0.0
     tailwindcss: ^3.3.5
@@ -2661,6 +2662,13 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
+  languageName: node
+  linkType: hard
+
+"svelte-accessible-dialog@npm:^2.1.3":
+  version: 2.1.3
+  resolution: "svelte-accessible-dialog@npm:2.1.3"
+  checksum: a33e53d51a6cc1dff056e499daf8babcedc7f7e8b5c446c45cfccd1ab33c7c087fd61527745ed06612d0aed1a7431ad849924cdc722deee39cbc36441da7e146
   languageName: node
   linkType: hard
 

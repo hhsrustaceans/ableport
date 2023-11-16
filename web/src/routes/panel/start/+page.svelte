@@ -25,5 +25,5 @@
   {/each}
 </ul>
 <div class="mt-4">
-  <HelpButton />
+  <HelpButton text={$_("panel.help.select_study")} />
 </div>

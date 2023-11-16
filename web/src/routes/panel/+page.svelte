@@ -8,6 +8,6 @@
     values: { action: $_("panel.welcome.button") },
   })}
 </h1>
-<a href="/panel/start" class="action action-primary">
+<a href="/panel/start" class="action action-primary inline-block">
   <IconLabel caption={$_("panel.welcome.button")} />
 </a>
