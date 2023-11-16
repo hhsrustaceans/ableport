@@ -1,6 +1,6 @@
 {
   "welcome": {
-    "message": "Hallo! Welkom op het testportaal voor ervaringsdeskundigen. Hier vindt u alle informatie die u nodig hebt.",
+    "message": "Hallo! Welkom op het testportaal voor ervaringsdeskundigen. Klik op {action} om een onderzoek te starten.",
     "button": "Beginnen"
   },
   "a11y": {
@@ -11,8 +11,7 @@
     "logo": "Logo van {product}",
     "home": "Homepagina",
     "controls": {
-      "settings_a11y": "Instellingen voor toegankelijkheid",
-      "adjust_font_size": "Tekstgrootte aanpassen"
+      "settings_a11y": "Instellingen voor toegankelijkheid"
     }
   },
   "portal": {

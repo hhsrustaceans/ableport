@@ -1,6 +1,6 @@
 <script lang="ts">
   import logo from "$lib/assets/logo.png";
-  import Icon from "@iconify/svelte";
+  import A11yButton from "$lib/controls/A11yButton.svelte";
   import { _ } from "svelte-i18n";
   import { productName } from "./modules/config";
 </script>
@@ -18,15 +18,6 @@
     </li>
   </ul>
   <ul class="flex items-center gap-2">
-    <li>
-      <button class="p-2" aria-label={$_("nav.controls.settings_a11y")}>
-        <Icon icon="radix-icons:accessibility" width="32" />
-      </button>
-    </li>
-    <li>
-      <button class="p-2" aria-label={$_("nav.controls.adjust_font_size")}>
-        <Icon icon="fluent:text-font-size-20-filled" width="32" />
-      </button>
-    </li>
+    <li><A11yButton /></li>
   </ul>
 </nav>
