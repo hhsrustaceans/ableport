@@ -1,7 +1,7 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
   import { helpText } from "$lib/modules/help";
-  import Dialog from "./Dialog.svelte";
+  import Dialog from "$lib/Dialog.svelte";
 
   function clearHelp() {
     helpText.set(null);

@@ -2,7 +2,7 @@
   import "../app.postcss";
   import { initI18n } from "$lib/modules/i18n";
   import { productName } from "$lib/modules/config";
-  import HelpDialog from "$lib/HelpDialog.svelte";
+  import HelpDialog from "$lib/dialogs/HelpDialog.svelte";
 
   initI18n();
 </script>

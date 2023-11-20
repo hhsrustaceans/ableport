@@ -3,6 +3,11 @@
     "skip_link": "Navigeer naar hoofdinhoud",
     "help": "Hulp"
   },
+  "i18n": {
+    "locales": {
+      "nl": "Nederlands"
+    }
+  },
   "nav": {
     "logo": "Logo van {product}",
     "home": "Homepagina",
