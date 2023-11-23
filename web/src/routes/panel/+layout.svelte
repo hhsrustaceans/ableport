@@ -8,7 +8,7 @@
   <title>{$_("portal.panel", { values: { product: productName } })}</title>
 </svelte:head>
 
-<main class="m-2">
+<main>
   <header class="mb-12">
     <a
       class="absolute -top-10 focus:top-0 text-sm py-1 px-2"

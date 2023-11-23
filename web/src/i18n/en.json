@@ -36,5 +36,11 @@
     "help": {
       "select_study": "You may choose a study from the list above. After you choose a study, the study will start. Further instructions will follow after."
     }
+  },
+  "error": {
+    "return": "Return",
+    "subtext": "Our apologies for the inconvenience.",
+    "unknown": "Something went wrong. Please try again later.",
+    "not_found": "We weren't able to find this page."
   }
 }

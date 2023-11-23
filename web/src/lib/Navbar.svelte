@@ -1,21 +1,16 @@
 <script lang="ts">
-  import Logo from "$lib/assets/logo.svg?component";
+  import { base } from "$app/paths";
   import A11yButton from "$lib/controls/A11yButton.svelte";
   import LanguageButton from "$lib/controls/LanguageButton.svelte";
   import { _ } from "svelte-i18n";
-  import { productName } from "./modules/config";
+  import Logo from "$lib/Logo.svelte";
 </script>
 
 <nav class="p-5 flex items-center justify-between">
   <ul class="flex items-center">
     <li>
-      <a href="/" aria-label={$_("nav.home")} class="p-1 block">
-        <Logo
-          width="150"
-          height="auto"
-          viewBox="0 0 1107 288"
-          alt={$_("nav.logo", { values: { product: productName } })}
-        />
+      <a href="{base}/" aria-label={$_("nav.home")} class="p-1 block">
+        <Logo />
       </a>
     </li>
   </ul>

@@ -36,5 +36,11 @@
     "help": {
       "select_study": "U kunt in de lijst hierboven een onderzoek kiezen. Nadat u een onderzoek heeft gekozen, wordt het onderzoek gestart. Daarna volgen verdere aanwijzingen."
     }
+  },
+  "error": {
+    "return": "Terugkeren",
+    "subtext": "Onze excuses voor het ongemak.",
+    "unknown": "Er is iets misgegaan. Probeer het later opnieuw.",
+    "not_found": "We konden deze pagina helaas niet vinden."
   }
 }

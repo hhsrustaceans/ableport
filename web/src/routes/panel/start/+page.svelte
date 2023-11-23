@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import HelpButton from "$lib/controls/HelpButton.svelte";
   import StudyPreview from "$lib/panel/StudyPreview.svelte";
   import type { Study } from "$lib/types/models/study";
@@ -18,7 +19,7 @@
 <ul class="max-w-md m-auto space-y-2">
   {#each studies as study}
     <li>
-      <a href="/panel/study/{study.id}" class="block action action-li">
+      <a href="{base}/panel/study/{study.id}" class="block action action-li">
         <StudyPreview {study} />
       </a>
     </li>
