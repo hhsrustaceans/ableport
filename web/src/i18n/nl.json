@@ -4,7 +4,7 @@
     "help": "Hulp"
   },
   "i18n": {
-    "auto": "{locale} (Automatisch)",
+    "auto": "{locale} (automatisch)",
     "locales": {
       "nl": "Nederlands",
       "en": "Engels"

@@ -6,11 +6,24 @@
   export let isOpen = false;
   export let onDismiss: () => void;
 
-  let selection = $i18nLocale;
+  $: selection = $i18nLocale!;
+
+  function isAuto(localeCode: string) {
+    return localeCode === $navigatorLocale;
+  }
+
+  function setLocale() {
+    if (isAuto(selection)) {
+      localStorage.removeItem("locale");
+    } else {
+      localStorage.setItem("locale", selection);
+    }
+    i18nLocale.set(selection);
+  }
 </script>
 
 <Dialog title={$_("nav.controls.settings_lang")} {onDismiss} {isOpen}>
-  <div role="radiogroup" class="flex flex-col gap-1">
+  <div role="radiogroup" class="flex flex-col gap-1" on:change={setLocale}>
     {#each Object.values(locales).sort( (_, b) => (b.code === $navigatorLocale ? 1 : 0) ) as locale}
       <div class="flex gap-2">
         <input
@@ -25,7 +38,7 @@
         >
           <span aria-hidden="true">{locale.flag}</span>
           <!-- Locale is determined by browser -->
-          {#if locale.code === $navigatorLocale}
+          {#if isAuto(locale.code)}
             <span
               >{$_("i18n.auto", {
                 values: { locale: $_(`i18n.locales.${locale.code}`) },
