@@ -10,8 +10,8 @@
 </script>
 
 <Dialog title={$_("nav.controls.settings_lang")} {onDismiss} {isOpen}>
-  <div role="radiogroup">
-    {#each Object.values(locales) as locale}
+  <div role="radiogroup" class="flex flex-col gap-1">
+    {#each Object.values(locales).sort( (_, b) => (b.code === $navigatorLocale ? 1 : 0) ) as locale}
       <div class="flex gap-2">
         <input
           type="radio"

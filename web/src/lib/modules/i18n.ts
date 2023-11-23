@@ -1,7 +1,8 @@
+import { writable } from "svelte/store";
 import { init, addMessages, getLocaleFromNavigator } from "svelte-i18n";
 
 import nl from "../../i18n/nl.json";
-import { writable } from "svelte/store";
+import en from "../../i18n/en.json";
 
 export type Locale = {
   code: string;
@@ -14,6 +15,11 @@ export const locales: Record<string, Locale> = {
     code: "nl",
     flag: "🇳🇱",
     messages: nl,
+  },
+  en: {
+    code: "en",
+    flag: "🇬🇧",
+    messages: en,
   },
 };
 

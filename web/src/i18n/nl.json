@@ -6,7 +6,8 @@
   "i18n": {
     "auto": "{locale} (Automatisch)",
     "locales": {
-      "nl": "Nederlands"
+      "nl": "Nederlands",
+      "en": "Engels"
     }
   },
   "nav": {
@@ -21,7 +22,7 @@
     "close": "Sluiten"
   },
   "portal": {
-    "panel": "{product} voor ervaringsdeskundigen",
+    "panel": "{product} voor panelleden",
     "admin": "{product} voor beheerders",
     "recruit": "{product} voor bedrijven",
     "research": "{product} voor onderzoekers"
