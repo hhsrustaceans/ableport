@@ -1,7 +1,7 @@
 <script lang="ts">
   import { _, locale as i18nLocale } from "svelte-i18n";
+  import { locales, navigatorLocale } from "$lib/modules/i18n";
   import Dialog from "$lib/Dialog.svelte";
-  import { locales } from "$lib/modules/i18n";
 
   export let isOpen = false;
   export let onDismiss: () => void;
@@ -24,7 +24,16 @@
           for={locale.code}
         >
           <span aria-hidden="true">{locale.flag}</span>
-          <span>{$_(`i18n.locales.${locale.code}`)}</span>
+          <!-- Locale is determined by browser -->
+          {#if locale.code === $navigatorLocale}
+            <span
+              >{$_("i18n.auto", {
+                values: { locale: $_(`i18n.locales.${locale.code}`) },
+              })}</span
+            >
+          {:else}
+            <span>{$_(`i18n.locales.${locale.code}`)}</span>
+          {/if}
         </label>
       </div>
     {/each}

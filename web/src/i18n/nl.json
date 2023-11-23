@@ -4,6 +4,7 @@
     "help": "Hulp"
   },
   "i18n": {
+    "auto": "{locale} (Automatisch)",
     "locales": {
       "nl": "Nederlands"
     }
