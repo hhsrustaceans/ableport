@@ -9,7 +9,7 @@ export default function Logo({ width = 150 }: { width?: number }) {
   return (
     <Image
       src={LogoAsset}
-      alt={t("nav.logo", { product: productName })}
+      alt={t("common.nav.logo", { product: productName })}
       width={width}
     />
   );

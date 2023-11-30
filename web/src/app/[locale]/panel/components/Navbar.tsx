@@ -11,7 +11,11 @@ export default function Navbar() {
     <nav className="p-5 flex items-center justify-between">
       <ul className="flex items-center">
         <li>
-          <Link href="/" aria-label={t("nav.home")} className="p-1 block">
+          <Link
+            href="/"
+            aria-label={t("common.nav.home")}
+            className="p-1 block"
+          >
             <Logo />
           </Link>
         </li>

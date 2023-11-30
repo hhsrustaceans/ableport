@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import IconLanguage from "~icons/tabler/language";
 
@@ -7,7 +9,7 @@ export default function LanguageButton() {
   return (
     <button
       className="setting"
-      aria-label={t("nav.controls.settings_lang")}
+      aria-label={t("panel.nav.controls.settings_lang")}
       //   on:click={() => (showDialog = true)}
     >
       <IconLanguage className="text-xl" />
