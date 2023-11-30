@@ -2,26 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  html {
+    @apply text-xl md:text-2xl dark:bg-black dark:text-white;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  a {
+    @apply focus:outline-2 focus:outline focus:outline-blue-400 focus:rounded-sm;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .action {
+    @apply bg-gray-200 dark:bg-gray-700 focus:outline focus:outline-gray-400 focus:outline-4 px-5 py-2 text-sm font-semibold rounded-md text-center;
+  }
+
+  .action-li {
+    @apply p-3 text-left font-normal focus:rounded-md focus:outline-blue-300;
+  }
+
+  .action-primary {
+    @apply bg-blue-500 text-white focus:outline-blue-300;
+  }
+
+  .setting {
+    @apply p-2 focus:outline-gray-300 dark:focus:outline-gray-400 focus:outline rounded-md;
+  }
+
+  .cta {
+    @apply mb-4;
+  }
+
+  .detail {
+    @apply text-gray-600 dark:text-gray-400;
+  }
 }

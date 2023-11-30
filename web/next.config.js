@@ -1,4 +1,19 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const withNextIntl = require("next-intl/plugin")();
+const unpluginWebpack = require("unplugin-icons/webpack").default;
 
-module.exports = nextConfig
+const nextConfig = {
+  webpack(config) {
+    config.plugins.push(
+      unpluginWebpack({
+        compiler: "jsx",
+        jsx: "react",
+      })
+    );
+
+    return config;
+  },
+  trailingSlash: true,
+};
+
+module.exports = withNextIntl(nextConfig);
