@@ -1,6 +1,5 @@
 import { Study } from "@/lib/types/models/study";
 import IconWeb from "~icons/mdi/web";
-import IconLink from "~icons/mdi/external-link";
 
 export default function StudyPreview({ study }: { study: Study }) {
   return (
@@ -10,7 +9,7 @@ export default function StudyPreview({ study }: { study: Study }) {
       <div className="flex items-center gap-1 py-0.5 mt-1 detail">
         <IconWeb />
         <span>{new URL(study.websiteUrl).host}</span>
-        <IconLink />
+        {/* <IconLink /> */}
       </div>
     </div>
   );

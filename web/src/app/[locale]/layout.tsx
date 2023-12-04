@@ -11,7 +11,7 @@ export function generateStaticParams() {
   return languages.map((lang) => ({ lang }));
 }
 
-export default function RootLayout({
+export default function LocaleLayout({
   children,
   params: { locale },
 }: {
