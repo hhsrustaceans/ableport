@@ -1,10 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.0" />
+      <PackageReference Include="Npgsql" Version="8.0.1" />
+    </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Ableport.API.Lib\Ableport.API.Lib.csproj" />
