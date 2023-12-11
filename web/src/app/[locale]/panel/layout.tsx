@@ -24,7 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <NextIntlClientProvider
       messages={{ common: commonMessages, panel: panelMessages }}
     >
-      <main>
+      <main id="app">
         <header className="mb-12">
           <a
             className="absolute -top-10 focus:top-0 text-sm py-1 px-2"
