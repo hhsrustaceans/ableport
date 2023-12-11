@@ -1,11 +1,11 @@
 import createMiddleware from "next-intl/middleware";
-import { languages } from "@/lib/modules/i18n";
+import { localeCodes } from "@/lib/modules/i18n";
 
 export default createMiddleware({
-  locales: languages,
+  locales: localeCodes,
   defaultLocale: "nl",
 });
 
 export const config = {
-  matcher: ["/", `/(nl)/:path*`],
+  matcher: ["/", "/([a-z]{2})/:path*"],
 };

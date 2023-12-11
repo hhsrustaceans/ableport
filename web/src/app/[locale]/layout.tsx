@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { languages } from "@/lib/modules/i18n";
+import { localeCodes } from "@/lib/modules/i18n";
 import { notFound } from "next/navigation";
 import "@/app/globals.css";
 
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export function generateStaticParams() {
-  return languages.map((lang) => ({ lang }));
+  return localeCodes.map((lang) => ({ lang }));
 }
 
 export default function LocaleLayout({
@@ -18,7 +18,7 @@ export default function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  if (!languages.includes(locale)) return notFound();
+  if (!localeCodes.includes(locale)) return notFound();
 
   return (
     <html lang={locale}>
