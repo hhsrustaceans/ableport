@@ -1,19 +1,20 @@
 using Ableport.API.Lib.DataModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services;
+var configuration = builder.Configuration;
 
 // Add services to the container.
 // Authorization
-builder.Services.AddAuthorization();
+services.AddAuthorization();
 
 // Configure identity database access via EF Core.
-builder.Services.AddDbContext<AbleportContext>(
+services.AddDbContext<AbleportContext>(
     options => options.UseInMemoryDatabase("AppDb"));
 
-builder.Services.Configure<IdentityOptions>(options =>
+services.Configure<IdentityOptions>(options =>
 {
     // Password settings.
     options.Password.RequireDigit = true;
@@ -42,11 +43,20 @@ builder.Services.Configure<IdentityOptions>(options =>
 // Activate identity APIs. By default, both cookies and proprietary tokens
 // are activated. Cookies will be issued based on the `useCookies` querystring
 // parameter in the login endpoint.
-builder.Services.AddIdentityApiEndpoints<AbleportUser>()
+services.AddIdentityApiEndpoints<AbleportUser>()
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AbleportContext>();
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+services.AddEndpointsApiExplorer();
+services.AddSwaggerGen();
+
+services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
+{
+    // Use dotnet user-secrets set "Authentication:Microsoft:ClientId" "ID"
+    microsoftOptions.ClientId = configuration["Authentication:Microsoft:ClientId"];
+    // Use dotnet user-secrets set "Authentication:Microsoft:ClientSecret" "SECRET"
+    microsoftOptions.ClientSecret = configuration["Authentication:Microsoft:ClientSecret"];
+});
 
 
 var app = builder.Build();
