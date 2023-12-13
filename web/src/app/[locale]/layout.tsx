@@ -7,10 +7,6 @@ export const metadata: Metadata = {
   title: "Ableport",
 };
 
-export function generateStaticParams() {
-  return localeCodes.map((lang) => ({ lang }));
-}
-
 export default function LocaleLayout({
   children,
   params: { locale },
