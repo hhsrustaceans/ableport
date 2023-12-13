@@ -45,19 +45,26 @@ builder.Services.Configure<IdentityOptions>(options =>
 builder.Services.AddIdentityApiEndpoints<AbleportUser>()
     .AddEntityFrameworkStores<AbleportContext>();
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+
 var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseHttpsRedirection();
 
 app.MapGet("/", () => "Welcome to Ableport!")
-.RequireAuthorization();
+    .WithName("GetHome")
+    .RequireAuthorization();
 
-app.UseStaticFiles(new StaticFileOptions
-{
-    FileProvider = new PhysicalFileProvider(
-           Path.Combine(builder.Environment.ContentRootPath, "")),
-    RequestPath = "/account"
-});
+app.UseStaticFiles();
 
 app.MapIdentityApi<AbleportUser>();
 
