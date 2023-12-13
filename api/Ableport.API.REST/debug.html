@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        const website = "https://localhost:7265";
+        async function testLogin() {
+            await fetch(website + "/register", {
+                credentials: "include",
+                method: "POST",
+                headers: { "Content-Type": "application/json", },
+                body: "{\"email\": \"22035656@student.hhs.nl\"\,\"password\": \"@9uLrpjme\"}",
+            });
+
+            await fetch(website + "/login?useCookies=true", {
+                credentials: "include",
+                method: "POST",
+                headers: { "Content-Type": "application/json", },
+                body: "{\"email\": \"22035656@student.hhs.nl\"\,\"password\": \"@9uLrpjme\"}",
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <button type="button" onclick="testLogin()">Click Me!</button>
+</body>
+
+</html>

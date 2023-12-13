@@ -2,6 +2,7 @@ using Ableport.API.Lib.DataModel;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -42,12 +43,12 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.RequireUniqueEmail = false;
 });
 
-builder.Services.AddAuthentication("CookieAuth").AddCookie("CookieAuth", options =>
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie("CookieAuth", options =>
 {
     options.Cookie.HttpOnly = true;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
-    options.LoginPath = "/User/Login";
-    options.LogoutPath = "/User/Logout";
+    options.LoginPath = "Account/Login";
+    options.LogoutPath = "/Account/Logout";
     // Additional options can be set here
 });
 
@@ -88,7 +89,21 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapGet("/", () => "Hello World!");
-app.MapGet("/test/", () => "Hello there!").RequireAuthorization();
+app.MapGet("/best", () => "Hello there!");
+app.MapGet("/west", () => "Hello there!").RequireAuthorization();
+
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+           Path.Combine(builder.Environment.ContentRootPath, "")),
+    RequestPath = "/test"
+});
+
+app.UseCookiePolicy(new CookiePolicyOptions
+{
+    Secure = CookieSecurePolicy.Always
+});
 
 
 app.Run();
