@@ -1,0 +1,3 @@
+.ReactModal__Overlay {
+  @apply bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70;
+}

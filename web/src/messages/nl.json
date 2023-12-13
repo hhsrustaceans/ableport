@@ -1,0 +1,50 @@
+{
+  "common": {
+    "a11y": {
+      "skip_link": "Navigeer naar hoofdinhoud",
+      "help": "Hulp"
+    },
+    "i18n": {
+      "auto": "{locale} (automatisch)",
+      "locales": {
+        "nl": "Nederlands",
+        "en": "Engels"
+      }
+    },
+    "nav": {
+      "logo": "Logo van {product}",
+      "home": "Homepagina"
+    },
+    "dialog": {
+      "close": "Sluiten"
+    },
+    "portal": {
+      "panel": "{product} voor panelleden",
+      "admin": "{product} voor beheerders",
+      "recruit": "{product} voor bedrijven",
+      "research": "{product} voor onderzoekers"
+    },
+    "error": {
+      "return": "Terugkeren",
+      "subtext": "Onze excuses voor het ongemak.",
+      "unknown": "Er is iets misgegaan. Probeer het later opnieuw.",
+      "not_found": "We konden deze pagina helaas niet vinden."
+    }
+  },
+  "panel": {
+    "welcome": {
+      "message": "Hallo! Welkom op het testportaal voor ervaringsdeskundigen. Klik op {action} om een onderzoek te starten.",
+      "button": "Beginnen"
+    },
+    "studies_avail": "Kies hieronder uit een van de beschikbare onderzoeken.",
+    "help": {
+      "select_study": "U kunt in de lijst hierboven een onderzoek kiezen. Nadat u een onderzoek heeft gekozen, wordt het onderzoek gestart. Daarna volgen verdere aanwijzingen."
+    },
+    "nav": {
+      "controls": {
+        "settings_a11y": "Instellingen voor toegankelijkheid",
+        "settings_lang": "Taalinstelling"
+      }
+    }
+  }
+}

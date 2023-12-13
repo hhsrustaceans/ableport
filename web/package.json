@@ -1,32 +1,37 @@
 {
   "name": "@ableport/web",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.0.3",
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^2.0.0",
-    "@sveltejs/kit": "^1.27.4",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31",
-    "svelte": "^4.0.5",
-    "svelte-check": "^3.6.0",
-    "tailwindcss": "^3.3.5",
-    "tslib": "^2.4.1",
-    "typescript": "^5.0.0",
-    "vite": "^4.4.2",
-    "vite-plugin-svelte-svg": "^2.3.0"
-  },
-  "type": "module",
-  "packageManager": "yarn@3.6.3",
-  "dependencies": {
-    "@iconify/svelte": "^3.1.4",
-    "svelte-accessible-dialog": "npm:@hhsrustaceans/svelte-accessible-dialog@^2.1.3-1",
-    "svelte-i18n": "^4.0.0"
+    "@iconify-json/lucide": "^1.1.144",
+    "@iconify-json/mdi": "^1.1.57",
+    "@iconify-json/radix-icons": "^1.1.13",
+    "@iconify-json/tabler": "^1.1.100",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-modal": "^3.16.3",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "next-intl": "^3.2.0",
+    "postcss": "^8",
+    "react-modal": "^3.16.1",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5",
+    "unplugin-icons": "^0.18.0"
   }
 }
