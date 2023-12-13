@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace Ableport.API.Lib.DataModel
 {
@@ -31,6 +32,8 @@ namespace Ableport.API.Lib.DataModel
 
     public class Organisation
     {
+        [Key]
+        public int Id { get; set; }
         public string Type { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -41,6 +44,8 @@ namespace Ableport.API.Lib.DataModel
 
     public class Panel
     {
+        [Key]
+        public int Id { get; set; }
         public Organisation Organisation { get; set; }
         public string Title { get; set; }
 
