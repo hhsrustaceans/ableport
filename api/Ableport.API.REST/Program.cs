@@ -1,4 +1,5 @@
 using Ableport.API.Lib.DataModel;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,8 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AbleportContext>(
     options => options.UseInMemoryDatabase("AppDb"));
 
-builder.Services.AddAuthorization();
-
 builder.Services.AddIdentityApiEndpoints<AbleportUser>()
     .AddEntityFrameworkStores<AbleportContext>();
 
@@ -19,12 +18,8 @@ builder.Services.AddIdentityApiEndpoints<AbleportUser>()
 //builder.Services.AddDbContext<AbleportContext>(options =>
 //    options.UseSqlServer(connectionString));
 
+// Adds custom redirect for DB errors
 //builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
-//builder.Services.AddDefaultIdentity<AbleportUser>(options => options.SignIn.RequireConfirmedAccount = true)
-//    .AddEntityFrameworkStores<AbleportContext>();
-
-//builder.Services.AddRazorPages();
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -47,16 +42,29 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.RequireUniqueEmail = false;
 });
 
-//builder.Services.ConfigureApplicationCookie(options =>
-//{
-//    // Cookie settings
-//    options.Cookie.HttpOnly = true;
-//    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+builder.Services.AddAuthentication("CookieAuth").AddCookie("CookieAuth", options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+    options.LoginPath = "/User/Login";
+    options.LogoutPath = "/User/Logout";
+    // Additional options can be set here
+});
 
-//    options.LoginPath = "/Identity/Account/Login";
-//    options.AccessDeniedPath = "/Identity/Account/AccessDenied";
-//    options.SlidingExpiration = true;
-//});
+builder.Services.AddAuthorization(options =>
+{
+    // Configure authorization policies here
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSPA",
+        builder => builder.WithOrigins("https://localhost:7265")
+                          .AllowAnyMethod()
+                          .AllowAnyHeader()
+                          .AllowCredentials());
+});
+
 
 var app = builder.Build();
 
@@ -70,17 +78,14 @@ else
     app.UseHsts();
 }
 
-
-
-//app.UseHttpsRedirection();
-//app.UseStaticFiles();
+app.UseHttpsRedirection();
 
 app.MapIdentityApi<AbleportUser>();
 
-//app.UseRouting();
+app.UseCors("AllowSPA");
 
-//app.UseAuthentication();
-//app.UseAuthorization();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapGet("/", () => "Hello World!");
 app.MapGet("/test/", () => "Hello there!").RequireAuthorization();
