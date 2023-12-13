@@ -48,8 +48,10 @@ namespace Ableport.API.Lib.DataModel
         [Key]
         public int Id { get; set; }
         [MaxLength(35)]
+        [PersonalData]
         public string Name { get; set; }
         [MaxLength(254)]
+        [PersonalData]
         public string Email { get; set; }
     }
 
