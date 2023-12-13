@@ -1,0 +1,50 @@
+{
+  "common": {
+    "a11y": {
+      "skip_link": "Skip to content",
+      "help": "Help"
+    },
+    "i18n": {
+      "auto": "{locale} (Automatic)",
+      "locales": {
+        "nl": "Dutch",
+        "en": "English"
+      }
+    },
+    "nav": {
+      "logo": "{product} Logo",
+      "home": "Home page"
+    },
+    "dialog": {
+      "close": "Close"
+    },
+    "portal": {
+      "panel": "{product} for panel members",
+      "admin": "{product} for administrators",
+      "recruit": "{product} for companies",
+      "research": "{product} for research"
+    },
+    "error": {
+      "return": "Return",
+      "subtext": "Our apologies for the inconvenience.",
+      "unknown": "Something went wrong. Please try again later.",
+      "not_found": "We weren't able to find this page."
+    }
+  },
+  "panel": {
+    "welcome": {
+      "message": "Hi there! Welcome to the test portal for panel members. Click {action} to start a study.",
+      "button": "Start"
+    },
+    "studies_avail": "Please choose one of the studies listed below.",
+    "help": {
+      "select_study": "You may choose a study from the list above. After you choose a study, the study will start. Further instructions will follow after."
+    },
+    "nav": {
+      "controls": {
+        "settings_a11y": "Accessibility settings",
+        "settings_lang": "Language settings"
+      }
+    }
+  }
+}
