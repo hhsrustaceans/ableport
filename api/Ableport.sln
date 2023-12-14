@@ -1,8 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ableport.API.Lib", "Ableport.API.Lib\Ableport.API.Lib.csproj", "{D202E10D-8354-4AE1-9F43-F0D65BFC8ABB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ableport.API.REST", "Ableport.API.REST\Ableport.API.REST.csproj", "{7811DE32-E104-4A82-9B21-FFB6307C1A0E}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ableport.API.REST", "Ableport.API.REST\Ableport.API.REST.csproj", "{7811DE32-E104-4A82-9B21-FFB6307C1A0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,13 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D202E10D-8354-4AE1-9F43-F0D65BFC8ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D202E10D-8354-4AE1-9F43-F0D65BFC8ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D202E10D-8354-4AE1-9F43-F0D65BFC8ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D202E10D-8354-4AE1-9F43-F0D65BFC8ABB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7811DE32-E104-4A82-9B21-FFB6307C1A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7811DE32-E104-4A82-9B21-FFB6307C1A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7811DE32-E104-4A82-9B21-FFB6307C1A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7811DE32-E104-4A82-9B21-FFB6307C1A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C6C472A-07CA-45EB-ACBB-251C5C1F3489}
 	EndGlobalSection
 EndGlobal
