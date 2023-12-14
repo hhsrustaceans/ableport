@@ -12,6 +12,8 @@ namespace Ableport.API.Lib.DataModel
         public DbSet<PanelUserdata> PanelUserdata { get; set; }
         public DbSet<OrgUserdata> OrgUserdata { get; set; }
         public DbSet<AdminUserdata> PanelUserData { get; set; }
+        public DbSet<Disability> Disabilities { get; set; }
+        public DbSet<Aid> Aids { get; set; }
 
         public AbleportContext(DbContextOptions<AbleportContext> options) : base(options) // Calls constructor of base class
         {
@@ -36,10 +38,10 @@ namespace Ableport.API.Lib.DataModel
     public class PanelUserdata
     {
         [Key]
-        public AbleportUser UserId { get; set; }
-        public string ContactPreference { get; set; }
+        public required AbleportUser User { get; set; }
+        public required string ContactPreference { get; set; }
         public bool AllowCommercialPanels { get; set; }
-        public Guardian? guardian { get; set; }
+        public Guardian? Guardian { get; set; }
     }
 
     // Stores guardian (Parent/caretaker) information
@@ -49,29 +51,28 @@ namespace Ableport.API.Lib.DataModel
         public int Id { get; set; }
         [MaxLength(35)]
         [PersonalData]
-        public string Name { get; set; }
+        public required string Name { get; set; }
         [MaxLength(254)]
         [PersonalData]
-        public string Email { get; set; }
+        public required string Email { get; set; }
     }
 
     // Stores preferences for organisations
     public class OrgUserdata
     {
         [Key]
-        public AbleportUser UserId { get; set; }
+        public required AbleportUser User { get; set; }
         [MaxLength(10)]
-        public string ContactPreference { get; set; }
-        public bool AllowChat { get; set; }
+        public required string ContactPreference { get; set; }
     }
 
     // Stores preferences for admin users
     public class AdminUserdata
     {
         [Key]
-        public AbleportUser UserId { get; set; }
+        public required AbleportUser User { get; set; }
         [MaxLength(10)]
-        public string ContactPreference { get; set; }
+        public required string ContactPreference { get; set; }
     }
 
     // Stores all organisation data
@@ -80,17 +81,25 @@ namespace Ableport.API.Lib.DataModel
         [Key]
         public int Id { get; set; }
         [MaxLength(10)]
-        public string Type { get; set; }
+        public required string Type { get; set; }
         [MaxLength(30)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
         [MaxLength(1000)]
-        public string Description { get; set; }
+        public required string Description { get; set; }
         [MaxLength(20)]
-        public string Logo { get; set; }
+        public string? Logo { get; set; }
         [MaxLength(35)]
         public string? Website { get; set; }
         [MaxLength(15)]
-        public string PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
+    }
+
+    // Stores organization-wide preferences
+    public class OrgPreferences
+    {
+        [Key]
+        public required Organisation Organisation { get; set; }
+        public bool AllowChat { get; set; }
     }
 
     // Stores all panel data
@@ -98,18 +107,40 @@ namespace Ableport.API.Lib.DataModel
     {
         [Key]
         public int Id { get; set; }
-        public Organisation Organisation { get; set; }
+        public required Organisation Organisation { get; set; }
         [MaxLength(60)]
-        public string Title { get; set; }
+        public required string Title { get; set; }
         [MaxLength(300)]
-        public string Description { get; set; }
+        public required string Description { get; set; }
         [MaxLength(1000)]
-        public string Content {  get; set; }
-        public DateTime StartDate { get; set; }
-        public string Location { get; set; }
+        public required string Content {  get; set; }
+        public TimeSpan ActivePeriod { get; set; }
+        public required string Location { get; set; }
         [MaxLength(30)]
-        public string Reward {  get; set; }
+        public required List<string> Reward {  get; set; }
         [MaxLength(10)]
-        public string StudyType { get; set; }
+        public required string StudyType { get; set; }
+    }
+
+    // Stores disabilities
+    public class Disability
+    {
+        [MaxLength(3)]
+        public required string Code { get; set; }
+        [MaxLength(40)]
+        public required string Name { get; set; }
+        [MaxLength(300)]
+        public required string Description { get; set; }
+    }
+
+    // Stores aids
+    public class Aid
+    {
+        [MaxLength(3)]
+        public required string Code { get; set; }
+        [MaxLength(40)]
+        public required string Name { get; set; }
+        [MaxLength(300)]
+        public required string Description { get; set; }
     }
 }
