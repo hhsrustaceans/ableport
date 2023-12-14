@@ -9,9 +9,6 @@ namespace Ableport.API.Lib.DataModel
     {
         public DbSet<Organisation> Organisations { get; set; }
         public DbSet<Panel> Panels { get; set; }
-        public DbSet<PanelUserdata> PanelUserdata { get; set; }
-        public DbSet<OrgUserdata> OrgUserdata { get; set; }
-        public DbSet<AdminUserdata> PanelUserData { get; set; }
         public DbSet<Disability> Disabilities { get; set; }
         public DbSet<Aid> Aids { get; set; }
 
@@ -125,6 +122,7 @@ namespace Ableport.API.Lib.DataModel
     // Stores disabilities
     public class Disability
     {
+        [Key]
         [MaxLength(3)]
         public required string Code { get; set; }
         [MaxLength(40)]
@@ -136,6 +134,7 @@ namespace Ableport.API.Lib.DataModel
     // Stores aids
     public class Aid
     {
+        [Key]
         [MaxLength(3)]
         public required string Code { get; set; }
         [MaxLength(40)]
