@@ -11,7 +11,7 @@ export default function A11yButton() {
       className="setting"
       aria-label={t("panel.nav.controls.settings_a11y")}
     >
-      <IconAccessibility className="text-xl" />
+      <IconAccessibility className="text-xl icon-highlight-fill" />
     </button>
   );
 }

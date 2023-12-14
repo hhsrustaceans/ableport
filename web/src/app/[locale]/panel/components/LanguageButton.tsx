@@ -16,7 +16,7 @@ export default function LanguageButton() {
         aria-label={t("panel.nav.controls.settings_lang")}
         onClick={() => showModal(true)}
       >
-        <IconLanguage className="text-xl" />
+        <IconLanguage className="text-xl icon-highlight-stroke" />
       </button>
       <LanguageModal isShown={isModalShown} onClose={() => showModal(false)} />
     </>
