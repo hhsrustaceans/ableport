@@ -7,7 +7,7 @@ Ableport is an online hub for research and collaboration between individuals wit
 In order to work on Ableport, you'll need to install the following:
 
 Frontend requirements:
-- Install [Yarn](https://yarnpkg.com/getting-started/install)
+- Install [NodeJS](https://nodejs.org/en/download)
 - (Recommended) Install [VScode](https://code.visualstudio.com/)
 
 Backend requirements:
