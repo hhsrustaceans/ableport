@@ -49,7 +49,7 @@ services.AddIdentityApiEndpoints<AbleportUser>()
     .AddEntityFrameworkStores<AbleportContext>();
 
 services.AddEndpointsApiExplorer();
-services.AddSwaggerGen();
+services.AddOpenApiDocument();
 
 services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
 {
@@ -65,8 +65,12 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseOpenApi(); // serve OpenAPI/Swagger documents
+    //app.UseSwaggerUi(); // serve Swagger UI
+    app.UseReDoc(config =>
+    {
+        config.Path = "/redoc";
+    }); // serve ReDoc UI
 }
 
 app.UseHttpsRedirection();
