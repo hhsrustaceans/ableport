@@ -2,6 +2,9 @@
 	height="288">
 	<title>Ableport Logo</title>
 	<style>
+		:root {
+		color-scheme: light dark;
+		}
 
 		.s0 { fill: #FFFFFF }
 		.s1 { fill: #FFFFFF;stroke: #FFFFFF;stroke-miterlimit:100;stroke-width: 4 }
