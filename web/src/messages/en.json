@@ -33,12 +33,12 @@
   },
   "panel": {
     "welcome": {
-      "message": "Hi there! Welcome to the test portal for panel members. Click {action} to start a study.",
+      "message": "Hi there! Welcome to the test portal for panel members. Click {action} to start a panel.",
       "button": "Start"
     },
-    "studies_avail": "Please choose one of the studies listed below.",
+    "panels_avail": "Please choose one of the panels listed below.",
     "help": {
-      "select_study": "You may choose a study from the list above. After you choose a study, the study will start. Further instructions will follow after."
+      "select_panel": "You may choose a panel from the list above. After you choose a panel, the panel will start. Further instructions will follow after."
     },
     "nav": {
       "controls": {
