@@ -1,38 +1,39 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { Study } from "@/lib/types/models/study";
-import StudyPreview from "../components/StudyPreview";
+import { Panel } from "@/lib/types/models/panel";
+import PanelPreview from "../components/PanelPreview";
 import HelpButton from "../components/HelpButton";
 
 export default function Root() {
   const t = useTranslations();
 
-  const studies: Study[] = [
+  const panels: Panel[] = [
     {
       id: "test",
       name: "Test",
-      description: "This is a test study.",
+      description: "This is a test panel.",
       websiteUrl: "https://example.com",
+      imageUrl: "test",
     },
   ];
 
   return (
     <>
-      <h1 className="cta">{t("panel.studies_avail")}</h1>
+      <h1 className="cta">{t("panel.panels_avail")}</h1>
       <ul className="max-w-md m-auto space-y-2">
-        {studies.map((study, key) => (
+        {panels.map((panel, key) => (
           <li key={key}>
             <Link
-              href={`../study/${study.id}`}
+              href={`../panel/${panel.id}`}
               className="block action action-li"
             >
-              <StudyPreview study={study} />
+              <PanelPreview panel={panel} />
             </Link>
           </li>
         ))}
       </ul>
       <div className="mt-4">
-        <HelpButton text={t("panel.help.select_study")} />
+        <HelpButton text={t("panel.help.select_panel")} />
       </div>
     </>
   );
