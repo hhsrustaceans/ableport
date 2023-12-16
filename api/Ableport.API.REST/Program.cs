@@ -54,9 +54,9 @@ services.AddOpenApiDocument();
 services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
 {
     // Use dotnet user-secrets set "Authentication:Microsoft:ClientId" "ID"
-    microsoftOptions.ClientId = configuration["Authentication:Microsoft:ClientId"];
+    microsoftOptions.ClientId = configuration["Authentication:Microsoft:ClientId"] ?? throw new ArgumentNullException("Authentication:Microsoft:ClientId");
     // Use dotnet user-secrets set "Authentication:Microsoft:ClientSecret" "SECRET"
-    microsoftOptions.ClientSecret = configuration["Authentication:Microsoft:ClientSecret"];
+    microsoftOptions.ClientSecret = configuration["Authentication:Microsoft:ClientSecret"] ?? throw new ArgumentNullException("Authentication:Microsoft:ClientSecret");
 });
 
 
