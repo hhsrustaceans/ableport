@@ -20,7 +20,7 @@ Backend requirements:
 
 Ableport's frontend is powered by NextJS and uses a single-page application (SPA) design.
 
-To work on the frontend locally, run these commands:
+To work on the frontend locally, you'll first need to set up environment variables for the application. Make a copy of [.env.local.example](/web/.env.local.example) called .env.local and fill it all of the required variables. Once done, you should be able to run the application using these commands:
 
 ```sh
 cd web
