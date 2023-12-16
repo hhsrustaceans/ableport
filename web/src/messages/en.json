@@ -11,6 +11,9 @@
         "en": "English"
       }
     },
+    "meta": {
+      "description": "{product} - Building the gateway between humans and software."
+    },
     "nav": {
       "logo": "{product} Logo",
       "home": "Home page"
