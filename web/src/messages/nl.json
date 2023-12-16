@@ -11,6 +11,9 @@
         "en": "Engels"
       }
     },
+    "meta": {
+      "description": "{product} - Het bouwen van de verbinding tussen mens en software."
+    },
     "nav": {
       "logo": "Logo van {product}",
       "home": "Homepagina",

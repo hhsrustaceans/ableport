@@ -13,6 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: t("common.portal.panel", { product: productName }),
+    description: t("common.meta.description", { product: productName })
   };
 }
 

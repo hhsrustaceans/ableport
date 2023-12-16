@@ -7,6 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: t("common.portal.recruit", { product: productName }),
+    description: t("common.meta.description", { product: productName })
   };
 }
 
