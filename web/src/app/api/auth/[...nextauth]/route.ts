@@ -1,19 +1,21 @@
 import NextAuth from "next-auth"
+import { DataSource } from "typeorm"
+import { TypeORMAdapter } from "@auth/typeorm-adapter"
 import GoogleProvider from "next-auth/providers/google"
 import GithubProvider from "next-auth/providers/github"
-import PostgresAdapter from "@auth/pg-adapter"
-import { Pool } from 'pg'
+import createConnection from "@auth/pg-adapter"
 
-const pool = new Pool({
-    host: 'localhost',
-    user: 'postgres',
-    max: 20,
-    idleTimeoutMillis: 30000,
-    connectionTimeoutMillis: 2000,
-})
+import * as entities from "@/lib/types/models/index";
 
 const handler = NextAuth({
-    adapter: PostgresAdapter(pool),
+    adapter: TypeORMAdapter({
+        type: "postgres",
+        host: "localhost",
+        port: 5432,
+        username: "postgres",
+        entities: entities,
+        synchronize: true, // DO NOT USE IN PRODUCTION
+    }),
     providers: [
         GithubProvider({
             clientId: process.env.GITHUB_ID!,
