@@ -42,7 +42,7 @@ const transformer: Record<"date" | "bigint", ValueTransformer> = {
     image!: string | null
 
     @OneToMany(() => UserRoles, (roles) => roles.userId)
-    roles!: string | null
+    roles!: string[]
   
     @OneToMany(() => Session, (session) => session.userId)
     sessions!: Session[]
