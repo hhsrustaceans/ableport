@@ -16,7 +16,8 @@
     },
     "nav": {
       "logo": "Logo van {product}",
-      "home": "Homepagina"
+      "home": "Homepagina",
+      "admin": "Administrator Pagina"
     },
     "dialog": {
       "close": "Sluiten"

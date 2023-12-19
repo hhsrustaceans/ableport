@@ -50,7 +50,3 @@ const transformer: Record<"date" | "bigint", ValueTransformer> = {
     @OneToMany(() => Account, (account) => account.userId)
     accounts!: Account[]
   }
-  
-  
-
-  

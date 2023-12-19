@@ -16,7 +16,8 @@
     },
     "nav": {
       "logo": "{product} Logo",
-      "home": "Home page"
+      "home": "Home page",
+      "admin": "Adminstrator page"
     },
     "dialog": {
       "close": "Close"
