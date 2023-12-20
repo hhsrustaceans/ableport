@@ -37,9 +37,9 @@
       "message": "Hallo! Welkom op het testportaal voor ervaringsdeskundigen. Klik op {action} om een onderzoek te starten.",
       "button": "Beginnen"
     },
-    "studies_avail": "Kies hieronder uit een van de beschikbare onderzoeken.",
+    "panels_avail": "Kies hieronder uit een van de beschikbare onderzoeken.",
     "help": {
-      "select_study": "U kunt in de lijst hierboven een onderzoek kiezen. Nadat u een onderzoek heeft gekozen, wordt het onderzoek gestart. Daarna volgen verdere aanwijzingen."
+      "select_panel": "U kunt in de lijst hierboven een onderzoek kiezen. Nadat u een onderzoek heeft gekozen, wordt het onderzoek gestart. Daarna volgen verdere aanwijzingen."
     },
     "nav": {
       "controls": {
