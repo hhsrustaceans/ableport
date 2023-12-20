@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { localeCodes } from "@/lib/modules/i18n";
 import { notFound } from "next/navigation";
 import "@/app/globals.css";
+import {Providers} from "./providers";
 
 export const metadata: Metadata = {
   title: "Ableport",
@@ -18,7 +19,9 @@ export default function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>  
+      </body>
     </html>
   );
 }
