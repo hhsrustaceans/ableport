@@ -17,7 +17,7 @@
     "nav": {
       "logo": "{product} Logo",
       "home": "Home page",
-      "admin": "Adminstrator page"
+      "admin": "Admin Portal"
     },
     "dialog": {
       "close": "Close"

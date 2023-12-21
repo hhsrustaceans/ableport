@@ -1,34 +1,31 @@
-import { useTranslations } from "next-intl";
 import Logo from "@/components/Logo";
-import LanguageButton from "./LanguageButton";
-import Link from "next/link";
+import { NextIntlClientProvider, useMessages, useTranslations } from "next-intl";
+import { ReactElement, useRef } from "react";
 
-export default function Navbar() {
+export function Navbar(): ReactElement {
   const t = useTranslations();
+  //const width = useRef(window.innerWidth);
+  const messages = useMessages();
 
   return (
-    <nav className="p-5 flex items-center justify-between">
-      <ul className="flex items-center">
-        <li>
-          <Link
-            href="/"
-            aria-label={t("common.nav.home")}
-            className="p-1 block"
-          >
-            <Logo />
-          </Link>
-        </li>
-      </ul>
-      <ul className="flex items-center gap-2">
-        <li>
-          <Link href="" className="p-1 block">
-            {t("common.nav.admin")}
-          </Link>
-        </li>
-        <li>
-          <LanguageButton />
-        </li>
-      </ul>
-    </nav>
+    <header className="w-full h-[5.3em] shadow-lg fixed">
+      <nav className="h-full mx-5 my-0">
+        <ol className="h-full items-center grid grid-cols-3">
+          <li className="flex justify-start">
+            <a href="#" target="_self">
+              <Logo width={180} />
+            </a>
+          </li>
+          <li className="flex justify-center">
+            <a href="#" target="_self" className="hidden sm:inline-block">
+              <p>{t("common.nav.admin")}</p>
+            </a>
+          </li>
+          <li className="flex justify-end">
+            {/* Icons will be placed here */}
+          </li>
+        </ol>
+      </nav>
+    </header>
   );
 }
