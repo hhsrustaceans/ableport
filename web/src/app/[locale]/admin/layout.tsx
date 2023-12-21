@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { productName } from "@/lib/modules/config";
-import { useTranslations } from "next-intl";
+import {
+  NextIntlClientProvider,
+  useMessages,
+  useTranslations,
+} from "next-intl";
 import { getTranslations } from "next-intl/server";
-import Navbar from "./components/Navbar";
+import Navbar from "@/components/Navbar";
 import React, { ReactNode } from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -10,19 +14,22 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: t("common.portal.admin", { product: productName }),
-    description: t("common.meta.description", { product: productName })
+    description: t("common.meta.description", { product: productName }),
   };
 }
 
-export default function Layout({ children } : { children: ReactNode }) {
+export default function Layout({ children }: { children: ReactNode }) {
   const t = useTranslations();
+  const { admin: adminMessages, common: commonMessages } = useMessages();
 
   return (
-    <>
-      <Navbar />
-      <main>
-        {children}
+    <NextIntlClientProvider
+      messages={{ common: commonMessages, admin: adminMessages }}
+    >
+      <main id="app">
+        <Navbar />
+        <div>{children}</div>
       </main>
-    </>
+    </NextIntlClientProvider>
   );
 }
