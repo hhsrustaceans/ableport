@@ -24,7 +24,9 @@ export default function Navbar() {
           <LanguageButton />
         </li>
         <li>
-          <Exit/>
+          <Link href={"/"}>
+            <Exit className="icon-highlight-stroke" />
+          </Link>
         </li>
       </ul>
     </nav>
