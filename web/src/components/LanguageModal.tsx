@@ -31,7 +31,7 @@ export default function LanguageModal({
 
   return (
     <Modal
-      title={t("panel.nav.controls.settings_lang")}
+      title={t("common.nav.controls.settings_lang")}
       isOpen={isShown}
       onClose={onClose}
     >
