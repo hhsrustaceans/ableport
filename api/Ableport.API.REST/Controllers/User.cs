@@ -45,7 +45,7 @@ namespace Ableport.API.REST.Controllers
         {
             if (id != user.Id)
             {
-                return BadRequest();
+                return BadRequest("User IDs do not match");
             }
 
             _context.Entry(user).State = EntityState.Modified;
@@ -54,16 +54,13 @@ namespace Ableport.API.REST.Controllers
             {
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateException)
             {
                 if (!UserExists(id))
                 {
                     return NotFound();
                 }
-                else
-                {
-                    throw;
-                }
+                throw; // Throw error in case of different problem
             }
 
             return NoContent();
