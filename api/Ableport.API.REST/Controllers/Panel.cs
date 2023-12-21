@@ -13,9 +13,9 @@ public class PanelController : ControllerBase
         "Hello there", "Hello world", "Hell no"
     };
 
-    private readonly ILogger<TestController> _logger;
+    private readonly ILogger<PanelController> _logger;
 
-    public PanelController(ILogger<TestController> logger)
+    public PanelController(ILogger<PanelController> logger)
     {
         _logger = logger;
     }
