@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import Logo from "@/components/Logo";
 import LanguageButton from "@/components/LanguageButton";
 import Link from "next/link";
+import Exit from "~icons/lucide/log-out";
 
 export default function Navbar() {
   const t = useTranslations();
@@ -21,6 +22,9 @@ export default function Navbar() {
       <ul className="flex items-center gap-2">
         <li>
           <LanguageButton />
+        </li>
+        <li>
+          <Exit/>
         </li>
       </ul>
     </nav>
