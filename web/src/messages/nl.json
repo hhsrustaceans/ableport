@@ -53,6 +53,16 @@
     "overview": {
       "title": "Overzicht",
       "description": "Voor een overzicht, selecteer een van de selecties. Je kan kiezen tussen de volgende selecties van de lijst: Ervaringsdeskundigen, Onderzoek or Bedrijven."
+    },
+    "dropdown": {
+      "items": {
+        "experts": "Ervarings deskundigen",
+        "research": "Onderzoek",
+        "companies": "Bedrijven"
+      }
+    },
+    "help": {
+      "select_item": "U kunt een item selecteren van de lijst hiernaast om een overzicht te krijgen."
     }
   }
 }

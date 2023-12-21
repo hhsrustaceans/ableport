@@ -44,4 +44,8 @@
   .detail {
     @apply text-gray-600 dark:text-gray-400;
   }
+
+  .aside-items {
+    @apply p-5 hover:bg-green-500 duration-300 ease-in-out text-lg font-semibold;
+  }
 }

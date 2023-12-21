@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
 import { productName } from "@/lib/modules/config";
-import {
-  NextIntlClientProvider,
-  useMessages,
-  useTranslations,
-} from "next-intl";
+import { NextIntlClientProvider, useMessages, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Navbar from "@/components/Navbar";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations();

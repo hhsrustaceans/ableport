@@ -1,15 +1,17 @@
 import HelpButton from "@/components/HelpButton";
 import { useTranslations } from "next-intl";
+import { Sidebar } from "./components/Sidebar";
 
 export default function OverviewPage() {
   const t = useTranslations();
 
   return (
-    <section className="w-full flex justify-center">
-      <article className="w-7/12">
+    <section className="w-full grid grid-cols-12 mt-5">
+      <Sidebar />
+      <article className="col-span-12 sm:col-span-9 mx-5 lg:w-2/3">
         <h1 className="text-3xl">{t("admin.overview.title")}</h1>
-        <p className="mt-5">{t("admin.overview.description")}</p>
-        <HelpButton text="s" />
+        <p className="my-5">{t("admin.overview.description")}</p>
+        <HelpButton text={t("admin.help.select_item")} />
       </article>
     </section>
   );

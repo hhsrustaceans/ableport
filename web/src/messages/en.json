@@ -53,6 +53,16 @@
     "overview": {
       "title": "Overview",
       "description": "For an overview, please select one of the items. You can choose the following from the list: Experts, Research or Companies."
+    },
+    "dropdown": {
+      "items":{
+        "experts": "Experts",
+        "research": "Research",
+        "companies": "Companies"
+      }
+    },
+    "help": {
+      "select_item": "You may choose an item from the list to the left to get an overview."
     }
   }
 }
