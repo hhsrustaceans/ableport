@@ -3,10 +3,8 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Languages from "~icons/lucide/languages";
 import Exit from "~icons/lucide/log-out";
-import { ReactNode } from "react";
 
-export default function Navbar({ 
-  languages = <Languages />, exit = <Exit /> } : { languages: ReactNode, exit: ReactNode }) {
+export default function Navbar() {
   const t = useTranslations();
 
   return (
@@ -25,10 +23,10 @@ export default function Navbar({
           </li>
           <li className="flex justify-end gap-3">
             <button>
-              {languages}
+              <Languages />
             </button>
             <button>
-              {exit}
+              <Exit />
             </button>
           </li>
         </ul>
