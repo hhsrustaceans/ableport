@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Ableport.API.REST.DataModel
 {
-    public class AbleportContext : IdentityDbContext<AbleportUser>
+    public class AbleportContext : IdentityDbContext<AbleportUser, AbleportRole, int>
     {
         public DbSet<Organisation> Organisations { get; set; }
         public DbSet<Panel> Panels { get; set; }
@@ -17,12 +17,11 @@ namespace Ableport.API.REST.DataModel
     }
 
     // Stores all account data and is used throughout Ableport (Email, password, etc.)
-    public class AbleportUser : IdentityUser
+    public class AbleportUser : IdentityUser<int>
     {
         [Key]
-        [MaxLength(8)]
-        [PersonalData]
-        public override string Id { get; set; }
+        [PersonalData] 
+        public override int Id { get; set; } 
         [PersonalData]
         [MaxLength(35)]
         public string? FirstName { get; set; }
@@ -36,13 +35,17 @@ namespace Ableport.API.REST.DataModel
         public AdminUserdata? AdminUserdata { get; set; }
         
     }
+    
+    public class AbleportRole : IdentityRole<int>
+    {
+    }
 
     // Stores preferences for panel users
     public class PanelUserData
     {
         [Key]
-        [MaxLength(8)]
-        public required string UserId { get; set; }
+        public required int UserId { get; set; }
+        [MaxLength(35)]
         public required string ContactPreference { get; set; }
         public bool AllowCommercialPanels { get; set; }
         public Guardian? Guardian { get; set; }
@@ -52,8 +55,7 @@ namespace Ableport.API.REST.DataModel
     public class Guardian
     {
         [Key]
-        [MaxLength(8)]
-        public required string UserId { get; set; }
+        public required int UserId { get; set; }
         [MaxLength(35)]
         [PersonalData]
         public required string Name { get; set; }
@@ -66,8 +68,7 @@ namespace Ableport.API.REST.DataModel
     public class OrgUserdata
     {
         [Key]
-        [MaxLength(8)]
-        public required string UserId { get; set; }
+        public required int UserId { get; set; }
         [MaxLength(10)]
         public required string ContactPreference { get; set; }
     }
@@ -76,8 +77,7 @@ namespace Ableport.API.REST.DataModel
     public class AdminUserdata
     {
         [Key]
-        [MaxLength(8)]
-        public required string UserId { get; set; }
+        public required int UserId { get; set; }
         [MaxLength(10)]
         public required string ContactPreference { get; set; }
     }
@@ -122,8 +122,9 @@ namespace Ableport.API.REST.DataModel
         [MaxLength(1000)]
         public required string Content {  get; set; }
         public TimeSpan ActivePeriod { get; set; }
+        [MaxLength(80)]
         public required string Location { get; set; }
-        [MaxLength(30)]
+        [MaxLength(8)]
         public required List<string> Reward {  get; set; }
         [MaxLength(10)]
         public required string StudyType { get; set; }

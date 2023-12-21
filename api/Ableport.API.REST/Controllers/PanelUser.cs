@@ -54,7 +54,7 @@ namespace Ableport.API.REST.Controllers
 
         // PUT: api/user/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUserData(string id, PanelUserData data)
+        public async Task<IActionResult> UpdateUserData(int id, PanelUserData data)
         {
             if (id != data.UserId) return BadRequest("User IDs do not match");
 
@@ -78,7 +78,7 @@ namespace Ableport.API.REST.Controllers
 
         // DELETE: api/user/{id}
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser(string id)
+        public async Task<IActionResult> DeleteUser(int id)
         {
             var user = await _context.Users.FindAsync(id);
             var hasPanelData = _context.Users.Where(d => d.Id == id)

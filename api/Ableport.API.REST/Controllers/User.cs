@@ -41,7 +41,7 @@ namespace Ableport.API.REST.Controllers
 
         // PUT: api/user/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(string id, AbleportUser user)
+        public async Task<IActionResult> UpdateUser(int id, AbleportUser user)
         {
             if (id != user.Id) return BadRequest("User IDs do not match");
 

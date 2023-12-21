@@ -44,7 +44,7 @@ services.Configure<IdentityOptions>(options =>
 // are activated. Cookies will be issued based on the `useCookies` querystring
 // parameter in the login endpoint.
 services.AddIdentityApiEndpoints<AbleportUser>()
-    .AddRoles<IdentityRole>()
+    .AddRoles<AbleportRole>()
     .AddEntityFrameworkStores<AbleportContext>();
 
 services.ConfigureApplicationCookie(options =>
