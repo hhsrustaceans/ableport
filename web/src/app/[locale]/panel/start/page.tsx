@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Panel } from "@/lib/types/models/panel";
 import PanelPreview from "../components/PanelPreview";
-import HelpButton from "../components/HelpButton";
+import HelpButton from "@/components/HelpButton";
 
 export default function Root() {
   const t = useTranslations();
