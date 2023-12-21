@@ -9,7 +9,7 @@ namespace Ableport.API.REST.DataModel
     {
         public DbSet<Organisation> Organisations { get; set; }
         public DbSet<Panel> Panels { get; set; }
-        public DbSet<Disability> Disabilities { get; set; }
+        public DbSet<Condition> Conditions { get; set; }
         public DbSet<Aid> Aids { get; set; }
 
         public AbleportContext(DbContextOptions<AbleportContext> options) : base(options) // Calls constructor of base class
@@ -120,7 +120,7 @@ namespace Ableport.API.REST.DataModel
     }
 
     // Stores disabilities
-    public class Disability
+    public class Condition
     {
         [Key]
         [MaxLength(3)]
