@@ -2,7 +2,7 @@ import Logo from "@/components/Logo";
 import { NextIntlClientProvider, useMessages, useTranslations } from "next-intl";
 import { ReactElement, useRef } from "react";
 
-export function Navbar(): ReactElement {
+export default function Navbar() {
   const t = useTranslations();
   //const width = useRef(window.innerWidth);
   const messages = useMessages();
