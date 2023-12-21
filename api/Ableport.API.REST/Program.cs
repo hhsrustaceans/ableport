@@ -47,6 +47,17 @@ services.AddIdentityApiEndpoints<AbleportUser>()
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AbleportContext>();
 
+services.ConfigureApplicationCookie(options =>
+{
+    // Cookie settings
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+
+    options.LoginPath = "/auth/login";
+    options.AccessDeniedPath = "/auth/denied";
+    options.SlidingExpiration = true;
+});
+
 services.AddEndpointsApiExplorer();
 services.AddOpenApiDocument();
 
@@ -78,12 +89,8 @@ app.MapControllers();
 
 app.UseHttpsRedirection();
 
-app.MapGet("/", () => "Welcome to Ableport!")
-    .WithName("GetHome")
-    .RequireAuthorization();
-
 app.UseStaticFiles();
 
-app.MapIdentityApi<AbleportUser>();
+app.MapGroup("/auth").WithTags("Auth").MapIdentityApi<AbleportUser>();
 
 app.Run();
