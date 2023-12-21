@@ -4,8 +4,7 @@ import ReactModal from "react-modal";
 import { useTranslations } from "next-intl";
 import IconClose from "~icons/mdi/close";
 import "./Modal.css";
-
-ReactModal.setAppElement("#app");
+import { useEffect } from "react";
 
 export default function Modal({
   children,
@@ -19,6 +18,10 @@ export default function Modal({
   onClose: () => void;
 }) {
   const t = useTranslations();
+
+  useEffect(() => {
+    ReactModal.setAppElement("#app");
+  });
 
   return (
     <>
