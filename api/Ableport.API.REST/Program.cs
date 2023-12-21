@@ -85,6 +85,32 @@ if (app.Environment.IsDevelopment())
     }); // serve ReDoc UI
 }
 
+using var scope = app.Services.CreateScope();
+
+var db = scope.ServiceProvider.GetRequiredService<AbleportContext>();
+
+var org = new Organisation()
+{
+    Name = "Accessibility",
+    Type = "NonProfit",
+    Description = "Center of expertise in the field of digital accessibility in the Netherlands.",
+};
+
+var panel = new Panel
+{
+    Title = "Test panel",
+    Description = "This is a test",
+    Location = "https://ableport.nl",
+    Organisation = org,
+    Content = "This is an automatically generated test panel",
+    Reward = ["$0", "Fame"],
+    StudyType = "QA",
+};
+
+db.Organisations.Add(org);
+db.Panels.Add(panel);
+db.SaveChanges();
+
 app.MapControllers();
 
 app.UseHttpsRedirection();
