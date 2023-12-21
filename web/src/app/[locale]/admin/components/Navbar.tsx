@@ -8,7 +8,7 @@ export default function Navbar() {
   const t = useTranslations();
 
   return (
-    <header className="w-full shadow-lg fixed">
+    <header className="w-full shadow-lg">
       <nav className="mx-5 my-5">
         <ul className="items-center grid grid-cols-3">
           <li className="flex justify-start">

@@ -17,7 +17,7 @@
     "nav": {
       "logo": "Logo van {product}",
       "home": "Homepagina",
-      "admin": "Beheerder Portaal"
+      "admin": "Beheerdersportaal"
     },
     "dialog": {
       "close": "Sluiten"
@@ -49,6 +49,12 @@
         "settings_a11y": "Instellingen voor toegankelijkheid",
         "settings_lang": "Taalinstelling"
       }
+    }
+  },
+  "admin": {
+    "overview": {
+      "title": "Overzicht",
+      "description": "Voor een overzicht, selecteer een van de selecties. Je kan kiezen tussen de volgende selecties van de lijst: Ervaringsdeskundigen, Onderzoek or Bedrijven."
     }
   }
 }

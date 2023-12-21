@@ -50,5 +50,11 @@
         "settings_lang": "Language settings"
       }
     }
+  },
+  "admin": {
+    "overview": {
+      "title": "Overview",
+      "description": "For an overview, please select one of the items. You can choose the following from the list: Experts, Research or Companies."
+    }
   }
 }
