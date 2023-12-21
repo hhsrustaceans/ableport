@@ -6,7 +6,7 @@ import {
   useTranslations,
 } from "next-intl";
 import { getTranslations } from "next-intl/server";
-import Navbar from "./components/Navbar";
+import Navbar from "@/components/Navbar";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations();
