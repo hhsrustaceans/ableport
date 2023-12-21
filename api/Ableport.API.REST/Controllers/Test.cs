@@ -8,11 +8,6 @@ namespace Ableport.API.REST.Controllers;
 [Produces(MediaTypeNames.Application.Json)]
 public class TestController : ControllerBase
 {
-    private static readonly string[] Strings = new[]
-    {
-        "Hello there", "Hello world", "Hell no"
-    };
-    
     private readonly AbleportContext _db;
 
     private readonly ILogger<TestController> _logger;
