@@ -13,7 +13,11 @@
     },
     "nav": {
       "logo": "Logo van {product}",
-      "home": "Homepagina"
+      "home": "Homepagina",
+      "controls": {
+        "settings_a11y": "Instellingen voor toegankelijkheid",
+        "settings_lang": "Taalinstelling"
+      }
     },
     "dialog": {
       "close": "Sluiten"
@@ -39,12 +43,6 @@
     "panels_avail": "Kies hieronder uit een van de beschikbare onderzoeken.",
     "help": {
       "select_panel": "U kunt in de lijst hierboven een onderzoek kiezen. Nadat u een onderzoek heeft gekozen, wordt het onderzoek gestart. Daarna volgen verdere aanwijzingen."
-    },
-    "nav": {
-      "controls": {
-        "settings_a11y": "Instellingen voor toegankelijkheid",
-        "settings_lang": "Taalinstelling"
-      }
     }
   }
 }

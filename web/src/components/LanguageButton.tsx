@@ -13,7 +13,7 @@ export default function LanguageButton() {
     <>
       <button
         className="setting"
-        aria-label={t("panel.nav.controls.settings_lang")}
+        aria-label={t("common.nav.controls.settings_lang")}
         onClick={() => showModal(true)}
       >
         <IconLanguage className="text-xl icon-highlight-stroke" />
