@@ -29,8 +29,8 @@
     "portal": {
       "panel": "{product} for panel members",
       "admin": "{product} for administrators",
-      "recruit": "{product} for companies",
-      "research": "{product} for research"
+      "recruit": "{product} for organisations",
+      "research": "{product} for researchers"
     },
     "error": {
       "return": "Return",
@@ -52,13 +52,13 @@
   "admin": {
     "overview": {
       "title": "Overview",
-      "description": "For an overview, please select one of the items. You can choose the following from the list: Experts, Research or Companies."
+      "description": "For an overview, please select one of the items. You can choose the following from the list: Panel Members, Panels or Organisations."
     },
     "dropdown": {
       "items":{
-        "experts": "Experts",
-        "research": "Research",
-        "companies": "Companies"
+        "panelmembers": "Panel Members",
+        "panels": "Panels",
+        "organisations": "Organisations"
       }
     },
     "help": {

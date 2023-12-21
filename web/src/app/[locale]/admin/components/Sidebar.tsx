@@ -12,14 +12,14 @@ export function Sidebar() {
   return (
     <aside className="bg-green-600 rounded-r-2xl col-span-3 hidden sm:inline-block">
       <ul className="text-center">
-        <Link href={`/${navigatorLocale.current ?? currentLocale.concat("/admin/experts")}`}>
-          <li className="aside-items rounded-tr-2xl">{t("admin.dropdown.items.experts")}</li>
+        <Link href={`/${navigatorLocale.current ?? currentLocale.concat("/admin/panelmembers")}`}>
+          <li className="aside-items rounded-tr-2xl">{t("admin.dropdown.items.panelmembers")}</li>
         </Link>
-        <Link href={`/${navigatorLocale.current ?? currentLocale.concat("/admin/research")}`}>
-          <li className="aside-items">{t("admin.dropdown.items.research")}</li>
+        <Link href={`/${navigatorLocale.current ?? currentLocale.concat("/admin/panels")}`}>
+          <li className="aside-items">{t("admin.dropdown.items.panels")}</li>
         </Link>
-        <Link href={`/${navigatorLocale.current ?? currentLocale.concat("/admin/companies")}`}>
-          <li className="aside-items rounded-br-2xl">{t("admin.dropdown.items.companies")}</li>
+        <Link href={`/${navigatorLocale.current ?? currentLocale.concat("/admin/organisations")}`}>
+          <li className="aside-items rounded-br-2xl">{t("admin.dropdown.items.organisations")}</li>
         </Link>
       </ul>
     </aside>

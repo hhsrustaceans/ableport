@@ -27,9 +27,9 @@
       "close": "Sluiten"
     },
     "portal": {
-      "panel": "{product} voor panelleden",
+      "panel": "{product} voor ervaringsdeskundigen",
       "admin": "{product} voor beheerders",
-      "recruit": "{product} voor bedrijven",
+      "recruit": "{product} voor organisaties",
       "research": "{product} voor onderzoekers"
     },
     "error": {
@@ -52,13 +52,13 @@
   "admin": {
     "overview": {
       "title": "Overzicht",
-      "description": "Voor een overzicht, selecteer een van de selecties. Je kan kiezen tussen de volgende selecties van de lijst: Ervaringsdeskundigen, Onderzoek or Bedrijven."
+      "description": "Voor een overzicht, selecteer een van de selecties. Je kan kiezen tussen de volgende selecties van de lijst: Ervaringsdeskundigen, Onderzoeken or Bedrijven."
     },
     "dropdown": {
       "items": {
-        "experts": "Ervarings deskundigen",
-        "research": "Onderzoek",
-        "companies": "Bedrijven"
+        "panelmembers": "Ervaringsdeskundigen",
+        "panels": "Onderzoeken",
+        "organisations": "Organisaties"
       }
     },
     "help": {
