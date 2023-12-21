@@ -1,6 +1,5 @@
 using Ableport.API.REST.DataModel;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Manage.Internal;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -59,6 +58,8 @@ services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
     microsoftOptions.ClientSecret = configuration["Authentication:Microsoft:ClientSecret"] ?? throw new ArgumentNullException("Authentication:Microsoft:ClientSecret");
 });
 
+services.AddControllers();
+
 
 var app = builder.Build();
 
@@ -72,6 +73,8 @@ if (app.Environment.IsDevelopment())
         config.Path = "/redoc";
     }); // serve ReDoc UI
 }
+
+app.MapControllers();
 
 app.UseHttpsRedirection();
 
