@@ -70,10 +70,10 @@
       "title": "title",
       "description": "description",
       "content": "content",
-      "activePeriod": "activePeriod",
+      "activePeriod": "activeperiod",
       "location": "location",
       "reward": "reward",
-      "studyType": "studyType"
+      "studyType": "studytype"
     }
   }
 }
