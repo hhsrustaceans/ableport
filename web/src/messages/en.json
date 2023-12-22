@@ -52,7 +52,10 @@
   "admin": {
     "overview": {
       "title": "Overview",
-      "description": "For an overview, please select one of the items. You can choose the following from the list: Panel Members, Panels or Organisations."
+      "description": "For an overview, please select one of the items. You can choose the following from the list: Panel Members, Panels or Organisations.",
+      "create": "create new panel",
+      "update": "update",
+      "delete": "delete"
     },
     "dropdown": {
       "items":{

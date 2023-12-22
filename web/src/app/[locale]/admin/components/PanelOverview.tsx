@@ -1,4 +1,7 @@
 import type { Organisation, Panel } from "../../types";
+import Update from "~icons/radix-icons/update";
+import Delete from "~icons/mdi/delete-outline";
+import Link from "next/link";
 
 export function PanelOverview({ heading }: { heading: string[] }) {
   const organisation: Organisation = {
@@ -44,8 +47,13 @@ export function PanelOverview({ heading }: { heading: string[] }) {
                   <td className="td-items">{panel.organisation.name}</td>
                   <td className="td-items">{panel.title}</td>
                   <td className="td-items">{panel.description}</td>
-                  <td className="td-items">{panel.content}</td>
                   <td className="td-items">{panel.activePeriod?.toLocaleDateString()}</td>
+                  <td className="td-items">
+                    <Link href={""} className="flex justify-center text-yellow-300"><Update /></Link>
+                  </td>
+                  <td className="td-items">
+                    <Link href={""} className="flex justify-center text-red-500"><Delete /></Link>
+                  </td>
                 </>
               );
             })

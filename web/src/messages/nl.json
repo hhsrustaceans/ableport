@@ -52,7 +52,10 @@
   "admin": {
     "overview": {
       "title": "Overzicht",
-      "description": "Voor een overzicht, selecteer een van de selecties. Je kan kiezen tussen de volgende selecties van de lijst: Ervaringsdeskundigen, Onderzoeken of Bedrijven."
+      "description": "Voor een overzicht, selecteer een van de selecties. Je kan kiezen tussen de volgende selecties van de lijst: Ervaringsdeskundigen, Onderzoeken of Bedrijven.",
+      "create": "maak nieuw onderzoek aan",
+      "update": "aanpassen",
+      "delete": "verwijderen"
     },
     "dropdown": {
       "items": {
