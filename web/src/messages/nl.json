@@ -63,6 +63,17 @@
     },
     "help": {
       "select_item": "U kunt een item selecteren van de lijst hiernaast om een overzicht te krijgen."
+    },
+    "panel": {
+      "id": "id",
+      "organisation": "organisatie",
+      "title": "titel",
+      "description": "beschrijving",
+      "content": "inhoud",
+      "activePeriod": "actieve periode",
+      "location": "locatie",
+      "reward": "beloning",
+      "studyType": "studietype"
     }
   }
 }

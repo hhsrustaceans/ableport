@@ -63,6 +63,17 @@
     },
     "help": {
       "select_item": "You may choose an item from the list to the left to get an overview."
+    },
+    "panel": {
+      "id": "id",
+      "organisation": "organisation",
+      "title": "title",
+      "description": "description",
+      "content": "content",
+      "activePeriod": "activePeriod",
+      "location": "location",
+      "reward": "reward",
+      "studyType": "studyType"
     }
   }
 }

@@ -1,5 +1,5 @@
 export type Organisation = {
-  id?: keyof number,
+  id?: number,
   type: string,
   name: string,
   description: string,
@@ -9,7 +9,7 @@ export type Organisation = {
 };
 
 export type Panel = {
-  id?: keyof number,
+  id?: number,
   organisation: Organisation,
   title: string,
   description: string,
@@ -18,4 +18,14 @@ export type Panel = {
   location: string,
   reward: Array<string>,
   studyType: string,
+};
+
+export type PanelUser = {
+  id?: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  dateOfBirth: Date;
+  avatarUrl?: string;
 };
