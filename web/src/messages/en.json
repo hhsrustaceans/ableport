@@ -78,6 +78,24 @@
       "reward": "reward",
       "studyType": "studytype"
     },
+    "panelmember": {
+      "id": "id",
+      "firstName": "firstname",
+      "lastName": "lastname",
+      "email": "email",
+      "phoneNumber": "phonenumber",
+      "dateOfBirth": "dateofbirth",
+      "avatarUrl": "avatarurl"
+    },
+    "organisation": {
+      "id": "id",
+      "type": "type",
+      "name": "name",
+      "description": "description",
+      "logo": "logo",
+      "website": "website",
+      "phoneNumber": "phonenumber"
+    },
     "search": {
       "label": "Panel search",
       "placeholder": "Search something from the panel"

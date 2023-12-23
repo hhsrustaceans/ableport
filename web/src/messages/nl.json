@@ -78,6 +78,24 @@
       "reward": "beloning",
       "studyType": "studietype"
     },
+    "panelmembers": {
+      "id": "id",
+      "firstName": "voornaam",
+      "lastName": "achternaam",
+      "email": "email",
+      "phoneNumber": "telefoonnummer",
+      "dateOfBirth": "geboortedatum",
+      "avatarUrl": "profielurl"
+    },
+    "organisation": {
+      "id": "id",
+      "type": "type",
+      "name": "naam",
+      "description": "beschrijving",
+      "logo": "logo",
+      "website": "website",
+      "phoneNumber": "telefoonnummer"
+    },
     "search": {
       "label": "Onderzoek vinden",
       "placeholder": "Vind iets van het onderzoek"

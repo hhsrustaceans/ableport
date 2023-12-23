@@ -1,14 +1,30 @@
 import { useTranslations } from "next-intl";
-import { Sidebar } from "../components/Sidebar";
+import { OrganisationOverview } from "../components/OrganisationOverview";
+import { CreateButton } from "../components/CreateButton";
+import { SearchBar } from "../components/SearchBar";
 
 export default function OrganisationsPage() {
   const t = useTranslations();
 
+  let heading: string[] = [
+    t("admin.organisation.id"),
+    t("admin.organisation.type"),
+    t("admin.organisation.name"),
+    t("admin.organisation.description"),
+    t("admin.organisation.logo"),
+    t("admin.organisation.website"),
+    t("admin.organisation.phoneNumber"),
+    t("admin.overview.update"),
+    t("admin.overview.delete"),
+  ];
+
   return (
-    <section className="w-full grid grid-cols-12 mt-5">
-      <Sidebar />
-      <article className="col-span-12 sm:col-span-9 mx-5 lg:w-2/3">
-        <h1 className="text-3xl">{t("admin.dropdown.items.organisations")}</h1>
+    <section className="w-full flex justify-center mt-5">
+      <article className="mx-3 lg:w-2/3 pb-4 overflow-x-scroll lg:overflow-x-hidden">
+        <h1 className="text-3xl mb-5">{t("admin.dropdown.items.organisations")}</h1>
+        <SearchBar />
+        <OrganisationOverview heading={heading} />
+        <CreateButton />
       </article>
     </section>
   );
