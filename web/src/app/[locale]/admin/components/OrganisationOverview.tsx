@@ -1,23 +1,11 @@
-import type { Organisation } from "../../types";
+import { organisation } from "../testdata";
 import Update from "~icons/radix-icons/update";
 import Delete from "~icons/mdi/delete-outline";
 import Link from "next/link";
 import { TableOverview } from "./TableOverview";
 
 export function OrganisationOverview({ heading }: { heading: string[] }) {
-  const organisation: Organisation[] = [
-    {
-      id: 1,
-      type: "test",
-      name: "test",
-      description: "test",
-      logo: "test",
-      website: "test",
-      phoneNumber: "test",
-    }
-  ];
-  
-  const organisations = (Object.values(organisation)).map((organisation: Organisation, result: number) =>
+  const organisations = (Object.values(organisation)).map((organisation, result: number) =>
     <>
       <td key={result} className="td-items">{organisation.id}</td>
       <td className="td-items">{organisation.type}</td>

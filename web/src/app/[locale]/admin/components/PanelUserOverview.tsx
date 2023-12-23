@@ -1,23 +1,11 @@
-import type { PanelUser } from "../../types";
+import { panelUser } from "../testdata";
 import Update from "~icons/radix-icons/update";
 import Delete from "~icons/mdi/delete-outline";
 import Link from "next/link";
 import { TableOverview } from "./TableOverview";
 
 export function PanelUserOverview({ heading }: { heading: string[] }) {
-  const panelUser: PanelUser[] = [
-    {
-      id: 1,
-      firstName: "test",
-      lastName: "test",
-      email: "test",
-      phoneNumber: "test",
-      dateOfBirth: new Date(),
-      avatarUrl: "test",
-    }
-  ];
-
-  const panelUsers = (Object.values(panelUser)).map((panelUser: PanelUser, result: number) =>
+  const panelUsers = (Object.values(panelUser)).map((panelUser, result: number) =>
     <>
       <td key={result} className="td-items">{panelUser.id}</td>
       <td className="td-items">{panelUser.firstName}</td>

@@ -1,35 +1,11 @@
-import type { Organisation, Panel } from "../../types";
+import { panel } from "../testdata";
 import Update from "~icons/radix-icons/update";
 import Delete from "~icons/mdi/delete-outline";
 import Link from "next/link";
 import { TableOverview } from "./TableOverview";
 
 export function PanelOverview({ heading }: { heading: string[] }) {
-  const organisation: Organisation = {
-    id: 1,
-    type: "test",
-    name: "test",
-    description: "test",
-    logo: "test",
-    website: "test",
-    phoneNumber: "test",
-  };
-
-  const panel: Panel[] = [
-    {
-      id: 1,
-      organisation: organisation,
-      title: "test",
-      description: "test",
-      content: "test",
-      activePeriod: new Date(),
-      location: "test",
-      reward: ["test"],
-      studyType: "test",
-    },
-  ];
-
-  const panels = (Object.values(panel)).map((panel: Panel, result: number) =>
+  const panels = (Object.values(panel)).map((panel, result: number) =>
     <>
       <td key={result} className="td-items">{panel.id}</td>
       <td className="td-items">{panel.organisation.name}</td>
