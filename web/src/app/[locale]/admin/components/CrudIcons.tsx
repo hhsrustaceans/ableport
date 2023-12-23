@@ -6,7 +6,7 @@ export function CrudIcons() {
   return (
     <>
       <td className="td-items">
-        <Link href={""} className="flex justify-center text-yellow-300"><Update /></Link>
+        <Link href={""} className="flex justify-center dark:text-yellow-300 text-yellow-500"><Update /></Link>
       </td>
       <td className="td-items">
         <Link href={""} className="flex justify-center text-red-500"><Delete /></Link>

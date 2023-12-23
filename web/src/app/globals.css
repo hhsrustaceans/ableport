@@ -50,6 +50,6 @@
   }
 
   .td-items {
-    @apply px-4 py-2 text-center;
+    @apply px-4 py-2 text-center border-2;
   }
 }

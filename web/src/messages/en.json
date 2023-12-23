@@ -53,7 +53,11 @@
     "overview": {
       "title": "Overview",
       "description": "For an overview, please select one of the items. You can choose the following from the list: Panel Members, Panels or Organisations.",
-      "create": "create new panel",
+      "create": {
+        "panel": "create new panel",
+        "panelmember": "Create new panel member",
+        "organisation": "Create new organisation"
+      },
       "update": "update",
       "delete": "delete"
     },
@@ -97,8 +101,16 @@
       "phoneNumber": "phonenumber"
     },
     "search": {
-      "label": "Panel search",
-      "placeholder": "Search something from the panel"
+      "label": {
+        "panel": "Panel search",
+        "panelmember": "Panel member search",
+        "organisation": "Organisation search"
+      },
+      "placeholder": {
+        "panel": "Search something from the panel",
+        "panelmember": "Search something from the panel member",
+        "organisation": "Search something from the organisation"
+      }
     }
   }
 }
