@@ -21,11 +21,11 @@ export type Panel = {
 };
 
 export type PanelUser = {
-  id?: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phoneNumber: string;
-  dateOfBirth: Date;
-  avatarUrl?: string;
+  id?: number,
+  firstName: string,
+  lastName: string,
+  email: string,
+  phoneNumber: string,
+  dateOfBirth: Date,
+  avatarUrl?: string,
 };
