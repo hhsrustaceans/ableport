@@ -34,6 +34,17 @@ export const panel: Panel[] = [
     reward: ["test"],
     studyType: "test",
   },
+  {
+    id: 2,
+    organisation: _organisation,
+    title: "test",
+    description: "test",
+    content: "test",
+    activePeriod: new Date(),
+    location: "test",
+    reward: ["test"],
+    studyType: "test",
+  }
 ];
 
 export const panelUser: PanelUser[] = [
