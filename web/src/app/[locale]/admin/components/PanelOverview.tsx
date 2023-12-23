@@ -51,7 +51,7 @@ export function PanelOverview({ heading }: { heading: string[] }) {
   //});
 
   return (
-    <div className="overflow-x-scroll mt-6 pb-4">
+    <div className="overflow-x-scroll mt-3 pb-4">
       <table className="rounded-2xl">
         <thead>
           <tr className="bg-gray-200 dark:bg-gray-800">
@@ -61,7 +61,7 @@ export function PanelOverview({ heading }: { heading: string[] }) {
           </tr>
         </thead>
         <tbody>
-          <tr className="bg-gray-400 dark:bg-gray-600">
+          <tr className="bg-gray-50 dark:bg-gray-600">
             {panels}
           </tr>
         </tbody>

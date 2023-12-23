@@ -77,6 +77,10 @@
       "location": "locatie",
       "reward": "beloning",
       "studyType": "studietype"
+    },
+    "search": {
+      "label": "Onderzoek vinden",
+      "placeholder": "Vind iets van het onderzoek"
     }
   }
 }

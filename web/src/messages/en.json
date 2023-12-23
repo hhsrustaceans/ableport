@@ -77,6 +77,10 @@
       "location": "location",
       "reward": "reward",
       "studyType": "studytype"
+    },
+    "search": {
+      "label": "Panel search",
+      "placeholder": "Search something from the panel"
     }
   }
 }
