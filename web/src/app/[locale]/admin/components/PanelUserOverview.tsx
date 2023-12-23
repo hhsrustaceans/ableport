@@ -1,8 +1,6 @@
 import { panelUser } from "../testdata";
-import Update from "~icons/radix-icons/update";
-import Delete from "~icons/mdi/delete-outline";
-import Link from "next/link";
 import { TableOverview } from "./TableOverview";
+import { CrudIcons } from "./CrudIcons";
 
 export function PanelUserOverview({ heading }: { heading: string[] }) {
   const panelUsers = (Object.values(panelUser)).map((panelUser, result: number) =>
@@ -14,12 +12,7 @@ export function PanelUserOverview({ heading }: { heading: string[] }) {
       <td className="td-items">{panelUser.phoneNumber}</td>
       <td className="td-items">{panelUser.dateOfBirth.toLocaleDateString()}</td>
       <td className="td-items">{panelUser.avatarUrl}</td>
-      <td className="td-items">
-        <Link href={""} className="flex justify-center text-yellow-300"><Update /></Link>
-      </td>
-      <td className="td-items">
-        <Link href={""} className="flex justify-center text-red-500"><Delete /></Link>
-      </td>
+      <CrudIcons />
     </>
   );
 

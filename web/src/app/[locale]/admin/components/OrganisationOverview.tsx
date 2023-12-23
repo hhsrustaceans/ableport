@@ -1,8 +1,6 @@
 import { organisation } from "../testdata";
-import Update from "~icons/radix-icons/update";
-import Delete from "~icons/mdi/delete-outline";
-import Link from "next/link";
 import { TableOverview } from "./TableOverview";
+import { CrudIcons } from "./CrudIcons";
 
 export function OrganisationOverview({ heading }: { heading: string[] }) {
   const organisations = (Object.values(organisation)).map((organisation, result: number) =>
@@ -14,12 +12,7 @@ export function OrganisationOverview({ heading }: { heading: string[] }) {
       <td className="td-items">{organisation.logo}</td>
       <td className="td-items">{organisation.website}</td>
       <td className="td-items">{organisation.phoneNumber}</td>
-      <td className="td-items">
-        <Link href={""} className="flex justify-center text-yellow-300"><Update /></Link>
-      </td>
-      <td className="td-items">
-        <Link href={""} className="flex justify-center text-red-500"><Delete /></Link>
-      </td>
+      <CrudIcons />
     </>
   );
   
