@@ -50,6 +50,7 @@
     }
   },
   "admin": {
+    "id": "id",
     "overview": {
       "title": "Overzicht",
       "description": "Voor een overzicht, selecteer een van de selecties. Je kan kiezen tussen de volgende selecties van de lijst: Ervaringsdeskundigen, Onderzoeken of Bedrijven.",
@@ -72,7 +73,6 @@
       "select_item": "U kunt een item selecteren van de lijst hiernaast om een overzicht te krijgen."
     },
     "panel": {
-      "id": "id",
       "organisation": "organisatie",
       "title": "titel",
       "description": "beschrijving",
@@ -83,7 +83,6 @@
       "studyType": "studietype"
     },
     "panelmember": {
-      "id": "id",
       "firstName": "voornaam",
       "lastName": "achternaam",
       "email": "email",
@@ -92,7 +91,6 @@
       "avatarUrl": "profielurl"
     },
     "organisation": {
-      "id": "id",
       "type": "type",
       "name": "naam",
       "description": "beschrijving",

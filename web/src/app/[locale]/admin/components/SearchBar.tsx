@@ -1,5 +1,3 @@
-//import Search from "~icons/tabler/search";
-
 export function SearchBar( { label, placeholder } : { label: string, placeholder: string }) {
   return (
     <div className="grid-cols-1">
@@ -10,7 +8,6 @@ export function SearchBar( { label, placeholder } : { label: string, placeholder
         placeholder={placeholder}
         type="search" 
       />
-      {/*<Search />*/}
     </div>
   );
 }

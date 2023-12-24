@@ -7,7 +7,7 @@ export default function PanelMembersPage() {
   const t = useTranslations();
 
   let heading: string[] = [
-    t("admin.panelmember.id"),
+    t("admin.id"),
     t("admin.panelmember.firstName"),
     t("admin.panelmember.lastName"),
     t("admin.panelmember.email"),
@@ -20,11 +20,11 @@ export default function PanelMembersPage() {
 
   let content: Content[] = [
     {
-      contentHeading: t("admin.dropdown.items.organisations"),
-      searchLabel: t("admin.search.label.organisation"),
-      searchPlaceholder: t("admin.search.placeholder.organisation"),
-      filterLabel: t("admin.filter.label.organisation"),
-      createButton: t("admin.overview.create.organisation"),
+      contentHeading: t("admin.dropdown.items.panelmembers"),
+      searchLabel: t("admin.search.label.panelmember"),
+      searchPlaceholder: t("admin.search.placeholder.panelmember"),
+      filterLabel: t("admin.filter.label.panelmember"),
+      createButton: t("admin.overview.create.panelmember"),
     }
   ];
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { productName } from "@/lib/modules/config";
-import { NextIntlClientProvider, useMessages, useTranslations } from "next-intl";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Navbar from "@/components/Navbar";
 import { ReactNode } from "react";
@@ -15,7 +15,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Layout({ children }: { children: ReactNode }) {
-  const t = useTranslations();
   const { admin: adminMessages, common: commonMessages } = useMessages();
 
   return (

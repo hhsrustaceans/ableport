@@ -7,7 +7,7 @@ export default function OrganisationsPage() {
   const t = useTranslations();
 
   let heading: string[] = [
-    t("admin.organisation.id"),
+    t("admin.id"),
     t("admin.organisation.type"),
     t("admin.organisation.name"),
     t("admin.organisation.description"),
@@ -20,11 +20,11 @@ export default function OrganisationsPage() {
 
   let content: Content[] = [
     {
-      contentHeading: t("admin.dropdown.items.panelmembers"),
-      searchLabel: t("admin.search.label.panelmember"),
-      searchPlaceholder: t("admin.search.placeholder.panelmember"),
-      filterLabel: t("admin.filter.label.panelmember"),
-      createButton: t("admin.overview.create.panelmember"),
+      contentHeading: t("admin.dropdown.items.organisations"),
+      searchLabel: t("admin.search.label.organisation"),
+      searchPlaceholder: t("admin.search.placeholder.organisation"),
+      filterLabel: t("admin.filter.label.organisation"),
+      createButton: t("admin.overview.create.organisation"),
     }
   ];
 

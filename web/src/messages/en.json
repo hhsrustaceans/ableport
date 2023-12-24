@@ -50,6 +50,7 @@
     }
   },
   "admin": {
+    "id": "id",
     "overview": {
       "title": "Overview",
       "description": "For an overview, please select one of the items. You can choose the following from the list: Panel Members, Panels or Organisations.",
@@ -72,7 +73,6 @@
       "select_item": "You may choose an item from the list to the left to get an overview."
     },
     "panel": {
-      "id": "id",
       "organisation": "organisation",
       "title": "title",
       "description": "description",
@@ -83,7 +83,6 @@
       "studyType": "studytype"
     },
     "panelmember": {
-      "id": "id",
       "firstName": "firstname",
       "lastName": "lastname",
       "email": "email",
@@ -92,7 +91,6 @@
       "avatarUrl": "avatarurl"
     },
     "organisation": {
-      "id": "id",
       "type": "type",
       "name": "name",
       "description": "description",

@@ -7,7 +7,7 @@ export default function PanelsPage() {
   const t = useTranslations();
 
   let heading: string[] = [
-    t("admin.panel.id"),
+    t("admin.id"),
     t("admin.panel.organisation"),
     t("admin.panel.title"),
     t("admin.panel.description"),
