@@ -5,7 +5,7 @@ import { CrudIcons } from "./CrudIcons";
 export function OrganisationOverview({ heading }: { heading: string[] }) {
   const organisations = (Object.values(organisation)).map((organisation, result: number) =>
     <>
-      <td key={result} className="td-items" scope="row">{organisation.id}</td>
+      <td key={result} className="td-items" scope="row">{result + 1}</td>
       <td className="td-items">{organisation.type}</td>
       <td className="td-items">{organisation.name}</td>
       <td className="td-items">{organisation.description}</td>

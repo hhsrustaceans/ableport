@@ -5,7 +5,7 @@ export function TableOverview({ heading, overview }: { heading: string[], overvi
         <thead>
           <tr className="bg-gray-200 dark:bg-gray-800">
             {Object.values(heading).map((result: string) => (
-              <th key={result + 1} className="px-4 py-2" scope="col">{result}</th>
+              <th key={result} className="px-4 py-2" scope="col">{result}</th>
             ))}
           </tr>
         </thead>

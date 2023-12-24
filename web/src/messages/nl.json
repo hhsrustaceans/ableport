@@ -107,9 +107,17 @@
         "organisation": "Organisatie vinden"
       },
       "placeholder": {
-        "panel": "Vind iets van het onderzoek",
-        "panelmember": "Vind iets van de ervaringsdeskundige",
-        "organisation": "Vind iets van de organisatie"
+        "panel": "Vind onderzoek",
+        "panelmember": "Vind ervaringsdeskundige",
+        "organisation": "Vind organisatie"
+      },
+      "filter": {
+        "label": {
+          "panel": "Onderzoek filteren",
+          "panelmember": "Ervaringsdeskundige filteren",
+          "organisation": "Organisatie filteren"
+        },
+        "option": "Filteren op"
       }
     }
   }

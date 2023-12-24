@@ -1,19 +1,16 @@
 //import Search from "~icons/tabler/search";
-import { useTranslations } from "next-intl";
 
 export function SearchBar( { label, placeholder } : { label: string, placeholder: string }) {
-  const t = useTranslations();
-
   return (
-    <>
-      <label htmlFor="searchPanel">{label}</label>
+    <div className="grid-cols-1">
+      <label htmlFor="searchResult">{label}</label>
       <input 
-        id="searchPanel" 
-        className="w-full rounded-md bg-none outline-none px-2 text-black border-green-600 border-2" 
+        id="searchResult" 
+        className="w-full rounded-md bg-none outline-none px-2 text-black border-gray-600 dark:border-gray-400 border-2" 
         placeholder={placeholder}
         type="search" 
       />
       {/*<Search />*/}
-    </>
+    </div>
   );
 }

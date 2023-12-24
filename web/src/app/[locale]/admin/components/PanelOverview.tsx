@@ -5,7 +5,7 @@ import { CrudIcons } from "./CrudIcons";
 export function PanelOverview({ heading }: { heading: string[] }) {
   const panels = (Object.values(panel)).map((panel, result: number) =>
     <>
-      <td key={result} className="td-items" scope="row">{panel.id}</td>
+      <td key={result} className="td-items" scope="row">{result + 1}</td>
       <td className="td-items">{panel.organisation.name}</td>
       <td className="td-items">{panel.title}</td>
       <td className="td-items">{panel.description}</td>

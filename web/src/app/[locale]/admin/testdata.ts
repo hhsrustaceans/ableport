@@ -1,7 +1,6 @@
 import type { Organisation, Panel, PanelUser } from "../types";
 
 export const _organisation: Organisation = {
-  id: 1,
   type: "test",
   name: "test",
   description: "test",
@@ -12,7 +11,6 @@ export const _organisation: Organisation = {
 
 export const organisation: Organisation[] = [
   {
-    id: 1,
     type: "test",
     name: "test",
     description: "test",
@@ -24,7 +22,6 @@ export const organisation: Organisation[] = [
 
 export const panel: Panel[] = [
   {
-    id: 1,
     organisation: _organisation,
     title: "test",
     description: "test",
@@ -35,7 +32,6 @@ export const panel: Panel[] = [
     studyType: "test",
   },
   {
-    id: 2,
     organisation: _organisation,
     title: "test",
     description: "test",
@@ -49,7 +45,6 @@ export const panel: Panel[] = [
 
 export const panelUser: PanelUser[] = [
   {
-    id: 1,
     firstName: "test",
     lastName: "test",
     email: "test",

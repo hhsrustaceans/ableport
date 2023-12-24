@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { OrganisationOverview } from "../components/OrganisationOverview";
 import { CreateButton } from "../components/CreateButton";
 import { SearchBar } from "../components/SearchBar";
+import { FilterButton } from "../components/FilterButton";
 
 export default function OrganisationsPage() {
   const t = useTranslations();
@@ -19,10 +20,13 @@ export default function OrganisationsPage() {
   ];
 
   return (
-    <section className="w-full flex justify-center mt-5">
-      <article className="mx-3 lg:w-2/3 pb-4 overflow-x-scroll lg:overflow-x-hidden">
-        <h1 className="text-3xl mb-5">{t("admin.dropdown.items.organisations")}</h1>
-        <SearchBar label={t("admin.search.label.organisation")} placeholder={t("admin.search.placeholder.organisation")} />
+    <section className="display-section">
+      <article className="article-content">
+        <h1 className="display-heading">{t("admin.dropdown.items.organisations")}</h1>
+        <article className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
+          <SearchBar label={t("admin.search.label.organisation")} placeholder={t("admin.search.placeholder.organisation")} />
+          <FilterButton label={t("admin.filter.label.organisation")} />
+        </article>
         <OrganisationOverview heading={heading} />
         <CreateButton create={t("admin.overview.create.organisation")} />
       </article>

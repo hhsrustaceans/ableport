@@ -107,10 +107,18 @@
         "organisation": "Organisation search"
       },
       "placeholder": {
-        "panel": "Search something from the panel",
-        "panelmember": "Search something from the panel member",
-        "organisation": "Search something from the organisation"
+        "panel": "Search panel",
+        "panelmember": "Search panel member",
+        "organisation": "Search organisation"
       }
+    },
+    "filter": {
+      "label": {
+        "panel": "Panel filter",
+        "panelmember": "Panel member filter",
+        "organisation": "Organisation filter"
+      },
+      "option": "Select"
     }
   }
 }
