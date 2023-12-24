@@ -5,6 +5,7 @@ import "@/app/globals.css";
 
 export const metadata: Metadata = {
   title: "Ableport",
+  description: "Ableport",
 };
 
 export default function LocaleLayout({
