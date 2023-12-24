@@ -29,3 +29,11 @@ export type PanelUser = {
   dateOfBirth: Date,
   avatarUrl?: string,
 };
+
+export type Content = {
+  contentHeading: string,
+  searchLabel: string,
+  searchPlaceholder: string,
+  filterLabel: string,
+  createButton: string,
+}

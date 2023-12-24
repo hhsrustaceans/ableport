@@ -1,8 +1,7 @@
 import { useTranslations } from "next-intl";
 import { OrganisationOverview } from "../components/OrganisationOverview";
-import { CreateButton } from "../components/CreateButton";
-import { SearchBar } from "../components/SearchBar";
-import { FilterButton } from "../components/FilterButton";
+import { ContentOverview } from "../components/ContentOverview";
+import type { Content } from "../../types";
 
 export default function OrganisationsPage() {
   const t = useTranslations();
@@ -19,17 +18,17 @@ export default function OrganisationsPage() {
     t("admin.overview.delete"),
   ];
 
+  let content: Content[] = [
+    {
+      contentHeading: t("admin.dropdown.items.panelmembers"),
+      searchLabel: t("admin.search.label.panelmember"),
+      searchPlaceholder: t("admin.search.placeholder.panelmember"),
+      filterLabel: t("admin.filter.label.panelmember"),
+      createButton: t("admin.overview.create.panelmember"),
+    }
+  ];
+
   return (
-    <section className="display-section">
-      <article className="article-content">
-        <h1 className="display-heading">{t("admin.dropdown.items.organisations")}</h1>
-        <article className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
-          <SearchBar label={t("admin.search.label.organisation")} placeholder={t("admin.search.placeholder.organisation")} />
-          <FilterButton label={t("admin.filter.label.organisation")} />
-        </article>
-        <OrganisationOverview heading={heading} />
-        <CreateButton create={t("admin.overview.create.organisation")} />
-      </article>
-    </section>
+    <ContentOverview overview={<OrganisationOverview heading={heading} />} content={content} />
   );
 }

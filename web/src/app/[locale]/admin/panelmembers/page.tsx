@@ -1,8 +1,7 @@
 import { useTranslations } from "next-intl";
 import { PanelUserOverview } from "../components/PanelUserOverview";
-import { CreateButton } from "../components/CreateButton";
-import { SearchBar } from "../components/SearchBar";
-import { FilterButton } from "../components/FilterButton";
+import { ContentOverview } from "../components/ContentOverview";
+import type { Content } from "../../types";
 
 export default function PanelMembersPage() {
   const t = useTranslations();
@@ -19,17 +18,17 @@ export default function PanelMembersPage() {
     t("admin.overview.delete"),
   ];
 
+  let content: Content[] = [
+    {
+      contentHeading: t("admin.dropdown.items.organisations"),
+      searchLabel: t("admin.search.label.organisation"),
+      searchPlaceholder: t("admin.search.placeholder.organisation"),
+      filterLabel: t("admin.filter.label.organisation"),
+      createButton: t("admin.overview.create.organisation"),
+    }
+  ];
+
   return (
-    <section className="display-section">
-      <article className="article-content">
-        <h1 className="display-heading">{t("admin.dropdown.items.panelmembers")}</h1>
-        <article className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
-          <SearchBar label={t("admin.search.label.panelmember")} placeholder={t("admin.search.placeholder.panelmember")} />
-          <FilterButton label={t("admin.filter.label.panelmember")} />
-        </article>
-        <PanelUserOverview heading={heading} />
-        <CreateButton create={t("admin.overview.create.panelmember")} />
-      </article>
-    </section>
+    <ContentOverview overview={<PanelUserOverview heading={heading} />} content={content} />
   );
 }
