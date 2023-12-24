@@ -110,15 +110,15 @@
         "panel": "Vind onderzoek",
         "panelmember": "Vind ervaringsdeskundige",
         "organisation": "Vind organisatie"
-      },
-      "filter": {
-        "label": {
-          "panel": "Onderzoek filteren",
-          "panelmember": "Ervaringsdeskundige filteren",
-          "organisation": "Organisatie filteren"
-        },
-        "option": "Filteren op"
       }
+    },
+    "filter": {
+      "label": {
+        "panel": "Onderzoek filteren",
+        "panelmember": "Ervaringsdeskundige filteren",
+        "organisation": "Organisatie filteren"
+      },
+      "option": "Filteren op"
     }
   }
 }
