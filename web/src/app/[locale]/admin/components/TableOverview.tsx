@@ -1,7 +1,7 @@
 export function TableOverview({ heading, overview }: { heading: string[], overview: JSX.Element[] }) {
   return (
-    <div className="overflow-x-scroll mt-3 pb-4">
-      <table className="rounded-2xl">
+    <div className="overflow-x-scroll mt-3 pb-4 rounded-lg">
+      <table>
         <thead>
           <tr className="bg-gray-200 dark:bg-gray-800">
             {Object.values(heading).map((result: string) => (
@@ -11,7 +11,11 @@ export function TableOverview({ heading, overview }: { heading: string[], overvi
         </thead>
         <tbody>
           {overview.map((overview: JSX.Element, result: number) => (
-            <tr className="bg-gray-50 dark:bg-gray-600" key={result}>{overview}</tr>
+            <tr 
+              className={`${result % 2 == 0 ? "bg-gray-50 dark:bg-gray-600" : "bg-gray-100 dark:bg-gray-500 text-green-600 dark:text-green-400"}`}
+              key={result}>
+              {overview}
+            </tr>
           ))}
         </tbody>
       </table>

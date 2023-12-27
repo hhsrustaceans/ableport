@@ -50,7 +50,7 @@
   }
 
   .td-items {
-    @apply px-4 py-2 text-center border-2;
+    @apply px-4 py-2 text-center border-t-2 border-gray-300 dark:border-gray-400;
   }
 
   .display-section {
