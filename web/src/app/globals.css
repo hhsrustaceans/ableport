@@ -50,18 +50,10 @@
   }
 
   .td-items {
-    @apply px-4 py-2 text-center border-t-2 border-gray-300 dark:border-gray-400;
+    @apply px-4 py-0 md:py-2 text-right md:text-center md:border-b-2 md:border-gray-300 md:dark:border-gray-400 my-2 md:my-0 w-full inline-block md:table-cell font-light md:font-normal;
   }
 
-  .display-section {
-    @apply w-full flex justify-center mt-5;
-  }
-
-  .article-content {
-    @apply mx-3 lg:w-2/3 pb-4 overflow-x-scroll lg:overflow-x-hidden;
-  }
-
-  .display-heading {
-    @apply text-3xl mb-5;
+  .td-headings {
+    @apply md:hidden font-medium text-left;
   }
 }
