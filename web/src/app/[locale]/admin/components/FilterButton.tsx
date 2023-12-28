@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 
-export function FilterButton( { label } : { label: string }) {
+export function FilterButton({ label } : { label: string }) {
   const t = useTranslations();
   const options: number[] = [5, 10, 25];
 

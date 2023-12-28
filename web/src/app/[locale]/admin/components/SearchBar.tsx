@@ -1,4 +1,4 @@
-export function SearchBar( { label, placeholder } : { label: string, placeholder: string }) {
+export function SearchBar({ label, placeholder } : { label: string, placeholder: string }) {
   return (
     <div className="grid-cols-1">
       <label htmlFor="searchResult">{label}</label>

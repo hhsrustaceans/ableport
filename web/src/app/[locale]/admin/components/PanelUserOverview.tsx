@@ -10,7 +10,7 @@ export function PanelUserOverview({ heading }: { heading: string[] }) {
 
   const Display = (): JSX.Element => (
     <NoSSR>
-      <td className="md-hidden">{panelUserHeadings}</td>
+      <td className="md:hidden">{panelUserHeadings}</td>
     </NoSSR>
   );
   

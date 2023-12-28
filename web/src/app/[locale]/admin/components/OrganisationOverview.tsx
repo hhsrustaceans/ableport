@@ -10,7 +10,7 @@ export function OrganisationOverview({ heading }: { heading: string[] }) {
 
   const Display = (): JSX.Element => (
     <NoSSR>
-      <td className="md-hidden">{orgHeadings}</td>
+      <td className="md:hidden">{orgHeadings}</td>
     </NoSSR>
   )
 
