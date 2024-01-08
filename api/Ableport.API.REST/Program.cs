@@ -45,7 +45,8 @@ services.Configure<IdentityOptions>(options =>
 // parameter in the login endpoint.
 services.AddIdentityApiEndpoints<AbleportUser>()
     .AddRoles<AbleportRole>()
-    .AddEntityFrameworkStores<AbleportContext>();
+    .AddEntityFrameworkStores<AbleportContext>()
+    .AddDefaultTokenProviders();
 
 services.ConfigureApplicationCookie(options =>
 {
@@ -120,8 +121,7 @@ app.MapControllers();
 
 app.UseHttpsRedirection();
 
-app.UseStaticFiles();
-
+// Modify Identity Framework endpoints and add tag for swagger
 app.MapGroup("/auth").WithTags("Auth").MapIdentityApi<AbleportUser>();
 
 app.Run();
