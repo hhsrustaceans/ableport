@@ -1,4 +1,5 @@
 using Ableport.API.REST.DataModel;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -67,7 +68,8 @@ services.ConfigureApplicationCookie(options =>
 services.AddEndpointsApiExplorer();
 services.AddOpenApiDocument();
 
-services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
+services.AddAuthentication()
+.AddMicrosoftAccount(microsoftOptions =>
 {
     // Use dotnet user-secrets set "Authentication:Microsoft:ClientId" "ID"
     microsoftOptions.ClientId = configuration["Authentication:Microsoft:ClientId"] ?? throw new ArgumentNullException("Authentication:Microsoft:ClientId");
