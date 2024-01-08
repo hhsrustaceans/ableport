@@ -1,8 +1,7 @@
 import { useTranslations } from "next-intl";
 import Logo from "@/components/Logo"
-import Register from "./components/Register";
+import LoginButton from "./components/LoginButton";
 import Button from "@/components/Button"
-
 export default function Root() {
   const t = useTranslations();
 
@@ -14,7 +13,7 @@ export default function Root() {
         </div>
         <Button text="Microsoft"/>
         <Button text="Google"/>
-        <Register/>
+        <LoginButton/>
     </div>
     </>
   );
