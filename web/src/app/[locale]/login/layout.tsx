@@ -5,6 +5,7 @@ import {
   useMessages,
   useTranslations,
 } from "next-intl";
+import "../style.css";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata(): Promise<Metadata> {
