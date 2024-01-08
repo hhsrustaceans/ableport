@@ -44,8 +44,25 @@ services.Configure<IdentityOptions>(options =>
 // are activated. Cookies will be issued based on the `useCookies` querystring
 // parameter in the login endpoint.
 services.AddIdentityApiEndpoints<AbleportUser>()
-    .AddRoles<IdentityRole>()
-    .AddEntityFrameworkStores<AbleportContext>();
+    .AddRoles<AbleportRole>()
+    .AddEntityFrameworkStores<AbleportContext>()
+    .AddDefaultTokenProviders();
+
+services.ConfigureApplicationCookie(options =>
+{
+    // Cookie settings
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+
+    options.LoginPath = "/auth/login";
+    options.AccessDeniedPath = "/auth/denied";
+    options.SlidingExpiration = true;
+    
+    if (!builder.Environment.IsDevelopment())
+    {
+        options.Cookie.Domain = "api.ableport.nl";
+    }
+});
 
 services.AddEndpointsApiExplorer();
 services.AddOpenApiDocument();
@@ -56,8 +73,13 @@ services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
     microsoftOptions.ClientId = configuration["Authentication:Microsoft:ClientId"] ?? throw new ArgumentNullException("Authentication:Microsoft:ClientId");
     // Use dotnet user-secrets set "Authentication:Microsoft:ClientSecret" "SECRET"
     microsoftOptions.ClientSecret = configuration["Authentication:Microsoft:ClientSecret"] ?? throw new ArgumentNullException("Authentication:Microsoft:ClientSecret");
+}).AddGoogle(googleOptions => {
+    // Use dotnet user-secrets set "Authentication:Google:ClientId" "ID"
+    googleOptions.ClientId = configuration["Authentication:Google:ClientId"] ?? throw new ArgumentNullException("Authentication:Google:ClientId");
+    // Use dotnet user-secrets set "Authentication:Google:ClientSecret" "SECRET"
+    googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"] ?? throw new ArgumentNullException("Authentication:Google:ClientSecret");
 });
-
+    
 services.AddControllers();
 
 
@@ -74,16 +96,37 @@ if (app.Environment.IsDevelopment())
     }); // serve ReDoc UI
 }
 
+using var scope = app.Services.CreateScope();
+
+var db = scope.ServiceProvider.GetRequiredService<AbleportContext>();
+
+var org = new Organisation()
+{
+    Name = "Accessibility",
+    Type = "NonProfit",
+    Description = "Center of expertise in the field of digital accessibility in the Netherlands.",
+};
+
+var panel = new Panel
+{
+    Title = "Test panel",
+    Description = "This is a test",
+    Location = "https://ableport.nl",
+    Organisation = org,
+    Content = "This is an automatically generated test panel",
+    Reward = ["$0", "Fame"],
+    StudyType = "QA",
+};
+
+db.Organisations.Add(org);
+db.Panels.Add(panel);
+db.SaveChanges();
+
 app.MapControllers();
 
 app.UseHttpsRedirection();
 
-app.MapGet("/", () => "Welcome to Ableport!")
-    .WithName("GetHome")
-    .RequireAuthorization();
-
-app.UseStaticFiles();
-
-app.MapIdentityApi<AbleportUser>();
+// Modify Identity Framework endpoints and add tag for swagger
+app.MapGroup("/auth").WithTags("Auth").MapIdentityApi<AbleportUser>();
 
 app.Run();
