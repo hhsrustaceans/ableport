@@ -118,5 +118,8 @@
       },
       "option": "Select"
     }
+  },
+  "recruit": {
+    "button": "Go to recruit portal"
   }
 }

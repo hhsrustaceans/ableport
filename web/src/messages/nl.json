@@ -118,5 +118,8 @@
       },
       "option": "Filteren op"
     }
+  },
+  "recruit": {
+    "button": "Ga naar bedrijvenportaal"
   }
 }
