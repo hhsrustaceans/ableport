@@ -57,6 +57,11 @@ services.ConfigureApplicationCookie(options =>
     options.LoginPath = "/auth/login";
     options.AccessDeniedPath = "/auth/denied";
     options.SlidingExpiration = true;
+    
+    if (!builder.Environment.IsDevelopment())
+    {
+        options.Cookie.Domain = "api.ableport.nl";
+    }
 });
 
 services.AddEndpointsApiExplorer();
