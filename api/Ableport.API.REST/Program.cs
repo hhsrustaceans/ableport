@@ -73,11 +73,13 @@ services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
     microsoftOptions.ClientId = configuration["Authentication:Microsoft:ClientId"] ?? throw new ArgumentNullException("Authentication:Microsoft:ClientId");
     // Use dotnet user-secrets set "Authentication:Microsoft:ClientSecret" "SECRET"
     microsoftOptions.ClientSecret = configuration["Authentication:Microsoft:ClientSecret"] ?? throw new ArgumentNullException("Authentication:Microsoft:ClientSecret");
+    microsoftOptions.CallbackPath = new PathString("/auth/signin/microsoft");
 }).AddGoogle(googleOptions => {
     // Use dotnet user-secrets set "Authentication:Google:ClientId" "ID"
     googleOptions.ClientId = configuration["Authentication:Google:ClientId"] ?? throw new ArgumentNullException("Authentication:Google:ClientId");
     // Use dotnet user-secrets set "Authentication:Google:ClientSecret" "SECRET"
     googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"] ?? throw new ArgumentNullException("Authentication:Google:ClientSecret");
+    googleOptions.CallbackPath = new PathString("/auth/signin/google");
 });
     
 services.AddControllers();
