@@ -4,6 +4,12 @@ import { NextIntlClientProvider, useMessages } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Navbar from "@/components/Navbar";
 import { ReactNode } from "react";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations();
@@ -21,7 +27,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <NextIntlClientProvider
       messages={{ common: commonMessages, admin: adminMessages }}
     >
-      <main id="app">
+      <main id="app" className={roboto.className}>
         <Navbar />
         <div>{children}</div>
       </main>

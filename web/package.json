@@ -14,10 +14,13 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@iconify-json/lucide": "^1.1.144",
     "@iconify-json/mdi": "^1.1.57",
     "@iconify-json/radix-icons": "^1.1.13",
     "@iconify-json/tabler": "^1.1.100",
+    "@mui/material": "^5.15.3",
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@types/node": "^20",
