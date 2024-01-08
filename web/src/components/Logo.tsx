@@ -1,7 +1,7 @@
 import { productName } from "@/lib/modules/config";
 import { useTranslations } from "next-intl";
 
-export default function Logo({ width = 150, button = true }: { width?: number, button: boolean }) {
+export default function Logo({ width = 150, button = true }: { width?: number, button?: boolean }) {
   const t = useTranslations();
   const highlight = button ? "fill-current icon-highlight-fill" : "fill-current";
 
