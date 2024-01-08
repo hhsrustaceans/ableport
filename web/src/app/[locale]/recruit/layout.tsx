@@ -19,8 +19,10 @@ export default function Layout({ children } : { children: ReactNode }) {
 
   return (
     <NextIntlClientProvider messages={{recruit: recruitMessages, common: commonMessages}}>
-      <main id="app">
+      <header>
         <Navbar />
+      </header>
+      <main id="app">
         {children}
       </main>
     </NextIntlClientProvider>
