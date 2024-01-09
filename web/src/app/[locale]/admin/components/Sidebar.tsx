@@ -11,11 +11,11 @@ import IconPoll from "@mui/icons-material/Poll";
 import IconBusiness from "@mui/icons-material/Business";
 import { Link } from "@/lib/modules/navigation";
 
-export function Sidebar() {
+export function Sidebar({ open }: { open?: boolean }) {
   const t = useTranslations();
 
   return (
-    <Drawer variant="persistent" open>
+    <Drawer open={open}>
       <List>
         <ListItemButton LinkComponent={Link} href="/admin/members">
           <ListItemIcon>
