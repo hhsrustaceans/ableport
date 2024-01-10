@@ -120,6 +120,15 @@
     }
   },
   "recruit": {
-    "button": "Ga naar bedrijvenportaal"
+    "button": "Ga naar bedrijvenportaal",
+    "title": "Bedrijven overzicht",
+    "organisation": {
+      "type": "type",
+      "name": "naam",
+      "description": "beschrijving",
+      "logo": "logo",
+      "website": "website",
+      "phoneNumber": "telefoonnummer"
+    }
   }
 }

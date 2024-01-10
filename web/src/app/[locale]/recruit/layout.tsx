@@ -23,7 +23,7 @@ export default function Layout({ children } : { children: ReactNode }) {
         <Navbar />
       </header>
       <main id="app">
-        {children}
+        <article>{children}</article>
       </main>
     </NextIntlClientProvider>
   );

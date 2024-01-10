@@ -120,6 +120,15 @@
     }
   },
   "recruit": {
-    "button": "Go to recruit portal"
+    "button": "Go to recruit portal",
+    "title": "Recruit overview",
+    "organisation": {
+      "type": "type",
+      "name": "name",
+      "description": "description",
+      "logo": "logo",
+      "website": "website",
+      "phoneNumber": "phonenumber"
+    }
   }
 }
