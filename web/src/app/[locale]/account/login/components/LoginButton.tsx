@@ -11,7 +11,7 @@ export default function IconLabel({
   icon?: React.ReactNode;
 }) {
   return (
-    <button onClick={Redirect} className="grow flex m-2 items-center gap-1 action action-primary">
+    <button onClick={Redirect} className="flex m-2 items-center gap-1 action action-primary">
         <span>{"Login"}</span>
         <span className="text-sm" aria-hidden="true">
             {icon}

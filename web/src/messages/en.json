@@ -33,6 +33,13 @@
       "subtext": "Our apologies for the inconvenience.",
       "unknown": "Something went wrong. Please try again later.",
       "not_found": "We weren't able to find this page."
+    },
+    "account": {
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "password": "Email",
+      "dob": "Date of Birth"
     }
   },
   "panel": {

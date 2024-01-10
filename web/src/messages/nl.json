@@ -33,6 +33,13 @@
       "subtext": "Onze excuses voor het ongemak.",
       "unknown": "Er is iets misgegaan. Probeer het later opnieuw.",
       "not_found": "We konden deze pagina helaas niet vinden."
+    },
+    "account": {
+      "first_name": "Voornaam",
+      "last_name": "Achternaam",
+      "email": "Email",
+      "password": "Wachtwoord",
+      "dob": "Geboortedatum"
     }
   },
   "panel": {

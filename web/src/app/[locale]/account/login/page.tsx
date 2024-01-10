@@ -8,7 +8,7 @@ export default function Root() {
   return (
     <>
     <div className="flex flex-col flex-wrap justify-center max-w-xs m-auto setting bg-gray-200 dark:bg-gray-800 p-4">
-        <div className="flex justify-center m-4">
+        <div className="flex justify-center w-full p-2">
             <Logo width={200} button={false}/>
         </div>
         <Button text="Microsoft"/>
