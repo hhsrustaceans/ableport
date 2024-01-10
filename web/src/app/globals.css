@@ -58,6 +58,6 @@
   }
 
   .recruit-view {
-    @apply flex justify-between text-gray-800 dark:text-gray-200;
+    @apply grid grid-cols-2 text-gray-800 dark:text-gray-200;
   }
 }
