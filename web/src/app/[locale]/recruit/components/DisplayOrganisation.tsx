@@ -1,9 +1,7 @@
-import { useTranslations } from "next-intl";
 import { Organisation } from "../../types";
+import { IconOption } from "./IconOption";
 
 export function DisplayOrganisation({ organisation, recruit } : {organisation: Organisation[], recruit: string[]}) {
-  const t = useTranslations();
-
   return Array.from({ length: 5 })
     .map((): Organisation[] => ({...organisation}))
     .map((_: Organisation[]) => (
@@ -16,7 +14,7 @@ export function DisplayOrganisation({ organisation, recruit } : {organisation: O
             {Object.values(recruit).map((recruit: string, result: number) => (
               <div className="recruit-view" key={result}>
                 <p>{recruit.concat(":")}</p>
-                <p>{organisations.name}</p>
+                {recruit.length == result ? <IconOption /> : <p>{organisations.name}</p>}
               </div>
             ))}
           </div>

@@ -24,7 +24,8 @@ export default function RecruitPage() {
     t("recruit.organisation.description"),
     t("recruit.organisation.logo"),
     t("recruit.organisation.website"),
-    t("recruit.organisation.phoneNumber")
+    t("recruit.organisation.phoneNumber"),
+    t("recruit.option")
   ];
 
   return (

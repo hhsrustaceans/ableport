@@ -130,6 +130,7 @@
       "logo": "logo",
       "website": "website",
       "phoneNumber": "phonenumber"
-    }
+    },
+    "option": "options"
   }
 }
