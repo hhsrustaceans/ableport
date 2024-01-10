@@ -131,6 +131,7 @@
       "website": "website",
       "phoneNumber": "telefoonnummer"
     },
-    "option": "opties"
+    "option": "opties",
+    "create": "Maak een nieuwe organisatie aan"
   }
 }

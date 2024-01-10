@@ -3,12 +3,12 @@ import { IconOption } from "./IconOption";
 
 export function DisplayOrganisation({ organisation, recruit } : {organisation: Organisation[], recruit: string[]}) {
   return Array.from({ length: 3 })
-    .map((): Organisation[] => ({...organisation}))
+    .map((): Organisation[] => structuredClone(organisation))
     .map((org: Organisation[]) => (
       <>
         {Object.values(org).map((organisations: Organisation, result: number) => (
           <article 
-            className="shadow-md rounded-2xl mb-3 grid grid-cols-1 p-3 bg-gray-200 dark:bg-gray-800 hover:scale-105 duration-500 ease-in-out" 
+            className="shadow-md rounded-2xl mb-3 grid grid-cols-1 px-3 py-2 bg-gray-200 dark:bg-gray-800 hover:scale-105 duration-500 ease-in-out" 
             key={result}
           >
             <div className="recruit-view">
