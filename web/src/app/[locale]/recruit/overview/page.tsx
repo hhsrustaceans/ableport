@@ -17,12 +17,22 @@ export default function RecruitPage() {
     },
   ];
 
+  let recruit: string[] = [
+    t("recruit.organisation.id"),
+    t("recruit.organisation.type"),
+    t("recruit.organisation.name"),
+    t("recruit.organisation.description"),
+    t("recruit.organisation.logo"),
+    t("recruit.organisation.website"),
+    t("recruit.organisation.phoneNumber")
+  ];
+
   return (
     <section className="flex justify-center">
       <article className="w-full grid grid-cols-1 lg:w-2/3 mx-3 lg:mx-0" style={{width: "1024px"}}>
         <h1 className="mt-2 mb-4 md:my-4 text-2xl">{t("recruit.title")}</h1>
         <article>
-          <DisplayOrganisation organisation={organisation} />
+          <DisplayOrganisation organisation={organisation} recruit={recruit} />
         </article>
       </article>
     </section>

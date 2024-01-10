@@ -123,6 +123,7 @@
     "button": "Ga naar bedrijvenportaal",
     "title": "Bedrijven overzicht",
     "organisation": {
+      "id": "id",
       "type": "type",
       "name": "naam",
       "description": "beschrijving",

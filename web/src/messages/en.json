@@ -123,6 +123,7 @@
     "button": "Go to recruit portal",
     "title": "Recruit overview",
     "organisation": {
+      "id": "id",
       "type": "type",
       "name": "name",
       "description": "description",
