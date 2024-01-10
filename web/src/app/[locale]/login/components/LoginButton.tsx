@@ -2,7 +2,7 @@
 import IconArrow from "~icons/lucide/arrow-right-to-line";
 
 function Redirect() {
-  window.location.replace("http://localhost:5134/auth/login/google?provider=Google&returnUrl=http://localhost:5134/auth/callback/google");
+  window.location.replace("http://localhost:5134/auth/login/google?provider=Google&returnUrl=http://localhost:5134/auth/account/redirect");
 }
 
 export default function IconLabel({

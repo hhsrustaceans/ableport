@@ -17,7 +17,7 @@ namespace Ableport.API.REST.Controllers
 
         // GET: api/user/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<AbleportUser>> GetUser(string id)
+        public async Task<ActionResult<AbleportUser>> GetUser(int id)
         {
             var user = await _context.Users.FindAsync(id);
 

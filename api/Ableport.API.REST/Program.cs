@@ -1,11 +1,20 @@
+using System.Text;
+//using Ableport.API.REST.Auth;
 using Ableport.API.REST.DataModel;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
-var services = builder.Services;
 var configuration = builder.Configuration;
+var services = builder.Services;
+
+// Bind AppSettings class
+
+services.Configure<AbleportSettings>(configuration.GetSection("AppSettings"));
 
 // Add services to the container.
 // Authorization
@@ -45,9 +54,12 @@ services.Configure<IdentityOptions>(options =>
 // are activated. Cookies will be issued based on the `useCookies` querystring
 // parameter in the login endpoint.
 services.AddIdentityApiEndpoints<AbleportUser>()
+    // .AddIdentity<AbleportUser,AbleportRole>() <- TODO: might be worth writing our own endpoints later
     .AddRoles<AbleportRole>()
     .AddEntityFrameworkStores<AbleportContext>()
     .AddDefaultTokenProviders();
+
+//builder.Services.AddSingleton<JwtAuthManager, JwtAuthManager>();
 
 services.ConfigureApplicationCookie(options =>
 {
@@ -68,24 +80,65 @@ services.ConfigureApplicationCookie(options =>
 services.AddEndpointsApiExplorer();
 services.AddOpenApiDocument();
 
+var appSettings = configuration.Get<AbleportSettings>();
+
 services.AddAuthentication()
+    .AddCookie()
+    .AddJwtBearer(x =>
+    {
+        x.RequireHttpsMetadata = true;
+        x.SaveToken = true;
+        x.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidIssuer = appSettings.AuthSettings.Issuer,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.ASCII.GetBytes(
+                    configuration["Authentication:Ableport:Secret"])),
+            ValidAudience = appSettings.AuthSettings.Audience,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.FromMinutes(1)
+        };
+        x.Events = new JwtBearerEvents
+        {
+            OnAuthenticationFailed = context =>
+            {
+                if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                {
+                    context.Response.Headers.Add("Token-Expired", "true");
+                }
+                return Task.CompletedTask;
+            }
+        };
+    })
 .AddMicrosoftAccount(microsoftOptions =>
 {
     // Use dotnet user-secrets set "Authentication:Microsoft:ClientId" "ID"
-    microsoftOptions.ClientId = configuration["Authentication:Microsoft:ClientId"] ?? throw new ArgumentNullException("Authentication:Microsoft:ClientId");
+    microsoftOptions.ClientId = configuration["Authentication:Microsoft:ClientId"];
     // Use dotnet user-secrets set "Authentication:Microsoft:ClientSecret" "SECRET"
-    microsoftOptions.ClientSecret = configuration["Authentication:Microsoft:ClientSecret"] ?? throw new ArgumentNullException("Authentication:Microsoft:ClientSecret");
+    microsoftOptions.ClientSecret = configuration["Authentication:Microsoft:ClientSecret"];
     microsoftOptions.CallbackPath = new PathString("/auth/callback/microsoft");
+    microsoftOptions.SignInScheme = IdentityConstants.ExternalScheme;
 }).AddGoogle(googleOptions => {
     // Use dotnet user-secrets set "Authentication:Google:ClientId" "ID"
-    googleOptions.ClientId = configuration["Authentication:Google:ClientId"] ?? throw new ArgumentNullException("Authentication:Google:ClientId");
+    googleOptions.ClientId = configuration["Authentication:Google:ClientId"];
     // Use dotnet user-secrets set "Authentication:Google:ClientSecret" "SECRET"
-    googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"] ?? throw new ArgumentNullException("Authentication:Google:ClientSecret");
+    googleOptions.ClientSecret = configuration["Authentication:Google:ClientSecret"];
     googleOptions.CallbackPath = new PathString("/auth/callback/google");
+    googleOptions.SignInScheme = IdentityConstants.ExternalScheme;
+});
+
+//Cookie Policy needed for External Auth
+services.Configure<CookiePolicyOptions>(options =>
+{
+    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+    options.CheckConsentNeeded = context => true;
+    options.MinimumSameSitePolicy = SameSiteMode.Unspecified;
 });
     
 services.AddControllers();
-
 
 var app = builder.Build();
 
