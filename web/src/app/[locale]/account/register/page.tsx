@@ -13,9 +13,9 @@ export default function Root() {
   const t = useTranslations();
 
   const steps: React.ReactNode[] = [
-    <NameForm />,
-    <LoginForm />,
-    <PersonalForm />
+    <NameForm key={0} />,
+    <LoginForm key={0} />,
+    <PersonalForm key={0} />
   ];
 
   function PreviousStep() {
