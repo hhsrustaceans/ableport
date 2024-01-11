@@ -12,8 +12,27 @@ var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 var services = builder.Services;
 
-// Bind AppSettings class
+const string ableportOrigins = "_ableportOrigins";
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: ableportOrigins,
+        policy  =>
+        {
+            policy.AllowCredentials();
+            policy.AllowAnyMethod();
+            policy.AllowAnyHeader();
+            
+            policy.WithOrigins("https://nightly.ableport.nl");
+            
+            if (builder.Environment.IsDevelopment())
+            {
+                policy.WithOrigins("http://localhost:3000");
+            }
+        });
+});
+
+// Bind AppSettings class
 services.Configure<AbleportSettings>(configuration.GetSection("AppSettings"));
 
 // Add services to the container.
@@ -141,6 +160,8 @@ services.Configure<CookiePolicyOptions>(options =>
 services.AddControllers();
 
 var app = builder.Build();
+
+app.UseCors(ableportOrigins);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
