@@ -52,13 +52,13 @@ export default function Root() {
   return (
     <>
       <div style={{width: getProgress(), height: "0.2rem", backgroundColor: "blue", transitionProperty: "width", transitionDuration: "0.5s" }}></div>
-      <div className="text-center m-14" id="main">
+      <div className="text-center m-10" id="main">
         <div className="flex flex-col flex-wrap max-w-xs m-auto setting bg-gray-200 dark:bg-gray-800 p-4">
           <div className="flex justify-center w-full p-2">
             <Logo width={200} button={false} />
           </div>
           {steps[registerStep]}
-          <div className="flex p-1">
+          <div className="flex p-1 w-full">
             <BackButton />
             <NextButton />
           </div>
