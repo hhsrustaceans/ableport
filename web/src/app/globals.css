@@ -60,4 +60,8 @@
   .recruit-view {
     @apply grid grid-cols-2 text-gray-800 dark:text-gray-200;
   }
+
+  .recruit-label {
+    @apply font-semibold inline-block text-xs text-slate-700 dark:text-slate-400 p-1 text-left;
+  }
 }

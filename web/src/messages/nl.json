@@ -132,6 +132,7 @@
       "phoneNumber": "telefoonnummer"
     },
     "option": "opties",
-    "create": "Maak een nieuwe organisatie aan"
+    "create": "Maak een nieuwe organisatie aan",
+    "placeholder": "Vul een"
   }
 }

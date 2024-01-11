@@ -132,6 +132,7 @@
       "phoneNumber": "phonenumber"
     },
     "option": "options",
-    "create": "Create a new organisation"
+    "create": "Create a new organisation",
+    "placeholder": "Enter a"
   }
 }
