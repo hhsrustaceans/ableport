@@ -133,6 +133,10 @@
     },
     "option": "options",
     "create": "Create a new organisation",
-    "placeholder": "Enter a"
+    "placeholder": "Enter a",
+    "selection": {
+      "back": "Back",
+      "next": "Next"
+    }
   }
 }

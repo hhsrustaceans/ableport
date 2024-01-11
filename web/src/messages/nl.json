@@ -133,6 +133,10 @@
     },
     "option": "opties",
     "create": "Maak een nieuwe organisatie aan",
-    "placeholder": "Vul een"
+    "placeholder": "Vul een",
+    "selection": {
+      "back": "Terug",
+      "next": "Volgende"
+    }
   }
 }

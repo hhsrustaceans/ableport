@@ -10,7 +10,7 @@ export function Modal({ toggle }: { toggle: () => void }) {
       <span className="fixed inset-0 backdrop-blur-sm"></span>
       
       <section className="relative w-screen lg:w-[1024px] border-2 border-green-500 rounded-3xl bg-gray-200 dark:bg-gray-800">
-        <article className="p-3 w-full flex justify-between">
+        <article className="p-6 w-full flex justify-between">
           <div>
             <h2 className="text-xl sm:text-2xl">{t("recruit.create")}</h2>
           </div>
@@ -21,7 +21,7 @@ export function Modal({ toggle }: { toggle: () => void }) {
             <IconClose />
           </div>
         </article>
-        <article className="p-3 pt-0 grid grid-cols-1">
+        <article className="p-6 pt-0 grid grid-cols-1">
           <RecruitForm />
         </article>
       </section>
