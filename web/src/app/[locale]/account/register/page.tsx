@@ -3,9 +3,9 @@
 import { useTranslations } from "next-intl";
 import Logo from "@/components/Logo"
 import { useState } from 'react';
-import NameForm from "./forms/NameForm";
-import LoginForm from "./forms/LoginForm";
-import PersonalForm from "./forms/PersonalForm";
+import NameForm from "@/components/forms/NameForm";
+import LoginForm from "@/components/forms/LoginForm";
+import PersonalForm from "@/components/forms/PersonalForm";
 
 
 export default function Root() {
@@ -46,21 +46,21 @@ export default function Root() {
   }
 
   function getProgress(): string {
-    return registerStep/(steps.length-1)*100 + "%";
+    return registerStep / (steps.length - 1) * 100 + "%";
   }
 
   return (
     <>
-      <div style={{width: getProgress(), height: "0.2rem", backgroundColor: "blue", transitionProperty: "width", transitionDuration: "0.5s" }}></div>
+      <div style={{ width: getProgress(), height: "0.2rem", backgroundColor: "blue", transitionProperty: "width", transitionDuration: "0.5s" }}></div>
       <div className="text-center sm:m-20 m-4" id="main">
         <div className="flex flex-col flex-wrap max-w-xs m-auto setting bg-gray-200 dark:bg-gray-800 p-4">
           <div className="flex justify-center w-full p-2">
             <Logo width={200} button={false} />
           </div>
           {steps[registerStep]}
-          <div className="flex p-1 w-full">
-            <BackButton />
+          <div className="flex flex-row-reverse p-1 w-full">
             <NextButton />
+            <BackButton />
           </div>
         </div>
       </div>
