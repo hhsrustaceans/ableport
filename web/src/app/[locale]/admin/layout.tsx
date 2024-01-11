@@ -32,7 +32,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <main id="app" className={roboto.className}>
         <Topbar />
         <Sidebar />
-        <Box>{children}</Box>
+        <Box sx={{ marginTop: 10 }}>{children}</Box>
       </main>
     </NextIntlClientProvider>
   );
