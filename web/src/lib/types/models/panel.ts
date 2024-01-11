@@ -4,4 +4,9 @@ export type Panel = {
   description: string;
   imageUrl: string;
   websiteUrl: string;
+  disabilities: Disability[];
+};
+
+export type Disability = {
+  code: string;
 };
