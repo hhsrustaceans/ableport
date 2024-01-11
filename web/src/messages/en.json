@@ -37,6 +37,21 @@
       "subtext": "Our apologies for the inconvenience.",
       "unknown": "Something went wrong. Please try again later.",
       "not_found": "We weren't able to find this page."
+    },
+    "account": {
+      "login": "Log in",
+      "register": "Register",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "age": "Age",
+      "dob": "Date of Birth"
+    },
+    "form": {
+      "submit": "Submit",
+      "next": "Next",
+      "back": "Back"
     }
   },
   "panel": {

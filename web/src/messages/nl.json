@@ -37,6 +37,21 @@
       "subtext": "Onze excuses voor het ongemak.",
       "unknown": "Er is iets misgegaan. Probeer het later opnieuw.",
       "not_found": "We konden deze pagina helaas niet vinden."
+    },
+    "account": {
+      "login": "Inloggen",
+      "register": "Registreren",
+      "first_name": "Voornaam",
+      "last_name": "Achternaam",
+      "email": "Email",
+      "password": "Wachtwoord",
+      "age": "Leeftijd",
+      "dob": "Geboortedatum"
+    },
+    "form": {
+      "submit": "Insturen",
+      "next": "Volgende",
+      "back": "Vorige"
     }
   },
   "panel": {

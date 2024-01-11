@@ -24,9 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       messages={{ common: commonMessages, panel: panelMessages }}
     >
       <main id="app">
-        <div className="text-center m-14" id="main">
-          {children}
-        </div>
+        {children}
       </main>
     </NextIntlClientProvider>
   );
