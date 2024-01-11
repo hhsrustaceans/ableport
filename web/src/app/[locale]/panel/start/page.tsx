@@ -14,6 +14,7 @@ export default function Root() {
       description: "This is a test panel.",
       websiteUrl: "https://example.com",
       imageUrl: "test",
+      disabilities: [{ code: "AUT" }, { code: "BLI" }],
     },
   ];
 
