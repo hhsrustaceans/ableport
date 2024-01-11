@@ -4,32 +4,32 @@ import { useState } from 'react';
 
 export default function LoginForm() {
     const t = useTranslations();
-    const [passwordErrors, setPasswordErrors] = useState<string[]>([]);
+    const [passwordErrors, setPasswordErrors] = useState<{value: string; key: number}[]>([]);
 
     function ValidatePassword(e: any) {
-        let errors: string[] = [];
+        let errors: {value: string, key: number}[] = [];
 
         let lowerCaseLetters = /[a-z]/g;
         let text = e.currentTarget.value;
         if(!text.match(lowerCaseLetters)) {
-            errors.push("Password needs one lowercase letter");
+            errors.push({value:"Password needs one lowercase letter", key: 0});
         }
 
         // Validate capital letters
         let upperCaseLetters = /[A-Z]/g;
         if(!text.match(upperCaseLetters)) {
-            errors.push("Password needs one uppercase letter");
+            errors.push({value:"Password needs one uppercase letter", key: 1});
         }
 
         // Validate numbers
         let numbers = /[0-9]/g;
         if(!text.match(numbers)) {
-            errors.push("Password needs one number");
+            errors.push({value:"Password needs one number", key: 2});
         }
 
         // Validate length
         if(text.length < 6) {
-            errors.push("Password needs more than six characters");
+            errors.push({value:"Password needs more than six characters", key: 3});
         }
 
         setPasswordErrors(errors);
@@ -41,7 +41,7 @@ export default function LoginForm() {
         <p className="text-xs text-red-400">{}</p>
         <label htmlFor="password" className="font-semibold inline-block text-xs text-slate-700 dark:text-slate-400 p-1 text-left">{t("common.account.password")}</label>
         <input onChange={ValidatePassword} name="password" required={true} placeholder={t("common.account.password")} type="text" className="action w-full text-left bg-neutral-100 dark:bg-neutral-900 m-1"></input>
-        {passwordErrors.map((error) => (<p className="text-xs text-red-400">{error}</p>))}
+        {passwordErrors.map((error: {value: string; key: number}) => (<p key={error.key} className="text-xs text-red-400">{error.value}</p>))}
         
     </form>
 }
