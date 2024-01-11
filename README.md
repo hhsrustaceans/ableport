@@ -42,7 +42,7 @@ dotnet run
 External login functionality can be tested using the following url:
 
 ```
-http://localhost:5134/auth/login/google?provider=Google&returnUrl=http://localhost:5134/auth/callback/google?useCookies=true
+http://localhost:5134/auth/login/google?provider=Google&returnUrl=http://localhost:5134/auth/account/redirect
 ```
 
 ## ToDo

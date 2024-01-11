@@ -1,5 +1,6 @@
 ﻿using System.Net.Mime;
 using Ableport.API.REST.DataModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ableport.API.REST.Controllers;
@@ -17,7 +18,8 @@ public class TestController : ControllerBase
         _logger = logger;
         _db = db;
     }
-
+    
+    [Authorize]
     [HttpGet(Name = "GetTestData")]
     public Organisation Get()
     {
