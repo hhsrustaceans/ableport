@@ -39,7 +39,13 @@
       "last_name": "Achternaam",
       "email": "Email",
       "password": "Wachtwoord",
+      "age": "Leeftijd",
       "dob": "Geboortedatum"
+    },
+    "form": {
+      "submit": "Insturen",
+      "next": "Volgende",
+      "back": "Vorige"
     }
   },
   "panel": {

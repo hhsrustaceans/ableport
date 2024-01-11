@@ -3,61 +3,67 @@
 import { useTranslations } from "next-intl";
 import Logo from "@/components/Logo"
 import { useState } from 'react';
-import Button from "@/components/Button"
+import NameForm from "./forms/NameForm";
+import LoginForm from "./forms/LoginForm";
+import PersonalForm from "./forms/PersonalForm";
 
 
 export default function Root() {
   const [registerStep, setRegisterStep] = useState(0);
   const t = useTranslations();
 
-  function Back() {
+  const steps: React.ReactNode[] = [
+    <NameForm />,
+    <LoginForm />,
+    <PersonalForm />
+  ];
+
+  function PreviousStep() {
     if (registerStep > 0) {
-      setRegisterStep(registerStep-1);
+      setRegisterStep(registerStep - 1);
     }
   }
 
-  function Next() {
-    if (registerStep <= 4) {
-      setRegisterStep(registerStep+1);
+  function NextStep() {
+    if (registerStep < steps.length - 1) {
+      setRegisterStep(registerStep + 1);
+    } else if (registerStep == steps.length - 1) {
+      alert("Registered successfully!");
     }
   }
 
   function BackButton() {
     if (registerStep > 0) {
-        return <button onClick={Back} className="w-full action action-primary m-2">Back</button>;
+      return <button onClick={PreviousStep} className="w-full action action-primary m-2">{t("common.form.back")}</button>;
     }
     return <></>;
-}
+  }
 
-  const steps: React.ReactNode[] = [
-    <form className="flex flex-col p-2 w-full">
-      <label className="inline-block text-xs text-slate-600 p-1 text-left">{t("common.account.first_name")}</label>
-      <input name="fname" required={true} placeholder={t("common.account.first_name")} type="text" className="action w-full text-left bg-neutral-100 dark:bg-neutral-900 m-1"></input>
-      <label className="block text-xs text-slate-600 p-1 text-left">{t("common.account.last_name")}</label>
-      <input name="lname" required={true} placeholder={t("common.account.last_name")}  type="text" className="action w-full text-left bg-neutral-100 dark:bg-neutral-900 m-1"></input>
-    </form>,
-    <form id="2" className="flex flex-col p-2 w-full">
-      <label className="inline-block text-xs text-slate-600 p-1 text-left">{t("common.account.email")}</label>
-      <input name="fname" required={true} placeholder={t("common.account.email")} type="text" className="action w-full text-left bg-neutral-100 dark:bg-neutral-900 m-1"></input>
-    </form>,
-    <form id="3" className="flex flex-col p-2 w-full">
-      <label className="inline-block text-xs text-slate-600 p-1 text-left">{t("common.account.password")}</label>
-      <input name="fname" required={true} placeholder={t("common.account.password")} type="text" className="action w-full text-left bg-neutral-100 dark:bg-neutral-900 m-1"></input>
-    </form>
-  ];
+  function NextButton() {
+    return <button onClick={NextStep} className="w-full action action-primary m-2">
+      {registerStep == steps.length - 1 ? t("common.form.submit") : t("common.form.next")}
+    </button>;
+  }
+
+  function getProgress(): string {
+    return registerStep/(steps.length-1)*100 + "%";
+  }
 
   return (
     <>
-    <div className="flex flex-col flex-wrap max-w-xs m-auto setting bg-gray-200 dark:bg-gray-800 p-4">
-        <div className="flex justify-center w-full p-2">
-            <Logo width={200} button={false}/>
+      <div style={{width: getProgress(), height: "0.2rem", backgroundColor: "blue", transitionProperty: "width", transitionDuration: "0.5s" }}></div>
+      <div className="text-center m-14" id="main">
+        <div className="flex flex-col flex-wrap max-w-xs m-auto setting bg-gray-200 dark:bg-gray-800 p-4">
+          <div className="flex justify-center w-full p-2">
+            <Logo width={200} button={false} />
+          </div>
+          {steps[registerStep]}
+          <div className="flex p-1">
+            <BackButton />
+            <NextButton />
+          </div>
         </div>
-        {steps[registerStep]}
-        <div className="flex p-1">
-          <BackButton/>
-          <button onClick={Next} className="w-full action action-primary m-2">Next</button>
-        </div>
-    </div>
+      </div>
     </>
   );
 }

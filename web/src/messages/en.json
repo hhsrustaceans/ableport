@@ -39,7 +39,13 @@
       "last_name": "Last Name",
       "email": "Email",
       "password": "Password",
+      "age": "Age",
       "dob": "Date of Birth"
+    },
+    "form": {
+      "submit": "Submit",
+      "next": "Next",
+      "back": "Back"
     }
   },
   "panel": {
