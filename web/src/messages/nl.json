@@ -35,6 +35,8 @@
       "not_found": "We konden deze pagina helaas niet vinden."
     },
     "account": {
+      "login": "Inloggen",
+      "register": "Registreren",
       "first_name": "Voornaam",
       "last_name": "Achternaam",
       "email": "Email",

@@ -35,6 +35,8 @@
       "not_found": "We weren't able to find this page."
     },
     "account": {
+      "login": "Log in",
+      "register": "Register",
       "first_name": "First Name",
       "last_name": "Last Name",
       "email": "Email",
