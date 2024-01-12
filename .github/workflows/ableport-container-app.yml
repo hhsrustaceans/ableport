@@ -3,6 +3,7 @@ on:
   push:
     branches:
     - nightly
+    - main
 env:
   CONTAINER_APP_CONTAINER_NAME: ableport-container
   CONTAINER_APP_NAME: ableport-container-app

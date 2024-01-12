@@ -5,7 +5,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["Ableport.API.REST/Ableport.API.REST.csproj", "Ableport.API.REST/"]
+COPY ["api/Ableport.API.REST/Ableport.API.REST.csproj", "Ableport.API.REST/"]
 RUN dotnet restore "Ableport.API.REST/Ableport.API.REST.csproj"
 COPY . .
 WORKDIR "/src/Ableport.API.REST"
