@@ -10,13 +10,16 @@ export function DisplayOrganisation({
   recruit: string[], 
   search: string
 }) {
+  const items: string[] = ["id", "type", "name", "description", "logo", "website", "phoneNumber"];
+
   return Array.from({ length: 3 })
     .map((): Organisation[] => structuredClone(organisation))
     .map((org: Organisation[]) => (
       <>
-        {org.filter((organisations: Organisation) => organisations.name.toLocaleLowerCase().includes(search))
-            .map((organisations: Organisation, result: number) => (
-          
+        {org.filter((organisations: any) => (
+          items.some((item: string) => organisations[item].toString().toLocaleLowerCase().includes(search))
+        ))
+        .map((organisations: Organisation, result: number) => (
           <article className="shadow-md rounded-2xl mb-3 grid grid-cols-1 px-3 py-2 bg-gray-200 dark:bg-gray-800" key={result}>
             <div className="recruit-view">
               <div>
