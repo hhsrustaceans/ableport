@@ -12,16 +12,18 @@ export function RecruitForm() {
     <SecondStepForm key={0} />
   ];
 
-  const BackButton = ({ back }: { back: string }): JSX.Element => (
-    <button onClick={PreviousStep} className="w-full action action-primary my-2">{back}</button>
+  const BackButton = ({ back }: { back: string }): JSX.Element => ( 
+    step > 0 ? <button onClick={PreviousStep} className="w-full action action-primary my-2">{back}</button> : <></>
   );
   
-  const NextButton = ({ next }: { next: string }): JSX.Element => (
-    <button onClick={NextStep} className="w-full action action-primary my-2">{next}</button>
-  );  
+  const NextButton = ({ next, submit }: { next: string, submit: string }): JSX.Element => (
+    <button onClick={NextStep} className="w-full action action-primary my-2">
+      {step == steps.length - 1 ? submit : next}
+    </button>
+  );
 
-  let PreviousStep = (): void => step > 0 ? setStep(step - 1) : console.log("Not allowed to go back!");
-  let NextStep = (): void => step < steps.length - 1 ? setStep(step + 1) : console.log("Not allowed to go further!");
+  let PreviousStep = (): void | JSX.Element => step > 0 ? setStep(step - 1) : <></>;
+  let NextStep = (): void | JSX.Element => step < steps.length - 1 ? setStep(step + 1) : <></>;
   let getProgress = (): string => step / (steps.length - 1) * 100 + "%";
 
   return (
@@ -32,7 +34,7 @@ export function RecruitForm() {
       {steps[step]}
       <div className="flex gap-5">
         <BackButton back={t("recruit.selection.back")} />
-        <NextButton next={t("recruit.selection.next")} />
+        <NextButton next={t("recruit.selection.next")} submit={t("recruit.selection.submit")} />
       </div>
     </form>
   );

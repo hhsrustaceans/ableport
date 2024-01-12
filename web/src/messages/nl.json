@@ -136,7 +136,8 @@
     "placeholder": "Vul een",
     "selection": {
       "back": "Terug",
-      "next": "Volgende"
+      "next": "Volgende",
+      "submit": "Verstuur formulier"
     }
   }
 }

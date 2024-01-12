@@ -136,7 +136,8 @@
     "placeholder": "Enter a",
     "selection": {
       "back": "Back",
-      "next": "Next"
+      "next": "Next",
+      "submit": "Submit form"
     }
   }
 }
