@@ -26,9 +26,9 @@ export function RecruitForm() {
 
   return (
     <form id="recruitForm" className="flex flex-col w-full">
-      <span style={{ width: getProgress(), height: "0.2rem", backgroundColor: "blue", transitionProperty: "width", 
-        transitionDuration: "0.5s" }}>
-      </span>
+      <progress style={{ width: getProgress(), height: "0.2rem", backgroundColor: "blue", transitionProperty: "width", 
+        transitionDuration: "0.5s", position: "fixed", top: 0, left: 0 }}>
+      </progress>
       {steps[step]}
       <div className="flex gap-5">
         <BackButton back={t("recruit.selection.back")} />
