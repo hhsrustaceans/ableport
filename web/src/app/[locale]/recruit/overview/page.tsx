@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { Organisation } from "../../types";
 import { DisplayOrganisation } from "../components/DisplayOrganisation";
 import { ButtonCreate } from "../components/ButtonCreate";
+import { RecruitFilter } from "../components/RecruitFilter";
 
 export default function RecruitPage() {
   const t = useTranslations();
@@ -33,7 +34,10 @@ export default function RecruitPage() {
     <section className="flex justify-center">
       <article className="w-full grid grid-cols-1 lg:w-2/3 mx-3 lg:mx-0" style={{width: "1024px"}}>
         <h1 className="mt-2 md:mt-4 mb-3 text-3xl">{t("recruit.title")}</h1>
-        <ButtonCreate />
+        <article className="inline-block gap-0 sm:flex sm:gap-5 mb-5 sm:mb-0">
+          <RecruitFilter />
+          <ButtonCreate />
+        </article>
         <DisplayOrganisation organisation={organisation} recruit={recruit} />
       </article>
     </section>
