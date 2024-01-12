@@ -16,7 +16,9 @@ export function ButtonCreate() {
 
   return (
     <>
-      <Link href={""} className="cta action action-primary rounded-2xl duration-500 ease-in-out text-lg w-full" onClick={toggle}>
+      <Link href={""} className="cta action action-primary rounded-2xl duration-500 ease-in-out text-lg w-full flex justify-center
+        items-center" 
+        onClick={toggle}>
         {t("recruit.create")}
       </Link>
       {modal && <Modal toggle={toggle} open={modal} />}
