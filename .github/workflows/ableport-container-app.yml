@@ -8,7 +8,7 @@ env:
   CONTAINER_APP_NAME: ableport-container-app
   CONTAINER_APP_RESOURCE_GROUP_NAME: DefaultResourceGroup-PAR
   CONTAINER_REGISTRY_LOGIN_SERVER: ableport.azurecr.io
-  DOCKER_FILE_PATH: Ableport.API.REST/Dockerfile
+  DOCKER_FILE_PATH: api/Dockerfile
   PROJECT_NAME_FOR_DOCKER: ableport.api.rest
 jobs:
   build:
@@ -29,7 +29,7 @@ jobs:
       with:
         push: true
         tags: ${{ env.CONTAINER_REGISTRY_LOGIN_SERVER }}/${{ env.PROJECT_NAME_FOR_DOCKER }}:${{ github.sha }}
-        file: api/Ableport.API.REST/Dockerfile
+        file: ${{ env.DOCKER_FILE_PATH }}
   deploy:
     runs-on: ubuntu-latest
     needs: build
