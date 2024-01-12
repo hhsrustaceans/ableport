@@ -6,7 +6,7 @@ export function FilterButton({ label } : { label: string }) {
 
   return (
     <div className="grid grid-cols-1">
-      <label htmlFor="filterResult">{label}</label>
+      <label htmlFor="filterResult">{label} </label>
       <select 
         id="filterResult"
         className="bg-green-600 rounded-md outline-none p-2"

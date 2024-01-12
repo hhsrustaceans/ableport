@@ -9,7 +9,7 @@ export function SearchBar({
 }) {
   return (
     <div className="grid-cols-1">
-      <label htmlFor="searchResult">{label}</label>
+      <label htmlFor="searchResult">{label} </label>
       <Input placeholder={placeholder} role="search" />
     </div>
   );
