@@ -19,7 +19,7 @@ export function ButtonCreate() {
       <Link href={""} className="cta action action-primary rounded-2xl duration-500 ease-in-out text-lg" onClick={toggle}>
         {t("recruit.create")}
       </Link>
-      {modal && <Modal toggle={toggle} />}
+      {modal && <Modal toggle={toggle} open={modal} />}
     </>
   );
 }
