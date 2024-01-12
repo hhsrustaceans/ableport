@@ -14,7 +14,7 @@ export default function RecruitPage() {
   const organisation: Organisation[] = [
     {
       id: 1,
-      type: "test",
+      type: "Test",
       name: "test",
       description: "test",
       logo: "test",

@@ -17,7 +17,7 @@ export function DisplayOrganisation({
     .map((org: Organisation[]) => (
       <>
         {org.filter((organisations: any) => (
-          items.some((item: string) => organisations[item].toString().toLocaleLowerCase().includes(search))
+          items.some((item: string) => organisations[item].toString().includes(search))
         ))
         .map((organisations: Organisation, result: number) => (
           <article className="shadow-md rounded-2xl mb-3 grid grid-cols-1 px-3 py-2 bg-gray-200 dark:bg-gray-800" key={result}>
