@@ -7,8 +7,15 @@ export function RecruitForm() {
   const t = useTranslations();
   const [step, setStep] = useState(0);
 
+  const recruitType: string[] = [
+    t("recruit.recruitType.nonprofit"), 
+    t("recruit.recruitType.company"), 
+    t("recruit.recruitType.other"), 
+    t("recruit.recruitType.government")
+  ];
+
   const steps: ReactNode[] = [
-    <FirstStepForm key={0} />,
+    <FirstStepForm key={0} recruitType={recruitType} />,
     <SecondStepForm key={0} />
   ];
 

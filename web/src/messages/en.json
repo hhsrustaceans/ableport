@@ -139,6 +139,12 @@
       "next": "Next",
       "submit": "Submit form"
     },
-    "search": "Search recruit"
+    "search": "Search recruit",
+    "recruitType": {
+      "nonprofit": "Nonprofit",
+      "company": "Company",
+      "other": "Other",
+      "government": "Government"
+    }
   }
 }

@@ -139,6 +139,12 @@
       "next": "Volgende",
       "submit": "Verstuur formulier"
     },
-    "search": "Zoek bedrijf"
+    "search": "Zoek bedrijf",
+    "recruitType": {
+      "nonprofit": "Non-profit",
+      "company": "Bedrijf",
+      "other": "Anders",
+      "government": "Overheid"
+    }
   }
 }
