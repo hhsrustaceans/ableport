@@ -3,10 +3,10 @@ import { ChangeEvent } from "react";
 
 export function FirstStepForm({ 
   recruitType, 
-  recruitChange 
+  recruitChange, 
 } : { 
   recruitType: string[], 
-  recruitChange: (event: ChangeEvent<HTMLInputElement>) => void
+  recruitChange: (event: ChangeEvent<HTMLInputElement>) => void 
 }) {
   const t = useTranslations();
   const types: string[] = [t("recruit.organisation.type")];

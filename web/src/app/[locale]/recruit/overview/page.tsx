@@ -10,16 +10,30 @@ import { useState } from "react";
 export default function RecruitPage() {
   const t = useTranslations();
   const [search, setSearch] = useState("");
+  const [counter, setCounter] = useState(0);
+  const count = (): void => setCounter(counter + 1);
+
+  const [change, setChange] = useState<Organisation>({
+    id: counter,
+    type: "",
+    name: "",
+    description: "",
+    logo: "",
+    website: "",
+    phoneNumber: "",
+  });
+
+  const [showContent, setShowContent] = useState(false);
 
   const organisation: Organisation[] = [
     {
-      id: 1,
-      type: "Test",
-      name: "test",
-      description: "test",
-      logo: "test",
-      website: "test",
-      phoneNumber: "test"
+      id: change.id,
+      type: change.type,
+      name: change.name,
+      description: change.description,
+      logo: change.logo,
+      website: change.website,
+      phoneNumber: change.phoneNumber
     } satisfies Organisation,
   ];
 
@@ -44,9 +58,9 @@ export default function RecruitPage() {
         </article>
         <article className="inline-block gap-0 sm:flex sm:gap-5 mb-0">
           <RecruitFilter setSearch={setSearch} />
-          <ButtonCreate />
+          <ButtonCreate setChange={setChange} change={change} setShowContent={setShowContent} />
         </article>
-        <DisplayOrganisation organisation={organisation} recruit={recruit} search={search} />
+        <DisplayOrganisation organisation={organisation} recruit={recruit} search={search} count={count} showContent={showContent} />
       </article>
     </section>
   );

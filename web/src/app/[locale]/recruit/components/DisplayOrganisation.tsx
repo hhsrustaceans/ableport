@@ -4,15 +4,19 @@ import { IconOption } from "./IconOption";
 export function DisplayOrganisation({ 
   organisation, 
   recruit, 
-  search
+  search, 
+  count, 
+  showContent
 } : {
   organisation: Organisation[], 
   recruit: string[], 
-  search: string
+  search: string, 
+  count: () => void, 
+  showContent: boolean
 }) {
   const items: string[] = ["id", "type", "name", "description", "logo", "website", "phoneNumber"];
 
-  return Array.from({ length: 3 })
+  return Array.from({ length: 1 })
     .map((): Organisation[] => structuredClone(organisation))
     .map((org: Organisation[]) => (
       <>
@@ -20,7 +24,7 @@ export function DisplayOrganisation({
           items.some((item: string) => organisations[item].toString().includes(search))
         ))
         .map((organisations: Organisation, result: number) => (
-          <section 
+          showContent && <section 
             className="shadow-md rounded-2xl mb-3 grid grid-cols-1 px-4 py-2 bg-gray-200 dark:bg-gray-800 focus:outline 
           focus:outline-gray-400 focus:outline-4"  
             key={result}

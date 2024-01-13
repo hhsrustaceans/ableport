@@ -2,10 +2,19 @@
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { Modal } from "./Modal";
+import { Organisation } from "../../types";
 
-export function ButtonCreate() {
+export function ButtonCreate({ 
+  setChange, 
+  change, 
+  setShowContent
+} : { 
+  setChange: Dispatch<SetStateAction<Organisation>>, 
+  change: Organisation, 
+  setShowContent: Dispatch<SetStateAction<boolean>>
+}) {
   const t = useTranslations();
   const [modal, setModal] = useState(false);
 
@@ -21,7 +30,7 @@ export function ButtonCreate() {
         onClick={toggle}>
         {t("recruit.create")}
       </Link>
-      {modal && <Modal toggle={toggle} open={modal} />}
+      {modal && <Modal toggle={toggle} open={modal} setChange={setChange} change={change} setShowContent={setShowContent} />}
     </>
   );
 }

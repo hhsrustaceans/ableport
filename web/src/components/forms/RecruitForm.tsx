@@ -1,22 +1,21 @@
 import { useTranslations } from "next-intl";
-import { ReactNode, useState, FormEvent, ChangeEvent } from "react";
+import { ReactNode, useState, FormEvent, ChangeEvent, Dispatch, SetStateAction } from "react";
 import { FirstStepForm } from "./FirstStepForm";
 import { SecondStepForm } from "./SecondStepForm";
 import { Organisation } from "@/app/[locale]/types";
 import { useRouter } from "next/navigation";
 
-export function RecruitForm() {
+export function RecruitForm({ 
+  setChange, 
+  change, 
+  setShowContent
+}: { 
+  setChange: Dispatch<SetStateAction<Organisation>>, 
+  change: Organisation, 
+  setShowContent: Dispatch<SetStateAction<boolean>>
+}) {
   const t = useTranslations();
   const [step, setStep] = useState(0);
-
-  const [change, setChange] = useState<Organisation>({
-    type: "",
-    name: "",
-    description: "",
-    logo: "",
-    website: "",
-    phoneNumber: "",
-  });
 
   const recruitType: string[] = [
     t("recruit.recruitType.nonprofit"), 
@@ -54,6 +53,7 @@ export function RecruitForm() {
 
   const recruitSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault();
+    setShowContent(true);
     console.log(change);
     alert("Recruit information has successfully been submitted!");
     router.push("./", change);

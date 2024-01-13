@@ -1,8 +1,22 @@
 import { RecruitForm } from "@/components/forms/RecruitForm";
 import { useTranslations } from "next-intl";
+import { Dispatch, SetStateAction } from "react";
 import IconClose from "~icons/mdi/close";
+import { Organisation } from "../../types";
 
-export function Modal({ toggle, open }: { toggle: () => void, open: boolean }) {
+export function Modal({ 
+  toggle, 
+  open, 
+  setChange, 
+  change, 
+  setShowContent
+}: { 
+  toggle: () => void, 
+  open: boolean, 
+  setChange: Dispatch<SetStateAction<Organisation>>, 
+  change: Organisation, 
+  setShowContent: Dispatch<SetStateAction<boolean>>
+}) {
   const t = useTranslations();
 
   return (
@@ -26,7 +40,7 @@ export function Modal({ toggle, open }: { toggle: () => void, open: boolean }) {
             </div>
           </article>
           <article className="p-6 pt-0 grid grid-cols-1">
-            <RecruitForm />
+            <RecruitForm setChange={setChange} change={change} setShowContent={setShowContent} />
           </article>
         </section>
       </dialog>
