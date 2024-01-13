@@ -129,7 +129,7 @@
       "description": "description",
       "logo": "logo",
       "website": "website",
-      "phoneNumber": "phonenumber"
+      "phonenumber": "phonenumber"
     },
     "option": "options",
     "create": "Create a new organisation",

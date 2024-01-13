@@ -20,7 +20,7 @@ export default function RecruitPage() {
     description: "",
     logo: "",
     website: "",
-    phoneNumber: "",
+    phonenumber: "",
   });
 
   const [showContent, setShowContent] = useState(false);
@@ -33,7 +33,7 @@ export default function RecruitPage() {
       description: change.description,
       logo: change.logo,
       website: change.website,
-      phoneNumber: change.phoneNumber
+      phonenumber: change.phonenumber
     } satisfies Organisation,
   ];
 
@@ -44,7 +44,7 @@ export default function RecruitPage() {
     t("recruit.organisation.description"),
     t("recruit.organisation.logo"),
     t("recruit.organisation.website"),
-    t("recruit.organisation.phoneNumber"),
+    t("recruit.organisation.phonenumber"),
     t("recruit.option")
   ];
 

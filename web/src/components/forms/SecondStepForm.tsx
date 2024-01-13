@@ -7,7 +7,7 @@ export function SecondStepForm({ recruitChange } : { recruitChange: (event: Chan
   const attrs: string[] = [
     t("recruit.organisation.logo"),
     t("recruit.organisation.website"),
-    t("recruit.organisation.phoneNumber"),
+    t("recruit.organisation.phonenumber"),
   ];
   
   return (

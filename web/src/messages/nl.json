@@ -129,7 +129,7 @@
       "description": "beschrijving",
       "logo": "logo",
       "website": "website",
-      "phoneNumber": "telefoonnummer"
+      "phonenumber": "telefoonnummer"
     },
     "option": "opties",
     "create": "Maak een nieuwe organisatie aan",

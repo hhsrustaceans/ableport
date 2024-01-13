@@ -14,7 +14,7 @@ export function DisplayOrganisation({
   count: () => void, 
   showContent: boolean
 }) {
-  const items: string[] = ["id", "type", "name", "description", "logo", "website", "phoneNumber"];
+  const items: string[] = ["id", "type", "name", "description", "logo", "website", "phonenumber"];
 
   return Array.from({ length: 1 })
     .map((): Organisation[] => structuredClone(organisation))
