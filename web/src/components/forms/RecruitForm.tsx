@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { FirstStepForm } from "./FirstStepForm";
 import { SecondStepForm } from "./SecondStepForm";
 
@@ -7,18 +7,19 @@ export function RecruitForm() {
   const t = useTranslations();
   const [step, setStep] = useState(0);
 
-  const steps: React.ReactNode[] = [
+  const steps: ReactNode[] = [
     <FirstStepForm key={0} />,
     <SecondStepForm key={0} />
   ];
 
-  const BackButton = ({ back }: { back: string }): JSX.Element => ( 
-    step > 0 ? <button onClick={PreviousStep} className="w-full action action-primary my-2">{back}</button> : <></>
+  const BackButton = (): JSX.Element => ( 
+    step > 0 ? <button onClick={PreviousStep} className="w-full action action-primary my-2">{t("recruit.selection.back")}</button> : 
+    <></>
   );
   
-  const NextButton = ({ next, submit }: { next: string, submit: string }): JSX.Element => (
+  const NextButton = (): JSX.Element => (
     <button onClick={NextStep} className="w-full action action-primary my-2">
-      {step == steps.length - 1 ? submit : next}
+      {step == steps.length - 1 ? t("recruit.selection.submit") : t("recruit.selection.next")}
     </button>
   );
 
@@ -32,10 +33,10 @@ export function RecruitForm() {
         transitionDuration: "0.5s", position: "fixed", top: 0, left: 0 }}>
       </progress>
       {steps[step]}
-      <div className="flex gap-5">
-        <BackButton back={t("recruit.selection.back")} />
-        <NextButton next={t("recruit.selection.next")} submit={t("recruit.selection.submit")} />
-      </div>
+      <article className="flex gap-5">
+        <BackButton />
+        <NextButton />
+      </article>
     </form>
   );
 }

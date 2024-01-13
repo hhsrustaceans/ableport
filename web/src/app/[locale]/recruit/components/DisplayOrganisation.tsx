@@ -20,8 +20,8 @@ export function DisplayOrganisation({
           items.some((item: string) => organisations[item].toString().includes(search))
         ))
         .map((organisations: Organisation, result: number) => (
-          <article className="shadow-md rounded-2xl mb-3 grid grid-cols-1 px-3 py-2 bg-gray-200 dark:bg-gray-800" key={result}>
-            <div className="recruit-view">
+          <section className="shadow-md rounded-2xl mb-3 grid grid-cols-1 px-3 py-2 bg-gray-200 dark:bg-gray-800" key={result}>
+            <article className="recruit-view">
               <div>
                 {Object.values(recruit).map((recruit: string, result: number) => (
                   <p key={result} className="text-left">{recruit.concat(":")}</p>
@@ -33,8 +33,8 @@ export function DisplayOrganisation({
                 ))}
                 <>{recruit.length - 1 == result ? null : <IconOption />}</>
               </div>
-            </div>
-          </article>
+            </article>
+          </section>
         ))}
       </>
     ));
