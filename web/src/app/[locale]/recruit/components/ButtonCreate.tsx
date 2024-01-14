@@ -9,11 +9,15 @@ import { Organisation } from "../../types";
 export function ButtonCreate({ 
   setChange, 
   change, 
-  setShowContent
+  setShowContent, 
+  setCounter, 
+  counter
 } : { 
   setChange: Dispatch<SetStateAction<Organisation>>, 
   change: Organisation, 
-  setShowContent: Dispatch<SetStateAction<boolean>>
+  setShowContent: Dispatch<SetStateAction<boolean>>, 
+  setCounter: Dispatch<SetStateAction<number>>, 
+  counter: number
 }) {
   const t = useTranslations();
   const [modal, setModal] = useState(false);
@@ -30,7 +34,9 @@ export function ButtonCreate({
         onClick={toggle}>
         {t("recruit.create")}
       </Link>
-      {modal && <Modal toggle={toggle} open={modal} setChange={setChange} change={change} setShowContent={setShowContent} />}
+      {modal && <Modal toggle={toggle} open={modal} setChange={setChange} change={change} setShowContent={setShowContent} 
+        setCounter={setCounter} counter={counter} />
+      }
     </>
   );
 }

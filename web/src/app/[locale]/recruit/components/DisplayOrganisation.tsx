@@ -5,13 +5,11 @@ export function DisplayOrganisation({
   organisation, 
   recruit, 
   search, 
-  count, 
   showContent
 } : {
   organisation: Organisation[], 
   recruit: string[], 
   search: string, 
-  count: () => void, 
   showContent: boolean
 }) {
   const items: string[] = ["id", "type", "name", "description", "logo", "website", "phonenumber"];

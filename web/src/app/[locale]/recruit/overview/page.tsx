@@ -11,10 +11,9 @@ export default function RecruitPage() {
   const t = useTranslations();
   const [search, setSearch] = useState("");
   const [counter, setCounter] = useState(0);
-  const count = (): void => setCounter(counter + 1);
 
   const [change, setChange] = useState<Organisation>({
-    id: counter,
+    id: counter + 1,
     type: "",
     name: "",
     description: "",
@@ -34,6 +33,24 @@ export default function RecruitPage() {
       logo: change.logo,
       website: change.website,
       phonenumber: change.phonenumber
+    } satisfies Organisation,
+    {
+      id: counter + 1,
+      type: "Test",
+      name: "test",
+      description: "test",
+      logo: "test",
+      website: "test",
+      phonenumber: "31612345678"
+    } satisfies Organisation,
+    {
+      id: counter + 2,
+      type: "More Test",
+      name: "more test",
+      description: "more test",
+      logo: "more test",
+      website: "more test",
+      phonenumber: "31687654321"
     } satisfies Organisation,
   ];
 
@@ -58,9 +75,11 @@ export default function RecruitPage() {
         </article>
         <article className="inline-block gap-0 sm:flex sm:gap-5 mb-0">
           <RecruitFilter setSearch={setSearch} />
-          <ButtonCreate setChange={setChange} change={change} setShowContent={setShowContent} />
+          <ButtonCreate setChange={setChange} change={change} setShowContent={setShowContent} setCounter={setCounter} 
+            counter={counter} 
+          />
         </article>
-        <DisplayOrganisation organisation={organisation} recruit={recruit} search={search} count={count} showContent={showContent} />
+        <DisplayOrganisation organisation={organisation} recruit={recruit} search={search} showContent={showContent} />
       </article>
     </section>
   );
