@@ -33,7 +33,7 @@ export function DisplayOrganisation({
           items.some((item: string) => organisations[item].toString().includes(search))
         ))
         .map((organisations: Organisation, result: number) => (
-           <section 
+          (organisations.id != 3 || showContent) && <section 
             className="shadow-md rounded-2xl mb-3 grid grid-cols-1 px-7 py-5 bg-gray-200 dark:bg-gray-800 focus:outline 
           focus:outline-gray-400 focus:outline-4"  
             key={result}
