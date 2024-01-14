@@ -8,11 +8,13 @@ import { useRouter } from "next/navigation";
 export function RecruitForm({ 
   setChange, 
   change, 
-  setShowContent,
+  setShowContent, 
+  toggle
 }: { 
   setChange: Dispatch<SetStateAction<Organisation>>, 
   change: Organisation, 
-  setShowContent: Dispatch<SetStateAction<boolean>>,
+  setShowContent: Dispatch<SetStateAction<boolean>>, 
+  toggle: () => void,
 }) {
   const t = useTranslations();
   const [step, setStep] = useState(0);
@@ -56,6 +58,7 @@ export function RecruitForm({
     setShowContent(true);
     alert("Recruit information has successfully been submitted!");
     router.push("./", change);
+    toggle();
   };
 
   return (

@@ -40,7 +40,7 @@ export function Modal({
             </div>
           </article>
           <article className="p-6 pt-0 grid grid-cols-1">
-            <RecruitForm setChange={setChange} change={change} setShowContent={setShowContent} />
+            <RecruitForm setChange={setChange} change={change} setShowContent={setShowContent} toggle={toggle} />
           </article>
         </section>
       </dialog>
