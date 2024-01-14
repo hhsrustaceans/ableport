@@ -1,22 +1,13 @@
-"use client";
-
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { Dispatch, SetStateAction, useState } from "react";
+import { useContext, useState } from "react";
 import { Modal } from "./Modal";
-import { Organisation } from "../../types";
+import { Context } from "./Context";
 
-export function ButtonCreate({ 
-  setChange, 
-  change, 
-  setShowContent, 
-} : { 
-  setChange: Dispatch<SetStateAction<Organisation>>, 
-  change: Organisation, 
-  setShowContent: Dispatch<SetStateAction<boolean>>, 
-}) {
+export function ButtonCreate() {
   const t = useTranslations();
   const [modal, setModal] = useState(false);
+  const {setChange, change, setShowContent} = useContext(Context);
 
   const toggle = (): void => {
     setModal(!modal);
@@ -30,7 +21,11 @@ export function ButtonCreate({
         onClick={toggle}>
         {t("recruit.create")}
       </Link>
-      {modal && <Modal toggle={toggle} open={modal} setChange={setChange} change={change} setShowContent={setShowContent} />}
+      {modal && 
+        <Context.Provider value={{setChange, change, setShowContent, toggle}}>
+          <Modal open={modal} />
+        </Context.Provider>
+      }
     </>
   );
 }

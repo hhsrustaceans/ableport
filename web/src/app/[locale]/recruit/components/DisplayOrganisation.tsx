@@ -1,17 +1,12 @@
 import { useTranslations } from "next-intl";
 import { Organisation } from "../../types";
 import { IconOption } from "./IconOption";
+import { useContext } from "react";
+import { Context } from "./Context";
 
-export function DisplayOrganisation({ 
-  organisation, 
-  search, 
-  showContent
-} : {
-  organisation: Organisation[], 
-  search: string, 
-  showContent: boolean
-}) {
+export function DisplayOrganisation() {
   const t = useTranslations();
+  const {organisation, search, showContent} = useContext(Context);
   const items: string[] = ["id", "type", "name", "description", "logo", "website", "phonenumber"];
 
   let recruit: string[] = [

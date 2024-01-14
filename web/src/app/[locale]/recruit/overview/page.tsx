@@ -6,10 +6,12 @@ import { DisplayOrganisation } from "../components/DisplayOrganisation";
 import { ButtonCreate } from "../components/ButtonCreate";
 import { RecruitFilter } from "../components/RecruitFilter";
 import { useState } from "react";
+import { Context } from "../components/Context";
 
 export default function RecruitPage() {
   const t = useTranslations();
   const [search, setSearch] = useState("");
+  const [showContent, setShowContent] = useState(false);
 
   const [change, setChange] = useState<Organisation>({
     id: 3,
@@ -20,8 +22,6 @@ export default function RecruitPage() {
     website: "",
     phonenumber: "",
   });
-
-  const [showContent, setShowContent] = useState(false);
 
   const organisation: Organisation[] = [
     {
@@ -63,9 +63,13 @@ export default function RecruitPage() {
         </article>
         <article className="inline-block gap-0 sm:flex sm:gap-5 mb-2">
           <RecruitFilter setSearch={setSearch} />
-          <ButtonCreate setChange={setChange} change={change} setShowContent={setShowContent} />
+          <Context.Provider value={{setChange, change, setShowContent}}>
+            <ButtonCreate />
+          </Context.Provider>
         </article>
-        <DisplayOrganisation organisation={organisation} search={search} showContent={showContent} />
+        <Context.Provider value={{organisation, search, showContent}}>
+          <DisplayOrganisation />
+        </Context.Provider>
       </article>
     </section>
   );

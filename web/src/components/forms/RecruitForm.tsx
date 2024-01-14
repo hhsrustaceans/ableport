@@ -1,23 +1,17 @@
 import { useTranslations } from "next-intl";
-import { ReactNode, useState, FormEvent, ChangeEvent, Dispatch, SetStateAction } from "react";
+import { ReactNode, useState, FormEvent, ChangeEvent, useContext } from "react";
 import { FirstStepForm } from "./FirstStepForm";
 import { SecondStepForm } from "./SecondStepForm";
-import { Organisation } from "@/app/[locale]/types";
-import { useRouter } from "next/navigation";
+import { Context } from "@/app/[locale]/recruit/components/Context";
 
-export function RecruitForm({ 
-  setChange, 
-  change, 
-  setShowContent, 
-  toggle
-}: { 
-  setChange: Dispatch<SetStateAction<Organisation>>, 
-  change: Organisation, 
-  setShowContent: Dispatch<SetStateAction<boolean>>, 
-  toggle: () => void,
-}) {
+export function RecruitForm() {
   const t = useTranslations();
   const [step, setStep] = useState(0);
+  const {setChange, change, setShowContent, toggle} = useContext(Context);
+
+  let PreviousStep = (): void | JSX.Element => step > 0 ? setStep(step - 1) : <></>;
+  let NextStep = (): void | JSX.Element => step < steps.length - 1 ? setStep(step + 1) : <></>;
+  let getProgress = (): string => step / (steps.length - 1) * 100 + "%";
 
   const recruitType: string[] = [
     t("recruit.recruitType.nonprofit"), 
@@ -47,17 +41,10 @@ export function RecruitForm({
     </button>
   );
 
-  let PreviousStep = (): void | JSX.Element => step > 0 ? setStep(step - 1) : <></>;
-  let NextStep = (): void | JSX.Element => step < steps.length - 1 ? setStep(step + 1) : <></>;
-  let getProgress = (): string => step / (steps.length - 1) * 100 + "%";
-  
-  const router = useRouter();
-
   const recruitSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault();
     setShowContent(true);
     alert("Recruit information has successfully been submitted!");
-    router.push("./", change);
     toggle();
   };
 
