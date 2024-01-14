@@ -9,14 +9,10 @@ export function RecruitForm({
   setChange, 
   change, 
   setShowContent,
-  setCounter, 
-  counter
 }: { 
   setChange: Dispatch<SetStateAction<Organisation>>, 
   change: Organisation, 
   setShowContent: Dispatch<SetStateAction<boolean>>,
-  setCounter: Dispatch<SetStateAction<number>>,
-  counter: number
 }) {
   const t = useTranslations();
   const [step, setStep] = useState(0);
@@ -57,10 +53,7 @@ export function RecruitForm({
 
   const recruitSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault();
-    setCounter(counter + 1);
     setShowContent(true);
-
-    console.log(change);
     alert("Recruit information has successfully been submitted!");
     router.push("./", change);
   };

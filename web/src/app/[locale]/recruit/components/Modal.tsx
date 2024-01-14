@@ -10,16 +10,12 @@ export function Modal({
   setChange, 
   change, 
   setShowContent, 
-  setCounter, 
-  counter
 }: { 
   toggle: () => void, 
   open: boolean, 
   setChange: Dispatch<SetStateAction<Organisation>>, 
   change: Organisation, 
   setShowContent: Dispatch<SetStateAction<boolean>>,
-  setCounter: Dispatch<SetStateAction<number>>,
-  counter: number
 }) {
   const t = useTranslations();
 
@@ -44,9 +40,7 @@ export function Modal({
             </div>
           </article>
           <article className="p-6 pt-0 grid grid-cols-1">
-            <RecruitForm setChange={setChange} change={change} setShowContent={setShowContent} setCounter={setCounter} 
-              counter={counter}
-            />
+            <RecruitForm setChange={setChange} change={change} setShowContent={setShowContent} />
           </article>
         </section>
       </dialog>

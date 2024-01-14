@@ -9,7 +9,8 @@ export default function Page() {
   return (
     <section className="flex justify-center">
       <article className="w-2/3 text-center">
-        <h1 className="text-2xl mt-10 mb-5">{t("common.portal.recruit", { product: productName })}</h1>
+        <h1 className="text-2xl mt-10">{t("common.portal.recruit", { product: productName })}</h1>
+        <p className="mb-5">{t("recruit.start")}</p>
         <Link href={"./overview"} className="action action-primary inline-block">
           <IconLabel caption={t("recruit.button")} />
         </Link>

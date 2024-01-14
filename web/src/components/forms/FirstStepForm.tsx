@@ -9,16 +9,12 @@ export function FirstStepForm({
   recruitChange: (event: ChangeEvent<HTMLInputElement>) => void 
 }) {
   const t = useTranslations();
-  const types: string[] = [t("recruit.organisation.type")];
-
-  const attrs: string[] = [
-    t("recruit.organisation.name"),
-    t("recruit.organisation.description"),
-  ];
+  const listType: string[] = [t("recruit.organisation.type")];
+  const attrs: string[] = [t("recruit.organisation.name"), t("recruit.organisation.description")];
   
   return (
     <>
-      {Object.values(types).map((type: string, result: number) => (
+      {Object.values(listType).map((type: string, result: number) => (
         <>
           <label htmlFor={type} className="recruit-label" key={result}>{type}</label>
           <input autoFocus={true} name={type} required={true} placeholder={t("recruit.placeholder").concat(" ").concat(type)} 

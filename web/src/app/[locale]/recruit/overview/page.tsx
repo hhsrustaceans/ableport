@@ -10,10 +10,9 @@ import { useState } from "react";
 export default function RecruitPage() {
   const t = useTranslations();
   const [search, setSearch] = useState("");
-  const [counter, setCounter] = useState(0);
 
   const [change, setChange] = useState<Organisation>({
-    id: counter + 1,
+    id: 3,
     type: "",
     name: "",
     description: "",
@@ -35,7 +34,7 @@ export default function RecruitPage() {
       phonenumber: change.phonenumber
     } satisfies Organisation,
     {
-      id: counter + 1,
+      id: 2,
       type: "Test",
       name: "test",
       description: "test",
@@ -44,7 +43,7 @@ export default function RecruitPage() {
       phonenumber: "31612345678"
     } satisfies Organisation,
     {
-      id: counter + 2,
+      id: 1,
       type: "More Test",
       name: "more test",
       description: "more test",
@@ -52,17 +51,6 @@ export default function RecruitPage() {
       website: "more test",
       phonenumber: "31687654321"
     } satisfies Organisation,
-  ];
-
-  let recruit: string[] = [
-    t("recruit.organisation.id"),
-    t("recruit.organisation.type"),
-    t("recruit.organisation.name"),
-    t("recruit.organisation.description"),
-    t("recruit.organisation.logo"),
-    t("recruit.organisation.website"),
-    t("recruit.organisation.phonenumber"),
-    t("recruit.option")
   ];
 
   return (
@@ -73,13 +61,11 @@ export default function RecruitPage() {
             {t("recruit.title")}
           </h1>
         </article>
-        <article className="inline-block gap-0 sm:flex sm:gap-5 mb-0">
+        <article className="inline-block gap-0 sm:flex sm:gap-5 mb-2">
           <RecruitFilter setSearch={setSearch} />
-          <ButtonCreate setChange={setChange} change={change} setShowContent={setShowContent} setCounter={setCounter} 
-            counter={counter} 
-          />
+          <ButtonCreate setChange={setChange} change={change} setShowContent={setShowContent} />
         </article>
-        <DisplayOrganisation organisation={organisation} recruit={recruit} search={search} showContent={showContent} />
+        <DisplayOrganisation organisation={organisation} search={search} showContent={showContent} />
       </article>
     </section>
   );

@@ -145,6 +145,7 @@
       "company": "Company",
       "other": "Other",
       "government": "Government"
-    }
+    },
+    "start": "Click: Go to recruit portal to start."
   }
 }
