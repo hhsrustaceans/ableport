@@ -62,8 +62,8 @@ export default function RecruitPage() {
           </h1>
         </article>
         <article className="inline-block gap-0 sm:flex sm:gap-5 mb-2">
-          <RecruitFilter setSearch={setSearch} />
-          <Context.Provider value={{setChange, change, setShowContent}}>
+          <Context.Provider value={{setChange, change, setShowContent, setSearch}}>
+            <RecruitFilter />
             <ButtonCreate />
           </Context.Provider>
         </article>

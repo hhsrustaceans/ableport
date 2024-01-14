@@ -1,12 +1,9 @@
 import { RecruitForm } from "@/components/forms/RecruitForm";
 import { useTranslations } from "next-intl";
-import { useContext } from "react";
 import IconClose from "~icons/mdi/close";
-import { Context } from "./Context";
 
-export function Modal({ open }: { open: boolean }) {
+export function Modal({ toggle, open } : { toggle: () => void, open: boolean }) {
   const t = useTranslations();
-  const {setChange, change, setShowContent, toggle} = useContext(Context);
 
   return (
     <>
@@ -29,9 +26,7 @@ export function Modal({ open }: { open: boolean }) {
             </div>
           </article>
           <article className="p-6 pt-0 grid grid-cols-1">
-            <Context.Provider value={{setChange, change, setShowContent, toggle}}>
-              <RecruitForm />
-            </Context.Provider>
+            <RecruitForm toggle={toggle} />
           </article>
         </section>
       </dialog>

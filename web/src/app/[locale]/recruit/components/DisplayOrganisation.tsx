@@ -10,14 +10,10 @@ export function DisplayOrganisation() {
   const items: string[] = ["id", "type", "name", "description", "logo", "website", "phonenumber"];
 
   let recruit: string[] = [
-    t("recruit.organisation.id"),
-    t("recruit.organisation.type"),
-    t("recruit.organisation.name"),
-    t("recruit.organisation.description"),
-    t("recruit.organisation.logo"),
-    t("recruit.organisation.website"),
-    t("recruit.organisation.phonenumber"),
-    t("recruit.option")
+    t("recruit.organisation.id"), t("recruit.organisation.type"),
+    t("recruit.organisation.name"), t("recruit.organisation.description"),
+    t("recruit.organisation.logo"), t("recruit.organisation.website"),
+    t("recruit.organisation.phonenumber"), t("recruit.option")
   ];
 
   return Array.from({ length: 1 })
@@ -27,13 +23,9 @@ export function DisplayOrganisation() {
         {org.filter((organisations: any) => (
           items.some((item: string) => organisations[item].toString().includes(search))
         ))
-        .map((organisations: Organisation, result: number) => (
-          (organisations.id != 3 || showContent) && <section 
-            className="shadow-md rounded-2xl mb-3 grid grid-cols-1 px-7 py-5 bg-gray-200 dark:bg-gray-800 focus:outline 
-          focus:outline-gray-400 focus:outline-4"  
-            key={result}
-            tabIndex={0}
-          >
+        .map((organisations: Organisation, result: number) => (organisations.id != 3 || showContent) && 
+          <section className="shadow-md rounded-2xl mb-3 grid grid-cols-1 px-7 py-5 bg-gray-200 dark:bg-gray-800 focus:outline 
+          focus:outline-gray-400 focus:outline-4" key={result} tabIndex={0}>
             <article className="recruit-view">
               <div>
                 {Object.values(recruit).slice(1).map((recruit: string, result: number) => (
@@ -48,11 +40,11 @@ export function DisplayOrganisation() {
                     {orgs}
                   </p>
                 ))}
-                <>{recruit.length - 1 == result ? null : <IconOption />}</>
+                {recruit.length - 1 == result ? null : <IconOption />}
               </div>
             </article>
           </section>
-        ))}
+        )}
       </>
     ));
 }

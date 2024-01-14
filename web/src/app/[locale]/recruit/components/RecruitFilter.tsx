@@ -1,10 +1,11 @@
 import { useTranslations } from "next-intl";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useContext } from "react";
 import Search from "~icons/mdi/search";
-import { Dispatch, SetStateAction } from "react";
+import { Context } from "./Context";
 
-export function RecruitFilter({ setSearch } : { setSearch: Dispatch<SetStateAction<string>> }) {
+export function RecruitFilter() {
   const t = useTranslations();
+  const {setSearch} = useContext(Context);
 
   return (
     <>

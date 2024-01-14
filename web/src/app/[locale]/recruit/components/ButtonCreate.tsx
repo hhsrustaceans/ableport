@@ -1,13 +1,11 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Modal } from "./Modal";
-import { Context } from "./Context";
 
 export function ButtonCreate() {
   const t = useTranslations();
   const [modal, setModal] = useState(false);
-  const {setChange, change, setShowContent} = useContext(Context);
 
   const toggle = (): void => {
     setModal(!modal);
@@ -21,11 +19,7 @@ export function ButtonCreate() {
         onClick={toggle}>
         {t("recruit.create")}
       </Link>
-      {modal && 
-        <Context.Provider value={{setChange, change, setShowContent, toggle}}>
-          <Modal open={modal} />
-        </Context.Provider>
-      }
+      {modal && <Modal toggle={toggle} open={modal} />}
     </>
   );
 }
