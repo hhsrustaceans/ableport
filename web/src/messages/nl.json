@@ -88,7 +88,8 @@
     "help": {
       "select_panel": "U kunt in de lijst hierboven een onderzoek kiezen. Nadat u een onderzoek heeft gekozen, wordt het onderzoek gestart. Daarna volgen verdere aanwijzingen."
     },
-    "search": "Zoek bedrijf"
+    "search": "Zoek onderzoek",
+    "discover": "Verken onderzoeken"
   },
   "admin": {
     "id": "id",

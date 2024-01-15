@@ -23,6 +23,9 @@ export default function Root() {
       </ul>
       <div className="mt-4">
         <HelpButton text={t("panel.help.select_panel")} />
+        <Link href="./discover" className="cta action action-primary inline-block mx-4">
+          {t("panel.discover")}
+        </Link>
       </div>
     </>
   );
