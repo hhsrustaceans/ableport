@@ -25,7 +25,7 @@ export default function Root() {
         {panels.map((panel, key) => (
           <li key={key}>
             <Link
-              href={`../panel/${panel.id}`}
+              href={`../view/${panel.id}`}
               className="block action action-li"
             >
               <PanelPreview panel={panel} />
