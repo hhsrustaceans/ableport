@@ -89,7 +89,8 @@
   "panel": {
     "welcome": {
       "message": "Hallo! Welkom op het testportaal voor ervaringsdeskundigen. Klik op {action} om een onderzoek te starten.",
-      "button": "Beginnen"
+      "button": "Beginnen",
+      "heading": "Welkom bij het testportaal!"
     },
     "view": {
       "signup": "Inschrijven",
@@ -98,7 +99,8 @@
     },
     "panels_avail": "Kies hieronder uit een van de beschikbare onderzoeken.",
     "help": {
-      "select_panel": "U kunt in de lijst hierboven een onderzoek kiezen. Nadat u een onderzoek heeft gekozen, wordt het onderzoek gestart. Daarna volgen verdere aanwijzingen."
+      "select_panel": "U kunt in de lijst hierboven een onderzoek kiezen. Nadat u een onderzoek heeft gekozen, wordt het onderzoek gestart. Daarna volgen verdere aanwijzingen.",
+      "heading": "Hoe werkt deze pagina?"
     },
     "search": "Zoek onderzoek",
     "discover": "Verken onderzoeken"

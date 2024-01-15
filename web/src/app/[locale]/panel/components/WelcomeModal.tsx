@@ -33,9 +33,10 @@ export default function Welcome() {
         isOpen={isWelcomeWelcomeShown}
         noClose
       >
-        <h1 className="cta">
+        <h1 className="text-lg sm:text-xl cta">{t("panel.welcome.heading")}</h1>
+        <p className="cta">
           {t("panel.welcome.message", { action: t("panel.welcome.button") })}
-        </h1>
+        </p>
         <button
           className="action action-primary inline-block"
           onClick={hideWelcome}

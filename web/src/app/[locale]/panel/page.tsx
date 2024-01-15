@@ -11,7 +11,7 @@ export default function Root() {
   return (
     <>
       <WelcomeModal />
-      <h1 className="cta">{t("panel.panels_avail")}</h1>
+      <h1 className="cta text-lg sm:text-xl">{t("panel.panels_avail")}</h1>
       <ul className="max-w-md m-auto space-y-2 overflow-y-auto max-h-48">
         {panels.map((panel, key) => (
           <li key={key}>

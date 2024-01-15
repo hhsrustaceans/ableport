@@ -27,7 +27,8 @@ export default function HelpButton({ text }: { text: string }) {
         isOpen={isHelpShown}
         onClose={() => showHelp(false)}
       >
-        {text}
+        <h1 className="cta text-lg sm:text-xl">{t("panel.help.heading")}</h1>
+        <p>{text}</p>
       </Modal>
     </>
   );
