@@ -8,7 +8,9 @@ import Modal from "@/components/Modal";
 
 export default function HelpButton({ text }: { text: string }) {
   const t = useTranslations();
-  const [isHelpShown, showHelp] = useState(false);
+  const [isHelpShown, showHelp] = useState(
+    localStorage.getItem("alwaysHelp") === "true"
+  );
 
   return (
     <>

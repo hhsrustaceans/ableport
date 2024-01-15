@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import PanelPreview from "./components/PanelPreview";
+import PanelPreview from "../components/PanelPreview";
 import HelpButton from "@/components/HelpButton";
 import { panels } from "@/lib/modules/panel";
 
@@ -13,7 +13,10 @@ export default function Root() {
       <ul className="max-w-md m-auto space-y-2 overflow-y-auto max-h-48">
         {panels.map((panel, key) => (
           <li key={key}>
-            <Link href={`view/${panel.id}`} className="block action action-li">
+            <Link
+              href={`../view/${panel.id}`}
+              className="block action action-li"
+            >
               <PanelPreview panel={panel} />
             </Link>
           </li>

@@ -52,12 +52,37 @@
       "submit": "Insturen",
       "next": "Volgende",
       "back": "Vorige"
+    },
+    "disabilities": {
+      "autism": "Autisme",
+      "blindness": "Blindheid",
+      "deaf": "Doof",
+      "colorblind": "Kleurenblindheid",
+      "lowVision": "Slechtziendheid",
+      "lowHearing": "Slechthorendheid",
+      "epilepsy": "Epilepsie",
+      "motor": "Motorische beperking",
+      "dyslexia": "Dyslexie"
+    },
+    "aid": {
+      "screenreader": "Screenreader",
+      "speechToText": "Spraak naar tekst",
+      "textToSpeech": "Tekst naar spraak",
+      "magnifier": "VergrootGlas",
+      "voice": "Stem beheer",
+      "braille": "Braille",
+      "none": "Geen"
     }
   },
   "panel": {
     "welcome": {
       "message": "Hallo! Welkom op het testportaal voor ervaringsdeskundigen. Klik op {action} om een onderzoek te starten.",
       "button": "Beginnen"
+    },
+    "view": {
+      "signup": "Inschrijven",
+      "title": "U gaat inschrijven voor {panel}.",
+      "signupSucess": "U staat ingeschreven bij {panel}."
     },
     "panels_avail": "Kies hieronder uit een van de beschikbare onderzoeken.",
     "help": {

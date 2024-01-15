@@ -52,12 +52,38 @@
       "submit": "Submit",
       "next": "Next",
       "back": "Back"
+    },
+    "disabilities": {
+      "autism": "Autism",
+      "blindness": "Blindness",
+      "deaf": "Deaf",
+      "motor": "Motor handicap",
+      "dyslexia": "Dyslexia"
+    },
+    "aid": {
+      "screenreader": "Screenreader",
+      "speechToText": "Speech to text",
+      "textToSpeech": "Text to speech",
+      "deaf": "Deaf",
+      "colorblind": "Colorblind",
+      "lowVision": "Low vision",
+      "lowHearing": "Low hearing",
+      "epilepsy": "Epilepsy",
+      "magnifier": "Magnifier",
+      "voice": "Voice control",
+      "braille": "Braille",
+      "none": "None"
     }
   },
   "panel": {
     "welcome": {
       "message": "Hi there! Welcome to the test portal for panel members. Click {action} to start a panel.",
       "button": "Start"
+    },
+    "view": {
+      "signup": "Sign up",
+      "title": "You are signing up for {panel}.",
+      "signupSucess": "You've signed up for {panel}."
     },
     "panels_avail": "Please choose one of the panels listed below.",
     "help": {
@@ -78,7 +104,7 @@
       "delete": "delete"
     },
     "dropdown": {
-      "items":{
+      "items": {
         "panelmembers": "Panel Members",
         "panels": "Panels",
         "organisations": "Organisations"

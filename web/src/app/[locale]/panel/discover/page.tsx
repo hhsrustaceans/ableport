@@ -1,27 +1,16 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { Panel } from "@/lib/types/models/panel";
 import PanelPreview from "../components/PanelPreview";
 import HelpButton from "@/components/HelpButton";
+import { panels } from "@/lib/modules/panel";
 
 export default function Root() {
   const t = useTranslations();
 
-  const panels: Panel[] = [
-    {
-      id: "test",
-      name: "Test",
-      description: "This is a test panel.",
-      websiteUrl: "https://example.com",
-      imageUrl: "test",
-      disabilities: [{ code: "AUT" }, { code: "BLI" }],
-    },
-  ];
-
   return (
     <>
       <h1 className="cta">{t("panel.panels_avail")}</h1>
-      <ul className="max-w-md m-auto space-y-2">
+      <ul className="max-w-md m-auto space-y-2 overflow-y-auto max-h-48">
         {panels.map((panel, key) => (
           <li key={key}>
             <Link
