@@ -5,7 +5,7 @@ export type Organisation = {
   description: string,
   logo?: string,
   website?: string,
-  phoneNumber?: string,
+  phonenumber?: string,
 };
 
 export type Panel = {

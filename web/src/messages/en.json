@@ -133,5 +133,34 @@
       },
       "option": "Select"
     }
+  },
+  "recruit": {
+    "button": "Go to recruit portal",
+    "title": "Recruit overview",
+    "organisation": {
+      "id": "id",
+      "type": "type",
+      "name": "name",
+      "description": "description",
+      "logo": "logo",
+      "website": "website",
+      "phonenumber": "phonenumber"
+    },
+    "option": "options",
+    "create": "Create a new organisation",
+    "placeholder": "Enter a",
+    "selection": {
+      "back": "Back",
+      "next": "Next",
+      "submit": "Submit form"
+    },
+    "search": "Search recruit",
+    "recruitType": {
+      "nonprofit": "Nonprofit",
+      "company": "Company",
+      "other": "Other",
+      "government": "Government"
+    },
+    "start": "Click: Go to recruit portal to start."
   }
 }

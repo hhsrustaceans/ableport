@@ -46,4 +46,24 @@
   .detail {
     @apply text-gray-600 dark:text-gray-400;
   }
+
+  .aside-items {
+    @apply p-5 hover:bg-green-500 duration-300 ease-in-out text-lg font-semibold outline-none;
+  }
+
+  .td-items {
+    @apply px-4 py-0 md:py-2 text-right md:text-center md:border-b-2 md:border-gray-300 md:dark:border-gray-400 my-2 md:my-0 w-full inline-block md:table-cell font-light md:font-normal;
+  }
+
+  .td-headings {
+    @apply md:hidden font-medium text-left;
+  }
+
+  .recruit-view {
+    @apply grid grid-cols-2 text-gray-800 dark:text-gray-200;
+  }
+
+  .recruit-label {
+    @apply font-semibold inline-block text-xs text-slate-700 dark:text-slate-400 p-1 text-left;
+  }
 }
