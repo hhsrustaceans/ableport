@@ -95,7 +95,8 @@
     "panels_avail": "Kies hieronder uit een van de beschikbare onderzoeken.",
     "help": {
       "select_panel": "U kunt in de lijst hierboven een onderzoek kiezen. Nadat u een onderzoek heeft gekozen, wordt het onderzoek gestart. Daarna volgen verdere aanwijzingen."
-    }
+    },
+    "search": "Zoek bedrijf"
   },
   "admin": {
     "id": "id",
