@@ -46,7 +46,11 @@
       "email": "Email",
       "password": "Password",
       "age": "Age",
-      "dob": "Date of Birth"
+      "dob": "Date of Birth",
+      "heading": "Login or Register",
+      "name": "Enter your name",
+      "credentials": "Enter your credentials",
+      "newAge": "Enter your age"
     },
     "settings": {
       "settings": "Settings",

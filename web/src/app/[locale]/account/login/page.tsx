@@ -2,7 +2,6 @@ import { useTranslations } from "next-intl";
 import Logo from "@/components/Logo"
 import LoginButton from "./components/LoginButton";
 import RegisterButton from "./components/RegisterButton";
-import LoginForm from "@/components/forms/LoginForm";
 
 export default function Root() {
   const t = useTranslations();
@@ -16,7 +15,10 @@ export default function Root() {
         {/* <Button text="Microsoft"/>
         <Button text="Google"/> */}
         {/* <LoginForm /> */}
-        <div className="flex-col p-3 w-full">
+        <article className="flex justify-center p-3">
+          <h1 className="text-xl sm:text-2xl">{t("common.account.heading")}</h1>
+        </article>
+        <div className="flex-col p-3 pt-0 w-full">
           <LoginButton />
           <RegisterButton />
         </div>

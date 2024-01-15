@@ -36,6 +36,9 @@ export default function LoginForm() {
     }
 
     return <form id="registerForm" className="flex flex-col p-2 w-full">
+        <article className="flex justify-center p-3">
+            <h2 className="text-xl sm:text-2xl">{t("common.account.credentials")}</h2>
+        </article>
         <label htmlFor="email" className="font-semibold inline-block text-xs text-slate-700 dark:text-slate-400 p-1 text-left">{t("common.account.email")}</label>
         <input autoFocus={true} name="email" required={true} placeholder={t("common.account.email")} type="text" className="action w-full text-left bg-neutral-100 dark:bg-neutral-900 m-1"></input>
         <p className="text-xs text-red-400">{}</p>

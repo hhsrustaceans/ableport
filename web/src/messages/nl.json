@@ -46,7 +46,11 @@
       "email": "Email",
       "password": "Wachtwoord",
       "age": "Leeftijd",
-      "dob": "Geboortedatum"
+      "dob": "Geboortedatum",
+      "heading": "Log in of Registreer",
+      "name": "Vul uw naam in",
+      "credentials": "Vul uw gegevens in",
+      "newAge": "Vul uw leeftijd in"
     },
     "settings": {
       "settings": "Settings",
