@@ -9,6 +9,12 @@ export default function Welcome() {
   const t = useTranslations();
   const [isWelcomeWelcomeShown, showWelcome] = useState(false);
 
+  useEffect(() => {
+    if (localStorage.getItem("userWelcomed") === "true") {
+      showWelcome(false);
+    }
+  }, []);
+
   function hideWelcome() {
     showWelcome(false);
     localStorage.setItem("usedWelcomed", "true");
