@@ -48,6 +48,14 @@
       "age": "Age",
       "dob": "Date of Birth"
     },
+    "settings": {
+      "settings": "Settings",
+      "update": "Update settings",
+      "help": "You can update your account info and other preferences here. Click {button} when you want to save your changes.",
+      "disabilities": "My disabilities",
+      "aids": "My aids",
+      "save": "Save settings"
+    },
     "form": {
       "submit": "Submit",
       "next": "Next",
