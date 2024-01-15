@@ -7,12 +7,14 @@ import {
 } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Navbar from "@/components/Navbar";
+import "../style.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations();
 
   return {
     title: t("common.portal.panel", { product: productName }),
+    description: t("common.meta.description", { product: productName }),
   };
 }
 

@@ -25,11 +25,13 @@
     @apply bg-blue-700 hover:bg-blue-500 text-white focus:outline-blue-300;
   }
 
-  .icon-highlight-fill { /* [&>*] is special Tailwind syntax to select all child elements */
+  .icon-highlight-fill {
+    /* [&>*] is special Tailwind syntax to select all child elements */
     @apply [&>*]:hover:fill-slate-500 [&>*]:dark:hover:fill-slate-400;
   }
 
-  .icon-highlight-stroke { /* [&>*] is special Tailwind syntax to select all child elements */
+  .icon-highlight-stroke {
+    /* [&>*] is special Tailwind syntax to select all child elements */
     @apply [&>*]:hover:stroke-slate-500 [&>*]:dark:hover:stroke-slate-400;
   }
 

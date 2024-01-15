@@ -11,9 +11,13 @@
         "en": "English"
       }
     },
+    "meta": {
+      "description": "{product} - Building the gateway between humans and software."
+    },
     "nav": {
       "logo": "{product} Logo",
       "home": "Home page",
+      "admin": "Admin Portal",
       "controls": {
         "settings_a11y": "Accessibility settings",
         "settings_lang": "Language settings"
@@ -25,14 +29,29 @@
     "portal": {
       "panel": "{product} for panel members",
       "admin": "{product} for administrators",
-      "recruit": "{product} for companies",
-      "research": "{product} for research"
+      "recruit": "{product} for organisations",
+      "research": "{product} for researchers"
     },
     "error": {
       "return": "Return",
       "subtext": "Our apologies for the inconvenience.",
       "unknown": "Something went wrong. Please try again later.",
       "not_found": "We weren't able to find this page."
+    },
+    "account": {
+      "login": "Log in",
+      "register": "Register",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "password": "Password",
+      "age": "Age",
+      "dob": "Date of Birth"
+    },
+    "form": {
+      "submit": "Submit",
+      "next": "Next",
+      "back": "Back"
     }
   },
   "panel": {
@@ -43,6 +62,76 @@
     "panels_avail": "Please choose one of the panels listed below.",
     "help": {
       "select_panel": "You may choose a panel from the list above. After you choose a panel, the panel will start. Further instructions will follow after."
+    }
+  },
+  "admin": {
+    "id": "id",
+    "overview": {
+      "title": "Overview",
+      "description": "For an overview, please select one of the items. You can choose the following from the list: Panel Members, Panels or Organisations.",
+      "create": {
+        "panel": "create new panel",
+        "panelmember": "Create new panel member",
+        "organisation": "Create new organisation"
+      },
+      "update": "update",
+      "delete": "delete"
+    },
+    "dropdown": {
+      "items":{
+        "panelmembers": "Panel Members",
+        "panels": "Panels",
+        "organisations": "Organisations"
+      }
+    },
+    "help": {
+      "select_item": "You may choose an item from the list to the left to get an overview."
+    },
+    "panel": {
+      "organisation": "organisation",
+      "title": "title",
+      "description": "description",
+      "content": "content",
+      "activePeriod": "activeperiod",
+      "location": "location",
+      "reward": "reward",
+      "studyType": "studytype"
+    },
+    "panelmember": {
+      "firstName": "firstname",
+      "lastName": "lastname",
+      "email": "email",
+      "phoneNumber": "phonenumber",
+      "dateOfBirth": "dateofbirth",
+      "avatarUrl": "avatarurl"
+    },
+    "organisation": {
+      "type": "type",
+      "name": "name",
+      "description": "description",
+      "logo": "logo",
+      "website": "website",
+      "phoneNumber": "phonenumber"
+    },
+    "search": {
+      "label": {
+        "panel": "Panel search",
+        "panelmember": "Panel member search",
+        "organisation": "Organisation search"
+      },
+      "placeholder": {
+        "panel": "Search panel",
+        "panelmember": "Search panel member",
+        "organisation": "Search organisation"
+      }
+    },
+    "filter": {
+      "label": {
+        "panel": "Panel filter",
+        "panelmember": "Panel member filter",
+        "organisation": "Organisation filter"
+      },
+      "option": "Select"
     }
   }
 }

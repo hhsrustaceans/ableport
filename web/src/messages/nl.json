@@ -11,9 +11,13 @@
         "en": "Engels"
       }
     },
+    "meta": {
+      "description": "{product} - Het bouwen van de verbinding tussen mens en software."
+    },
     "nav": {
       "logo": "Logo van {product}",
       "home": "Homepagina",
+      "admin": "Beheerdersportaal",
       "controls": {
         "settings_a11y": "Instellingen voor toegankelijkheid",
         "settings_lang": "Taalinstelling"
@@ -23,9 +27,9 @@
       "close": "Sluiten"
     },
     "portal": {
-      "panel": "{product} voor panelleden",
+      "panel": "{product} voor ervaringsdeskundigen",
       "admin": "{product} voor beheerders",
-      "recruit": "{product} voor bedrijven",
+      "recruit": "{product} voor organisaties",
       "research": "{product} voor onderzoekers"
     },
     "error": {
@@ -33,6 +37,21 @@
       "subtext": "Onze excuses voor het ongemak.",
       "unknown": "Er is iets misgegaan. Probeer het later opnieuw.",
       "not_found": "We konden deze pagina helaas niet vinden."
+    },
+    "account": {
+      "login": "Inloggen",
+      "register": "Registreren",
+      "first_name": "Voornaam",
+      "last_name": "Achternaam",
+      "email": "Email",
+      "password": "Wachtwoord",
+      "age": "Leeftijd",
+      "dob": "Geboortedatum"
+    },
+    "form": {
+      "submit": "Insturen",
+      "next": "Volgende",
+      "back": "Vorige"
     }
   },
   "panel": {
@@ -43,6 +62,76 @@
     "panels_avail": "Kies hieronder uit een van de beschikbare onderzoeken.",
     "help": {
       "select_panel": "U kunt in de lijst hierboven een onderzoek kiezen. Nadat u een onderzoek heeft gekozen, wordt het onderzoek gestart. Daarna volgen verdere aanwijzingen."
+    }
+  },
+  "admin": {
+    "id": "id",
+    "overview": {
+      "title": "Overzicht",
+      "description": "Voor een overzicht, selecteer een van de selecties. Je kan kiezen tussen de volgende selecties van de lijst: Ervaringsdeskundigen, Onderzoeken of Bedrijven.",
+      "create": {
+        "panel": "maak nieuw onderzoek aan",
+        "panelmember": "maak nieuw ervaringsdeskundige aan",
+        "organisation": "maak nieuw organisatie aan"
+      },
+      "update": "aanpassen",
+      "delete": "verwijderen"
+    },
+    "dropdown": {
+      "items": {
+        "panelmembers": "Ervaringsdeskundigen",
+        "panels": "Onderzoeken",
+        "organisations": "Organisaties"
+      }
+    },
+    "help": {
+      "select_item": "U kunt een item selecteren van de lijst hiernaast om een overzicht te krijgen."
+    },
+    "panel": {
+      "organisation": "organisatie",
+      "title": "titel",
+      "description": "beschrijving",
+      "content": "inhoud",
+      "activePeriod": "actieveperiode",
+      "location": "locatie",
+      "reward": "beloning",
+      "studyType": "studietype"
+    },
+    "panelmember": {
+      "firstName": "voornaam",
+      "lastName": "achternaam",
+      "email": "email",
+      "phoneNumber": "telefoonnummer",
+      "dateOfBirth": "geboortedatum",
+      "avatarUrl": "profielurl"
+    },
+    "organisation": {
+      "type": "type",
+      "name": "naam",
+      "description": "beschrijving",
+      "logo": "logo",
+      "website": "website",
+      "phoneNumber": "telefoonnummer"
+    },
+    "search": {
+      "label": {
+        "panel": "Onderzoek vinden",
+        "panelmember": "Ervaringsdeskundige vinden",
+        "organisation": "Organisatie vinden"
+      },
+      "placeholder": {
+        "panel": "Vind onderzoek",
+        "panelmember": "Vind ervaringsdeskundige",
+        "organisation": "Vind organisatie"
+      }
+    },
+    "filter": {
+      "label": {
+        "panel": "Onderzoek filteren",
+        "panelmember": "Ervaringsdeskundige filteren",
+        "organisation": "Organisatie filteren"
+      },
+      "option": "Filteren op"
     }
   }
 }
