@@ -19,7 +19,7 @@ export default function Button({
   const router = useRouter()
 
   async function NormalLogin() {
-    router.push('/');
+    router.push('../../panel');
 
     // const response = await fetch("http://localhost:5134/auth/login?useCookies=true", {
     //   method: "POST", // *GET, POST, PUT, DELETE, etc.
