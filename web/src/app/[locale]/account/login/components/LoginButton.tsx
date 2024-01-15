@@ -20,7 +20,7 @@ export default function Button({
 
   async function NormalLogin() {
 
-    const response = await fetch("http://localhost:5134/auth/login", {
+    const response = await fetch("http://localhost:5134/auth/login?useCookies=true", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
