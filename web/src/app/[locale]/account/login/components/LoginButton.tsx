@@ -19,27 +19,28 @@ export default function Button({
   const router = useRouter()
 
   async function NormalLogin() {
+    router.push('/');
 
-    const response = await fetch("http://localhost:5134/auth/login?useCookies=true", {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-      mode: "cors", // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: "same-origin", // include, *same-origin, omit
-      headers: {
-        "Content-Type": "application/json",
-        "Sec-Fetch-Site": "same-site",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: "follow", // manual, *follow, error
-      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: loginData, // body data type must match "Content-Type" header
-    });
+    // const response = await fetch("http://localhost:5134/auth/login?useCookies=true", {
+    //   method: "POST", // *GET, POST, PUT, DELETE, etc.
+    //   mode: "cors", // no-cors, *cors, same-origin
+    //   cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    //   credentials: "same-origin", // include, *same-origin, omit
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "Sec-Fetch-Site": "same-site",
+    //     // 'Content-Type': 'application/x-www-form-urlencoded',
+    //   },
+    //   redirect: "follow", // manual, *follow, error
+    //   referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    //   body: loginData, // body data type must match "Content-Type" header
+    // });
   
-    if (response.status == 200) {
-      router.push('/');
-    } else {
-      console.log(response.body);
-    }
+    // if (response.status == 200) {
+    //   router.push('/');
+    // } else {
+    //   console.log(response.body);
+    // }
   }
 
   return (
