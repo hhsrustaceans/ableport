@@ -6,7 +6,7 @@ import IconBlind from "~icons/mdi/eye-remove";
 export { IconAutism, IconBlind };
 
 export type DisabilityMeta = {
-  Icon: JSX.Element;
+  Icon: React.FC;
   description?: string; // TODO: i18n
 };
 
