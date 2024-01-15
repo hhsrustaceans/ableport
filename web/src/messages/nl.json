@@ -48,6 +48,14 @@
       "age": "Leeftijd",
       "dob": "Geboortedatum"
     },
+    "settings": {
+      "settings": "Settings",
+      "update": "Update settings",
+      "help": "U kunt hier uw accountsinformatie en andere voorkeuren instellen. Klik op {button} om uw wijzigingen op te slaan.",
+      "disabilities": "Mijn beperkingen",
+      "aids": "Mijn hulpmiddelen",
+      "save": "Instellingen opslaan"
+    },
     "form": {
       "submit": "Insturen",
       "next": "Volgende",
