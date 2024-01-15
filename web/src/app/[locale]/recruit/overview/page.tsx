@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { DisplayOrganisation } from "../components/DisplayOrganisation";
 import { ButtonCreate } from "../components/ButtonCreate";
-import { RecruitFilter } from "../components/RecruitFilter";
+import { Filter } from "@/components/Filter";
 import { NewOrganisation } from "../components/NewOrganisation";
 
 export default function RecruitPage() {
@@ -19,7 +19,7 @@ export default function RecruitPage() {
             </h1>
           </article>
           <article className="inline-block gap-0 sm:flex sm:gap-5 mb-2">
-            <RecruitFilter />
+            <Filter filter={t("recruit.search")} />
             <ButtonCreate />
           </article>
           <DisplayOrganisation />
