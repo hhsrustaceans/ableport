@@ -13,7 +13,7 @@ export function NewOrganisation({ children } : { children : ReactNode }) {
     description: "",
     logo: "",
     website: "",
-    phonenumber: "",
+    phoneNumber: "",
   });
 
   const organisation: Organisation[] = [
@@ -24,7 +24,7 @@ export function NewOrganisation({ children } : { children : ReactNode }) {
       description: change.description,
       logo: change.logo,
       website: change.website,
-      phonenumber: change.phonenumber
+      phoneNumber: change.phoneNumber
     } satisfies Organisation,
     {
       id: 2,
@@ -33,7 +33,7 @@ export function NewOrganisation({ children } : { children : ReactNode }) {
       description: "test",
       logo: "test",
       website: "test",
-      phonenumber: "31612345678"
+      phoneNumber: "31612345678"
     } satisfies Organisation,
     {
       id: 1,
@@ -42,7 +42,7 @@ export function NewOrganisation({ children } : { children : ReactNode }) {
       description: "more test",
       logo: "more test",
       website: "more test",
-      phonenumber: "31687654321"
+      phoneNumber: "31687654321"
     } satisfies Organisation,
   ];
 

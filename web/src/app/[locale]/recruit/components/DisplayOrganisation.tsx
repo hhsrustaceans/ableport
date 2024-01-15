@@ -7,13 +7,13 @@ import { Context } from "./Context";
 export function DisplayOrganisation() {
   const t = useTranslations();
   const {organisation, search, showContent} = useContext(Context);
-  const items: string[] = ["id", "type", "name", "description", "logo", "website", "phonenumber"];
+  const items: string[] = ["id", "type", "name", "description", "logo", "website", "phoneNumber"];
 
   let recruit: string[] = [
     t("recruit.organisation.id"), t("recruit.organisation.type"),
     t("recruit.organisation.name"), t("recruit.organisation.description"),
     t("recruit.organisation.logo"), t("recruit.organisation.website"),
-    t("recruit.organisation.phonenumber"), t("recruit.option")
+    t("recruit.organisation.phoneNumber"), t("recruit.option")
   ];
 
   return Array.from({ length: 1 })

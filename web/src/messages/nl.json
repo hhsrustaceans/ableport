@@ -144,7 +144,7 @@
       "description": "beschrijving",
       "logo": "logo",
       "website": "website",
-      "phonenumber": "telefoonnummer"
+      "phoneNumber": "telefoonnummer"
     },
     "option": "opties",
     "create": "Maak een nieuwe organisatie aan",

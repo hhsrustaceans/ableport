@@ -101,7 +101,7 @@
       "firstName": "firstname",
       "lastName": "lastname",
       "email": "email",
-      "phoneNumber": "phonenumber",
+      "phoneNumber": "phoneNumber",
       "dateOfBirth": "dateofbirth",
       "avatarUrl": "avatarurl"
     },
@@ -111,7 +111,7 @@
       "description": "description",
       "logo": "logo",
       "website": "website",
-      "phoneNumber": "phonenumber"
+      "phoneNumber": "phoneNumber"
     },
     "search": {
       "label": {
@@ -144,7 +144,7 @@
       "description": "description",
       "logo": "logo",
       "website": "website",
-      "phonenumber": "phonenumber"
+      "phoneNumber": "phoneNumber"
     },
     "option": "options",
     "create": "Create a new organisation",
