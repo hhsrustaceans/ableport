@@ -18,7 +18,7 @@ export default function PanelSearch({ filter } : { filter: string }) {
       <input 
         type="search" 
         placeholder={filter}
-        className="cta action rounded-2xl text-lg w-full mt-0 text-center sm:text-left px-10 duration-500 ease-in-out max-w-md" 
+        className="cta action rounded-2xl text-lg w-full mt-0 text-center sm:text-left px-10 duration-500 ease-in-out max-w-md"
         onChange={(event: ChangeEvent<Element>) => setSearch((event.target as HTMLInputElement).value)}
       />
       <ul className="max-w-md m-auto space-y-2 overflow-y-auto max-h-48">

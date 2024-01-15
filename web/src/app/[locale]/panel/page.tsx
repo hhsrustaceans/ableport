@@ -21,9 +21,11 @@ export default function Root() {
           </li>
         ))}
       </ul>
-      <div className="mt-4">
-        <HelpButton text={t("panel.help.select_panel")} />
-        <Link href="./discover" className="cta action action-primary inline-block mx-4">
+      <div className="mt-4 block sm:flex justify-center sm:gap-5">
+        <div className="pb-2 sm:pb-0">
+          <HelpButton text={t("panel.help.select_panel")} />
+        </div>
+        <Link href="./discover" className="cta action action-primary">
           {t("panel.discover")}
         </Link>
       </div>

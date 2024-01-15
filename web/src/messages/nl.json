@@ -103,7 +103,9 @@
       "heading": "Hoe werkt deze pagina?"
     },
     "search": "Zoek onderzoek",
-    "discover": "Verken onderzoeken"
+    "discover": "Verken onderzoeken",
+    "searchHeading": "Filter op een onderzoek",
+    "back": "Terug naar onderzoeken"
   },
   "admin": {
     "id": "id",

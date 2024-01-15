@@ -104,7 +104,9 @@
       "heading": "How does this page work?"
     },
     "search": "Search panel",
-    "discover": "Discover panels"
+    "discover": "Discover panels",
+    "searchHeading": "Filter on a panel",
+    "back": "Return to panels"
   },
   "admin": {
     "id": "id",

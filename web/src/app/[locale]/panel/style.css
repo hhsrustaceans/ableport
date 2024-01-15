@@ -25,6 +25,10 @@
     @apply bg-blue-700 hover:bg-blue-500 text-white focus:outline-blue-300;
   }
 
+  .action-success {
+    @apply bg-green-700 hover:bg-green-500 text-white focus:outline-green-300;
+  }
+
   .icon-highlight-fill {
     /* [&>*] is special Tailwind syntax to select all child elements */
     @apply [&>*]:hover:fill-slate-500 [&>*]:dark:hover:fill-slate-400;
