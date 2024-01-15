@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from 'next/navigation'
 import { useTranslations } from "next-intl";
 import Logo from "@/components/Logo"
 import { useState } from 'react';
@@ -11,6 +11,7 @@ import PersonalForm from "@/components/forms/PersonalForm";
 export default function Root() {
   const [registerStep, setRegisterStep] = useState(0);
   const t = useTranslations();
+  const router = useRouter();
 
   const steps: React.ReactNode[] = [
     <NameForm key={0} />,
@@ -28,7 +29,7 @@ export default function Root() {
     if (registerStep < steps.length - 1) {
       setRegisterStep(registerStep + 1);
     } else if (registerStep == steps.length - 1) {
-      alert("Registered successfully!");
+      router.push('../login');
     }
   }
 
