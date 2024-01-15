@@ -9,13 +9,15 @@ import { useEffect } from "react";
 export default function Modal({
   children,
   title,
+  noClose,
   isOpen,
   onClose,
 }: {
   children: React.ReactNode;
   title: string;
+  noClose?: boolean;
   isOpen: boolean;
-  onClose: () => void;
+  onClose?: () => void;
 }) {
   const t = useTranslations();
 
@@ -32,13 +34,17 @@ export default function Modal({
         onRequestClose={onClose}
         style={{ overlay: { backgroundColor: null! } }}
       >
-        <button
-          onClick={onClose}
-          aria-label={t("common.dialog.close")}
-          className="p-1 action block"
-        >
-          <IconClose />
-        </button>
+        {noClose ? (
+          <></>
+        ) : (
+          <button
+            onClick={onClose}
+            aria-label={t("common.dialog.close")}
+            className="p-1 action block"
+          >
+            <IconClose />
+          </button>
+        )}
         <div className="mt-3">{children}</div>
       </ReactModal>
     </>

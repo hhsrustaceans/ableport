@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import Logo from "@/components/Logo";
 import LanguageButton from "@/components/LanguageButton";
-import Link from "next/link";
+import { Link } from "@/lib/modules/navigation";
 import Exit from "~icons/lucide/log-out";
 
 export default function Navbar() {
@@ -24,7 +24,7 @@ export default function Navbar() {
           <LanguageButton />
         </li>
         <li>
-          <Link href={`/logout`}>
+          <Link href="/logout">
             <Exit className="icon-highlight-stroke" />
           </Link>
         </li>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import IconLabel from "@/components/IconLabel";
 import IconHelp from "~icons/lucide/help-circle";
@@ -8,9 +8,14 @@ import Modal from "@/components/Modal";
 
 export default function HelpButton({ text }: { text: string }) {
   const t = useTranslations();
-  const [isHelpShown, showHelp] = useState(
-    localStorage.getItem("alwaysHelp") === "true"
-  );
+
+  const [isHelpShown, showHelp] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("alwaysHelp") === "true") {
+      showHelp(true);
+    }
+  }, []);
 
   return (
     <>
