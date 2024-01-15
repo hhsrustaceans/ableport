@@ -11,7 +11,7 @@ export default function Navbar() {
       <ul className="flex items-center">
         <li>
           <Link
-            href="/"
+            href="/panel"
             aria-label={t("common.nav.home")}
             className="p-1 block"
           >
