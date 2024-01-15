@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import { getTranslations } from "next-intl/server";
 import { productName } from "@/lib/modules/config";
 import { Metadata } from "next";
+import "../style.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations();
