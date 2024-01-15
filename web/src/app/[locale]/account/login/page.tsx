@@ -15,7 +15,7 @@ export default function Root() {
         </div>
         {/* <Button text="Microsoft"/>
         <Button text="Google"/> */}
-        <LoginForm />
+        {/* <LoginForm /> */}
         <div className="flex-col p-3 w-full">
           <LoginButton />
           <RegisterButton />
