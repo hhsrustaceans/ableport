@@ -22,7 +22,7 @@
   }
 
   .action-li-inactive {
-    @apply p-3 text-left font-normal focus:rounded-md focus:outline-gray-300 disabled:cursor-not-allowed pointer-events-none;
+    @apply p-3 text-left font-normal focus:rounded-md focus:outline-gray-300 disabled:cursor-not-allowed pointer-events-none opacity-40 dark:opacity-60;
   }
 
   .action-primary {
