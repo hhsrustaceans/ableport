@@ -8,6 +8,7 @@ export const panels: Panel[] = [
     websiteUrl: "https://example.com",
     imageUrl: "test",
     disabilities: [{ code: "AUT" }, { code: "BLI" }],
+    active: true
   },
   {
     id: "test2",
@@ -16,6 +17,7 @@ export const panels: Panel[] = [
     websiteUrl: "https://example.com",
     imageUrl: "test",
     disabilities: [{ code: "DEF" }],
+    active: false
   },
   {
     id: "test3",
@@ -24,6 +26,7 @@ export const panels: Panel[] = [
     websiteUrl: "https://example.com",
     imageUrl: "test",
     disabilities: [{ code: "MOT" }],
+    active: false
   },
   {
     id: "test4",
@@ -32,5 +35,6 @@ export const panels: Panel[] = [
     websiteUrl: "https://example.com",
     imageUrl: "test",
     disabilities: [{ code: "DYS" }, { code: "AUT" }],
+    active: true
   },
 ];

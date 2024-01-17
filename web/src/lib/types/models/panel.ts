@@ -6,6 +6,7 @@ export type Panel = {
   imageUrl: string;
   websiteUrl: string;
   disabilities: Disability[];
+  active: boolean
 };
 
 export type Disability = {

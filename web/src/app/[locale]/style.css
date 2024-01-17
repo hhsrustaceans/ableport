@@ -21,6 +21,10 @@
     @apply p-3 text-left font-normal focus:rounded-md focus:outline-blue-300;
   }
 
+  .action-li-inactive {
+    @apply p-3 text-left font-normal focus:rounded-md focus:outline-gray-300 disabled:cursor-not-allowed;
+  }
+
   .action-primary {
     @apply bg-blue-700 hover:bg-blue-500 text-white focus:outline-blue-300;
   }

@@ -4,6 +4,7 @@ import PanelPreview from "./components/PanelPreview";
 import HelpButton from "@/components/HelpButton";
 import { panels } from "@/lib/modules/panel";
 import WelcomeModal from "./components/WelcomeModal";
+import { Panel } from "@/lib/types/models/panel";
 
 export default function Root() {
   const t = useTranslations();
@@ -13,7 +14,7 @@ export default function Root() {
       <WelcomeModal />
       <h1 className="cta text-lg sm:text-xl">{t("panel.panels_avail")}</h1>
       <ul className="max-w-md m-auto space-y-2 overflow-y-auto max-h-48">
-        {panels.map((panel, key) => (
+        {panels.filter((panel: Panel) => panel.active).map((panel, key) => (
           <li key={key}>
             <Link href={`view/${panel.id}`} className="block action action-li">
               <PanelPreview panel={panel} />
