@@ -11,7 +11,7 @@ export default function Root() {
       <h2 className="cta text-base sm:text-lg">{t("panel.searchHeading")}</h2>
       <PanelSearch filter={t("panel.search")} />
       <div className="mt-4">
-        <HomeButton />
+        <HomeButton color={"action-primary"} />
       </div>
     </>
   );

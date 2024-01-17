@@ -2,15 +2,13 @@
 
 import { Link } from "@/lib/modules/navigation";
 import { useTranslations } from "next-intl";
-import { useRouter } from "@/lib/modules/navigation";
 
-export function HomeButton() {
+export function HomeButton({ color } : { color: string }) {
   const t = useTranslations();
-  const router = useRouter();
 
   return (
     <Link href={"/panel"}>
-      <button className="cta action action-primary" onClick={(): void => router.push("/./panel")}>
+      <button className={`cta action ${color == "" ? "" : color}`}>
         {t("panel.back")}
       </button>
     </Link>

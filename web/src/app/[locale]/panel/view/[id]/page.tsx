@@ -38,7 +38,7 @@ export default function ViewPanel({ params }: { params: { id: string } }) {
       <div className="mt-4 space-x-2">
         <HelpButton text={t("panel.help.select_panel")} />
         <SignUpButton panel={panel} />
-        <HomeButton />
+        <HomeButton color={""} />
       </div>
     </>
   );
