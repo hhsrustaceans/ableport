@@ -10,45 +10,60 @@ public class Tests
     {
         public static readonly Uri BaseUrl = new Uri("http://localhost:5134");
         public const string AccountData = "{\"email\":\"test@gmail.com\",\"password\":\"AW8v89WA12*!\"}";
+        public static HttpClient AuthorizedClient = new() { BaseAddress = TestConfig.BaseUrl };
     }
     
     [SetUp]
-    public async Task Setup()
+    public async Task AuthorizedSetup()
     {
-        // Register test account
-        HttpClient httpClient = new() { BaseAddress = TestConfig.BaseUrl };
+        // 1: Register test account
         HttpContent content = new StringContent(TestConfig.AccountData, Encoding.UTF8, "application/json");
-        var response = await httpClient.PostAsync("/auth/register", content);
-    }
-    
-    [Test]
-    public async Task Authorization()
-    {
-        HttpClient httpClient = new() { BaseAddress = TestConfig.BaseUrl };
-        
-        // 1: Assert that the test endpoint isn't visible for anonymous users
-        var response = await httpClient.GetAsync("/test");
-        
-        Assert.That( response.StatusCode, Is.EqualTo(HttpStatusCode.Unauthorized));
-        
-        HttpContent content = new StringContent(TestConfig.AccountData, Encoding.UTF8, "application/json");
+        var registerResponse = await TestConfig.AuthorizedClient.PostAsync("/auth/register", content);
         
         // 2: Assert login functionality is working
-        var loginResponse = await httpClient.PostAsync("/auth/login?useCookies=true", content);
+        var loginResponse = await TestConfig.AuthorizedClient.PostAsync("/auth/login?useCookies=true", content);
         
         Assert.That( loginResponse.StatusCode, Is.EqualTo(HttpStatusCode.OK));
         
         if (loginResponse.Headers.TryGetValues("Set-Cookie", out var cookieValues))
         {
             string cookie = cookieValues.FirstOrDefault();
-            Console.WriteLine(cookie);
+            Console.WriteLine(cookie); // SENSITIVE
             HttpClientHandler handler = new HttpClientHandler(); 
-            handler.CookieContainer.SetCookies(httpClient.BaseAddress, cookie);
+            handler.CookieContainer.SetCookies(TestConfig.AuthorizedClient.BaseAddress, cookie);
         }
         
         // 3: Assert that a logged in user can view the test endpoint
-        var testResponse = await httpClient.GetAsync("/test");
-        
+        var testResponse = await TestConfig.AuthorizedClient.GetAsync("/test");
         Assert.That( testResponse.StatusCode, Is.EqualTo(HttpStatusCode.OK));
+    }
+
+    [Test]
+    public async Task Enrollment()
+    {
+        // Arrange
+        const string panel = "{\"panel\":0}";
+        HttpContent content = new StringContent(panel, Encoding.UTF8, "application/json");
+        
+        // Act
+        var enrollmentResponse = await TestConfig.AuthorizedClient.PostAsync("/panel?panel=0",content);
+        
+        // Assert
+        Assert.That(enrollmentResponse.StatusCode, Is.EqualTo(HttpStatusCode.OK));
+    }
+
+    [Test]
+    public async Task UnauthorizedEnpoints()
+    {
+        // Arrange
+        HttpClient unauthorizedClient = new() { BaseAddress = TestConfig.BaseUrl };
+        
+        // Act
+        var enrollmentResponse = await unauthorizedClient.PostAsync("/panel", null);
+        var unauthorizedResponse = await unauthorizedClient.GetAsync("/test");
+        
+        // Assert
+        Assert.That(enrollmentResponse.StatusCode, Is.EqualTo(HttpStatusCode.Unauthorized));
+        Assert.That(unauthorizedResponse.StatusCode, Is.EqualTo(HttpStatusCode.Unauthorized));
     }
 }

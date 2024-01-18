@@ -1,26 +1,44 @@
 ﻿using System.Net.Mime;
 using Ableport.API.REST.DataModel;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ableport.API.REST.Controllers;
 [ApiController]
 [Route("[controller]")]
 [Produces(MediaTypeNames.Application.Json)]
+[Authorize]
 public class PanelController : ControllerBase
 {
     private readonly AbleportContext _db;
 
     private readonly ILogger<PanelController> _logger;
+    private readonly UserManager<AbleportUser> _userManager;
 
-    public PanelController(ILogger<PanelController> logger, AbleportContext db)
+    public PanelController(ILogger<PanelController> logger, AbleportContext db, UserManager<AbleportUser> userManager)
     {
         _logger = logger;
         _db = db;
+        _userManager = userManager;
     }
 
     [HttpGet(Name = "GetPanelData")]
     public Panel Get()
     {
         return _db.Panels.First();
+    }
+
+    public class PanelData
+    {
+        public int Panel;
+    }
+    
+    [HttpPost(Name = "EnrolPanelUser")]
+    public async Task<string> Enroll([FromBody] PanelData panel)
+    {
+        var user = await _userManager.GetUserAsync(HttpContext.User);
+        
+        return user?.Email + " " + panel ?? "No associated email found";
     }
 }
