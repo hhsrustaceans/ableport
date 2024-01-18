@@ -41,8 +41,12 @@ public class Tests
     [Test]
     public async Task Enrollment()
     {
+        // Arrange
+        const string panel = "{\"panel\":0}";
+        HttpContent content = new StringContent(panel, Encoding.UTF8, "application/json");
+        
         // Act
-        var enrollmentResponse = await TestConfig.AuthorizedClient.GetAsync("/panel?panel=0");
+        var enrollmentResponse = await TestConfig.AuthorizedClient.PostAsync("/panel?panel=0",content);
         
         // Assert
         Assert.That(enrollmentResponse.StatusCode, Is.EqualTo(HttpStatusCode.OK));
@@ -55,7 +59,7 @@ public class Tests
         HttpClient unauthorizedClient = new() { BaseAddress = TestConfig.BaseUrl };
         
         // Act
-        var enrollmentResponse = await unauthorizedClient.PostAsync("/panel?panel=0", null);
+        var enrollmentResponse = await unauthorizedClient.PostAsync("/panel", null);
         var unauthorizedResponse = await unauthorizedClient.GetAsync("/test");
         
         // Assert

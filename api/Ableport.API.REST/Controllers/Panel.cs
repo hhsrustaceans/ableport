@@ -28,12 +28,17 @@ public class PanelController : ControllerBase
     {
         return _db.Panels.First();
     }
+
+    public class PanelData
+    {
+        public int Panel;
+    }
     
     [HttpPost(Name = "EnrolPanelUser")]
-    public async Task<string> Enroll(int panel)
+    public async Task<string> Enroll([FromBody] PanelData panel)
     {
         var user = await _userManager.GetUserAsync(HttpContext.User);
         
-        return user?.Email ?? "No associated email found";
+        return user?.Email + " " + panel ?? "No associated email found";
     }
 }
