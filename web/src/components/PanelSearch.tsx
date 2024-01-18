@@ -29,8 +29,8 @@ export default function PanelSearch({ filter } : { filter: string }) {
           <li key={key}>
             <Link
               href={`../view/${panel.id}`}
-              className={`block action ${panel.active ? "action-li" : "action-li-inactive"}`}
-              aria-disabled={panel.active ? "false" : "true"}
+              className={`block action ${panel.active ? "action-li-inactive" : "action-li"}`}
+              aria-disabled={panel.active ? "true" : "false"}
             >
               <PanelPreview panel={panel} />
             </Link>
