@@ -14,7 +14,7 @@
 
 @layer components {
   .action {
-    @apply bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline focus:outline-gray-400 focus:outline-4 px-5 py-2 text-sm font-semibold rounded-md text-center;
+    @apply bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline focus:outline-gray-400 focus:outline-4 focus:rounded-md px-5 py-2 text-sm font-semibold rounded-md text-center w-full sm:w-auto;
   }
 
   .action-li {
@@ -40,7 +40,7 @@
   }
 
   .setting {
-    @apply p-2 focus:outline-gray-300 dark:focus:outline-gray-400 focus:outline rounded-md;
+    @apply p-2 focus:outline-gray-300 dark:focus:outline-gray-400 focus:outline focus:outline-4 focus:rounded-md rounded-md;
   }
 
   .cta {

@@ -13,7 +13,9 @@ export default function ViewPanel({ params }: { params: { id: string } }) {
     <>
       <div>
         <div className="cta">
-          <h1 className="text-xl sm:text-2xl">{t("panel.view.title", { panel: panel.name })}</h1>
+          <h1 className="text-xl sm:text-2xl">
+            {t("panel.view.title", { panel: panel.name })}
+          </h1>
           <ul className="flex gap-3 justify-center items-center mx-auto text-sm text-gray-600 dark:text-gray-400">
             {panel.disabilities
               .map((d) => getDisabilityMeta(d)!)
@@ -37,8 +39,8 @@ export default function ViewPanel({ params }: { params: { id: string } }) {
       </div>
       <div className="mt-4 space-x-2">
         <HelpButton text={t("panel.help.select_panel")} />
+        <HomeButton />
         <SignUpButton panel={panel} />
-        <HomeButton color={""} />
       </div>
     </>
   );

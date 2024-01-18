@@ -24,8 +24,8 @@ export default function Navbar() {
           <LanguageButton />
         </li>
         <li>
-          <Link href="/logout">
-            <Exit className="icon-highlight-stroke" />
+          <Link className="setting block" href="/logout">
+            <Exit className="text-xl icon-highlight-stroke" />
           </Link>
         </li>
       </ul>
