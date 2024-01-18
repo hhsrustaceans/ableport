@@ -1,13 +1,19 @@
+"use client";
+
 import { getDisabilityMeta } from "@/lib/modules/disability";
 import { useTranslations } from "next-intl";
 import SignUpButton from "../../components/SignUp";
 import HelpButton from "@/components/HelpButton";
 import { panels } from "@/lib/modules/panel";
 import { HomeButton } from "../../components/HomeButton";
+import { useRouter } from "@/lib/modules/navigation";
+import { notFound } from "next/navigation";
 
 export default function ViewPanel({ params }: { params: { id: string } }) {
   const t = useTranslations();
   const panel = panels.find((p) => p.id === params.id)!;
+  const router = useRouter();
+  !panel.active ? (notFound(), router.push(`/panel/view/`)) : null;
 
   return (
     <>
@@ -37,7 +43,7 @@ export default function ViewPanel({ params }: { params: { id: string } }) {
         </div>
         <p>{panel.content ?? panel.description}</p>
       </div>
-      <div className="mt-4 space-x-2">
+      <div className="mt-4 space-x-0 sm:space-x-2">
         <HelpButton text={t("panel.help.select_panel")} />
         <HomeButton />
         <SignUpButton panel={panel} />

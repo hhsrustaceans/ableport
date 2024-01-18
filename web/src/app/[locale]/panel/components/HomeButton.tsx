@@ -5,7 +5,7 @@ export function HomeButton() {
   const t = useTranslations();
 
   return (
-    <Link className="action inline-block" href="/panel">
+    <Link className="action inline-block mt-2 sm:mt-0" href="/panel">
       {t("panel.back")}
     </Link>
   );

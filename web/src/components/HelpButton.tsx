@@ -8,7 +8,6 @@ import Modal from "@/components/Modal";
 
 export default function HelpButton({ text }: { text: string }) {
   const t = useTranslations();
-
   const [isHelpShown, showHelp] = useState(false);
 
   useEffect(() => {
@@ -19,7 +18,7 @@ export default function HelpButton({ text }: { text: string }) {
 
   return (
     <>
-      <button className="action" onClick={() => showHelp(true)}>
+      <button className="action flex justify-center sm:inline-block" onClick={() => showHelp(true)}>
         <IconLabel caption={t("common.a11y.help")} icon={<IconHelp />} />
       </button>
       <Modal

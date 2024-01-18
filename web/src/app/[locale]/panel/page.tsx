@@ -26,7 +26,7 @@ export default function Root() {
         <div className="pb-2 sm:pb-0">
           <HelpButton text={t("panel.help.select_panel")} />
         </div>
-        <Link href="./discover" className="cta action action-primary">
+        <Link href="./discover" className="cta action action-primary flex justify-center">
           {t("panel.discover")}
         </Link>
       </div>
