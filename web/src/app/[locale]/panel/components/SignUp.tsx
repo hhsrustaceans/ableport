@@ -1,24 +1,21 @@
 "use client";
 
-import { Panel } from "@/lib/types/models/panel";
-import { useTranslations } from "next-intl";
-import {useRouter} from "@/lib/modules/navigation";
+import { useRouter } from "@/lib/modules/navigation";
 
-export default function SignUpButton({ panel }: { panel: Panel }) {
-  const t = useTranslations();
+export default function SignUpButton({ status, action }: { status: string, action: string }) {
   const router = useRouter();
 
   function signUp() {
-    alert(t("panel.view.signupSucess", { panel: panel.name }));
-    router.push("/panel");
+    alert(status);
+    router.push("/panel/discover");
   }
 
   return (
     <button
       onClick={() => signUp()}
-      className="px-16 action action-primary my-2"
+      className="px-0 sm:px-16 action action-primary my-2"
     >
-      {t("panel.view.signup")}
+      {action}
     </button>
   );
 }

@@ -94,8 +94,11 @@
     },
     "view": {
       "signup": "Inschrijven",
+      "signout": "Uitschrijven",
       "title": "U gaat zich inschrijven voor {panel}.",
-      "signupSucess": "U staat ingeschreven bij {panel}."
+      "signoutTitle": "U gaat zich uitschrijven voor {panel}.",
+      "signupSuccess": "U staat ingeschreven bij {panel}.",
+      "signoutSuccess": "U bent uitgeschreven bij {panel}."
     },
     "panels_avail": "Kies hieronder uit een van de beschikbare onderzoeken.",
     "help": {

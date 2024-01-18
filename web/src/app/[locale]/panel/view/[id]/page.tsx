@@ -1,26 +1,21 @@
-"use client";
-
 import { getDisabilityMeta } from "@/lib/modules/disability";
 import { useTranslations } from "next-intl";
 import SignUpButton from "../../components/SignUp";
 import HelpButton from "@/components/HelpButton";
 import { panels } from "@/lib/modules/panel";
 import { HomeButton } from "../../components/HomeButton";
-import { useRouter } from "@/lib/modules/navigation";
-import { notFound } from "next/navigation";
+import { SignOutButton } from "../../components/SignOut";
 
 export default function ViewPanel({ params }: { params: { id: string } }) {
   const t = useTranslations();
   const panel = panels.find((p) => p.id === params.id)!;
-  const router = useRouter();
-  !panel.active ? (notFound(), router.push(`/panel/view/`)) : null;
 
   return (
     <>
       <div>
         <div className="cta">
           <h1 className="text-xl sm:text-2xl">
-            {t("panel.view.title", { panel: panel.name })}
+            {!panel.active ? t("panel.view.title", { panel: panel.name }) : t("panel.view.signoutTitle", { panel: panel.name })}
           </h1>
           <ul className="flex gap-3 justify-center items-center mx-auto text-sm text-gray-600 dark:text-gray-400">
             {panel.disabilities
@@ -46,7 +41,10 @@ export default function ViewPanel({ params }: { params: { id: string } }) {
       <div className="mt-4 space-x-0 sm:space-x-2">
         <HelpButton text={t("panel.help.select_panel")} />
         <HomeButton />
-        <SignUpButton panel={panel} />
+        {!panel.active ? 
+          <SignUpButton status={t("panel.view.signupSuccess", { panel: panel.name })} action={t("panel.view.signup")} /> : 
+          <SignOutButton status={t("panel.view.signoutSuccess", { panel: panel.name })} action={t("panel.view.signout")} />
+        }
       </div>
     </>
   );

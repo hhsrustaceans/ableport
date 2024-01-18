@@ -95,8 +95,11 @@
     },
     "view": {
       "signup": "Sign up",
+      "signout": "Sign out",
       "title": "You are signing up for {panel}.",
-      "signupSucess": "You've signed up for {panel}."
+      "signoutTitle": "You are signing out of {panel}.",
+      "signupSuccess": "You've signed up for {panel}.",
+      "signoutSuccess": "You've signed out of {panel}."
     },
     "panels_avail": "Please choose one of the panels listed below.",
     "help": {
