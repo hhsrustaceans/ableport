@@ -50,7 +50,8 @@
       "heading": "Login or Register",
       "name": "Enter your name",
       "credentials": "Enter your credentials",
-      "newAge": "Enter your age"
+      "newAge": "Enter your age",
+      "accountCreated": "Your account has been created successfully. You can log in now."
     },
     "settings": {
       "settings": "Settings",

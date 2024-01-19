@@ -30,6 +30,7 @@ export default function Root() {
       setRegisterStep(registerStep + 1);
     } else if (registerStep == steps.length - 1) {
       router.push('../login');
+      alert(t("common.account.accountCreated"));
     }
   }
 

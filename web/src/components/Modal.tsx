@@ -28,7 +28,7 @@ export default function Modal({
   return (
     <>
       <ReactModal
-        className="rounded-md text-sm w-72 md:w-96 mx-auto my-24 bg-white dark:bg-gray-800 drop-shadow-2xl p-6"
+        className="rounded-md text-sm w-64 sm:w-96 mx-auto my-24 bg-white dark:bg-gray-800 drop-shadow-2xl p-6"
         contentLabel={title}
         isOpen={isOpen}
         onRequestClose={onClose}
