@@ -5,6 +5,7 @@ import PanelPreview from "@/app/[locale]/panel/components/PanelPreview";
 import { panels } from "@/lib/modules/panel";
 import { ChangeEvent, useState } from "react";
 import Search from "~icons/mdi/search";
+import { Disability } from "@/lib/types/models/panel";
 
 export default function PanelSearch({ filter }: { filter: string }) {
   const items: string[] = [
@@ -12,7 +13,6 @@ export default function PanelSearch({ filter }: { filter: string }) {
     "description",
     "websiteUrl",
     "imageUrl",
-    "disabilities",
   ];
   const [search, setSearch] = useState("");
 
@@ -36,7 +36,10 @@ export default function PanelSearch({ filter }: { filter: string }) {
           .filter((panel: any) =>
             items.some((item: string) =>
               panel[item].toString().includes(search)
-            )
+            ) || 
+            panel.disabilities.some((disability: Disability) => 
+              disability.code.toLowerCase().includes(search.toLowerCase())
+            ) 
           )
           .map((panel, key) => (
             <li key={key}>
