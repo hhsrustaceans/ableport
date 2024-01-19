@@ -29,6 +29,7 @@
     "@types/react-dom": "^18",
     "@types/react-modal": "^3.16.3",
     "autoprefixer": "^10.0.1",
+    "cypress": "^13.6.3",
     "eslint": "^8",
     "eslint-config-next": "14.0.3",
     "next-intl": "^3.2.0",
